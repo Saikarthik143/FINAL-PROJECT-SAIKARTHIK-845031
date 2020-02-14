@@ -59,6 +59,6 @@ import { ViewreportComponent } from './Seller/viewreport/viewreport.component';
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [RegisterBuyerComponent]
 })
 export class AppModule { }
