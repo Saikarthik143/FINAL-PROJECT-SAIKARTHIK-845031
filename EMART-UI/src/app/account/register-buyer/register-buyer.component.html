@@ -1,17 +1,22 @@
-<p>register-buyer works!</p>
+<div>
+    <marquee direction="rtl">
+        <p>register-buyer works!</p>
+    </marquee>
+</div>
+
 <div class="card m-3">
-    <h5 class="card-header">Angular 8 Reactive Form Validation</h5>
+    <h5 class="card-header">Buyer Register form</h5>
     <div class="card-body">
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
            
-                <div class="form-group col">
-                    <label>BUyer ID</label>
-                    <input type="number" formControlName="Bid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Bid.errors }" />
-                    <div *ngIf="submitted && f.Bid.errors" class="invalid-feedback">
-                        <div *ngIf="f.username.Bid.required"> Name is required</div>
-                        <div *ngIf="f.Bid.errors.pattern">Enter only Alphabets</div>
-                    </div>
+            <div class="form-group col">
+                <label>ID</label>
+                <input type="text" formControlName="Bid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Bid.errors }" />
+                <div *ngIf="submitted && f.Bid.errors" class="invalid-feedback">
+                    <div *ngIf="f.Bid.errors.required">Buyer id is required</div>
+                    <div *ngIf="f.Bid.errors.pattern">First char is E</div>
                 </div>
+            </div>
                 <div class="form-group col">
                     <label>User Name</label>
                     <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
@@ -25,7 +30,7 @@
                     <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
                     <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                         <div *ngIf="f.password.errors.required">Password is required</div>
-                        <div *ngIf="f.password.errors.minlength">Password must be 8 letters and last digit is special character</div>
+                        <div *ngIf="f.password.errors.pattern">Password must be 8 letters and last digit is special character</div>
                     </div>
                 </div>
                 <div class="form-group col">

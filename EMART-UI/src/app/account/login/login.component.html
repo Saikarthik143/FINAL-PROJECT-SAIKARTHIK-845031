@@ -1,2 +1,33 @@
 <p>login works!</p>
+<div class="container">
+<table class="table table-bordered">
+    <tr>
+        <td>Username</td>
+        <td>
+            <input type="text" [(ngModel)]="uname" >
+        </td>
+    </tr>
+    <tr>
+        <td>Password:</td>
+
+<td>
+    <input type="password" [(ngModel)]="pwd" >
+</td>    </tr>
+<tr>
+    <td colspan="2">
+        <button class="btn btn-primary" (click)="Login()">Login</button>
+    </td>
+</tr>
+<tr>
+    <td >
+        <a [routerLink]="['/register-buyer']"  >Registerbuyer</a>
+    </td>
+</tr>
+<tr>
+    <td>
+        <a [routerLink]="['/register-seller']"  >Registerseller</a>
+    </td>
+</tr>
+</table>
+</div>
 <router-outlet></router-outlet>

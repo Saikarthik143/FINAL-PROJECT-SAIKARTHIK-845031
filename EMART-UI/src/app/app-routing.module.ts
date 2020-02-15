@@ -36,14 +36,14 @@ const routes: Routes = [
     {path:'block-unblock-seller',component:BlockUnblockSellerComponent},
     {path:'daily-report',component:DailyReportComponent},
   ]},
-    {path:'buyer',component:HomeComponent,children:[
+    {path:'home',component:HomeComponent,children:[
       {path:'search',component:SearchComponent},
       {path:'viewcart',component:ViewcartComponent},
       {path:'viewprofile',component:ViewprofileComponent},
       {path:'buy-product',component:BuyProductComponent},
       {path:'purchase-history',component:PurchaseHistoryComponent}  
   ]},
-  {path:'seller',component:SHomeComponent,children:[
+  {path:'shome',component:SHomeComponent,children:[
     {path:'add-items',component:AddItemsComponent},
     {path:'viewitems',component:ViewitemsComponent},
     {path:'viewprofile',component:ViewprofileComponent},
