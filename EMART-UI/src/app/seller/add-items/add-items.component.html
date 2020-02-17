@@ -1,1 +1,108 @@
-<p>add-items works!</p>
+<div class="card m-3">
+    <h5 class="card-header bg-info text-center">add Items</h5>
+    <div class="card-body bg-success">
+        <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+            <div class="offset-2">
+           <div class="row">
+            <div class="form-group col-2 ">
+                <label>ID</label>
+                <input type="text" formControlName="id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.id.errors }" />
+                <div *ngIf="submitted && f.id.errors" class="invalid-feedback">
+                    <div *ngIf="f.id.errors.required">Item id is required</div>
+                    <div *ngIf="f.id.errors.pattern">Enter only digits</div>
+                </div>
+            </div>
+           
+            <div class="form-group col-5">
+                <label>Category</label>
+                <select formControlName="Category_id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Category_id.errors }">
+                    <option value=""></option>
+                    <option value="Clothes">Clothes</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Accessories">Accessories</option>
+                    <option value="Grocery">Grocery</option>
+                </select>
+                <div *ngIf="submitted && f.Category_id.errors" class="invalid-feedback">
+                    <div *ngIf="f.Category_id.errors.required">category is required</div>
+                </div>
+            </div>
+            <div class="form-group col-5">
+                <label>Sub Category</label>
+                <select formControlName="SubCategoryid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.SubCategoryid.errors }">
+                    <option value=""></option>
+                    <option value="Clothes">Clothes</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Accessories">Accessories</option>
+                    <option value="Grocery">Grocery</option>
+                </select>
+                <div *ngIf="submitted && f.SubCategoryid.errors" class="invalid-feedback">
+                    <div *ngIf="f.SubCategoryid.errors.required">category is required</div>
+                </div>
+            </div>
+    
+            </div>
+            <div class="row">
+                <div class="form-group col-6">
+                    <label>Item Name</label>
+                    <input type="text" formControlName="item_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.item_name.errors }" />
+                    <div *ngIf="submitted && f.item_name.errors" class="invalid-feedback">
+                        <div *ngIf="f.item_name.errors.required"> Name is required</div>
+                        <div *ngIf="f.item_name.errors.pattern">please Enter valid details</div>
+                    </div>
+                </div>
+                <div class="form-group col-6">
+                    <label>Price</label>
+                    <input type="text" formControlName="Price" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Price.errors }" />
+                    <div *ngIf="submitted && f.Price.errors" class="invalid-feedback">
+                        <div *ngIf="f.Price.errors.required">price is required</div>
+                        <div *ngIf="f.Price.errors.pattern">Enter only digits</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-6">
+                    <label>Stock</label>
+                    <input type="text" formControlName="stock_number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.stock_number.errors }" />
+                    <div *ngIf="submitted && f.stock_number.errors" class="invalid-feedback">
+                        <div *ngIf="f.stock_number.errors.required">quantity is required</div>
+                        <div *ngIf="f.stock_number.errors.pattern">Enter only digits</div>
+                    </div>
+                </div>
+            
+        
+           
+                <div class="form-group col-6">
+                    <label>description</label>
+                    <input type="text" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
+                    <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                        <div *ngIf="f.description.errors.required">Descripton is required</div>
+                        <div *ngIf="f.description.errors.pattern"> must be a valid </div>
+                    </div>
+                </div>
+            </div>
+            
+           
+                <div class="form-group col-10 text-center">
+                    <label>remarks</label>
+                    <input type="text" formControlName="remarks" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.remarks.errors }" />
+                    <div *ngIf="submitted && f.remarks.errors" class="invalid-feedback">
+                        <div *ngIf="f.remarks.errors.required"> is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary mr-1">Add</button>
+                <button class="btn btn-danger" type="reset" (click)="onReset()">Reset</button>
+            </div>
+        
+        </form>
+    </div>
+</div>
+           
+       
+       <router-outlet></router-outlet>
+       
+         
+               
+               
+        

@@ -1,1 +1,72 @@
-<p>add-sub-category works!</p>
+
+<div class="card m-3">
+    <h5 class="card-header text-center">Add sub Category form</h5>
+    <div class="card-body bg-success">
+        <form [formGroup]="SubForm" (ngSubmit)="onSubmit()">
+            <div class="offset-3">
+            <div class="form-group col-8">
+                <label>SubCategoryid</label>
+                <select formControlName="SubCategoryid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.SubCategoryid.errors }">
+                    <option value=""></option>
+                    <option value="Clothes">Clothes</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Accessories">Accessories</option>
+                    <option value="Grocery">Grocery</option>
+                </select>
+                <div *ngIf="submitted && f.SubCategoryid.errors" class="invalid-feedback">
+                    <div *ngIf="f.SubCategoryid.errors.required">category is required</div>
+                </div>
+            </div>
+            <div class="form-group col-8">
+                <label> SubCategoryName</label>
+                <select formControlName="SubCategoryName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.SubCategoryName.errors }">
+                    <option value=""></option>
+                    <option value="Clothes">Clothes</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Accessories">Accessories</option>
+                    <option value="Grocery">Grocery</option>
+                </select>
+                <div *ngIf="submitted && f.SubCategoryName.errors" class="invalid-feedback">
+                    <div *ngIf="f.SubCategoryName.errors.required">category is required</div>
+                </div>
+            </div>
+            <div class="form-group col-8 ">
+                <label>Category</label>
+                <select formControlName="Category_id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Category_id.errors }">
+                    <option value=""></option>
+                    <option value="Clothes">Clothes</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Accessories">Accessories</option>
+                    <option value="Grocery">Grocery</option>
+                </select>
+                <div *ngIf="submitted && f.Category_id.errors" class="invalid-feedback">
+                    <div *ngIf="f.Category_id.errors.required">category is required</div>
+                </div>
+            </div>
+           
+            <div class="form-group col-8">
+                <label> Brief</label>
+                <input type="text" formControlName="Brief" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Brief.errors }" />
+                <div *ngIf="submitted && f.Brief.errors" class="invalid-feedback">
+                    <div *ngIf="f.Brief.errors.required"> details is required</div>
+                    <div *ngIf="f.Brief.errors.pattern">please Enter valid details</div>
+                </div>
+            </div>
+            <div class="form-group col-8">
+                <label> Gst</label>
+                <input type="text" formControlName="Gst" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Gst.errors }" />
+                <div *ngIf="submitted && f.Gst.errors" class="invalid-feedback">
+                    <div *ngIf="f.Gst.errors.required"> Gst is required</div>
+                    <div *ngIf="f.Gst.errors.pattern">please Enter valid details</div>
+                </div>
+            </div>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary mr-1">Add-Category</button>
+                <button class="btn btn-danger" type="reset" (click)="onReset()">Reset</button>
+            </div>
+       
+        </form>
+    </div>
+</div>
+

@@ -1,12 +1,12 @@
 export class Seller {
-    Sid:number;
-    Susername:string;
-    Spassword:string;
-    CompanyName:string;
-    Gstin:string;
-    Briefaboutcompany:string;
-    address:string;
-    website:string;
-    emailid:string;
-    mobile:string;
+    public  Sid:number;
+    public Susername:string;
+    public  Spassword:string;
+    public  CompanyName:string;
+    public  Gstin:string;
+    public  Briefaboutcompany:string;
+    public  address:string;
+    public  website:string;
+    public emailid:string;
+    public mobile:string;
 }

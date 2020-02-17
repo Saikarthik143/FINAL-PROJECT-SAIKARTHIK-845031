@@ -2,13 +2,13 @@
 <div class="container">
 <table class="table table-bordered">
     <tr>
-        <td>Username</td>
+        <td style="color:darkred;">Username</td>
         <td>
             <input type="text" [(ngModel)]="uname" >
         </td>
     </tr>
     <tr>
-        <td>Password:</td>
+        <td style="color: darkred;"> Password:</td>
 
 <td>
     <input type="password" [(ngModel)]="pwd" >
@@ -20,14 +20,13 @@
 </tr>
 <tr>
     <td >
-        <a [routerLink]="['/register-buyer']"  >Registerbuyer</a>
+        <a [routerLink]="['/createbuyer']" style="color: red;" >Create new account</a>
     </td>
 </tr>
-<tr>
-    <td>
-        <a [routerLink]="['/register-seller']"  >Registerseller</a>
-    </td>
-</tr>
+
 </table>
 </div>
-<router-outlet></router-outlet>
+
+
+ 
+    

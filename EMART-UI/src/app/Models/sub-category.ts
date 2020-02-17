@@ -1,8 +1,8 @@
 export class SubCategory {
-    SubCategoryid:string;
-    SubCategoryName:string;
-    Category_id:string;
-    Brief:string;
-    Gst:number;
+    public SubCategoryid:string;
+    public SubCategoryName:string;
+    public  Category_id:string;
+    public  Brief:string;
+    public  Gst:number;
 
 }

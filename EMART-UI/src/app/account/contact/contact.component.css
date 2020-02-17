@@ -1,0 +1,120 @@
+#menu-nav {
+    max-width: 1800px;
+    margin: 30px auto;
+    background-color: #ecf0f1;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+   .bg{
+    background-image:url('E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-UI\src\assets\images\bg.jpg');
+    height: 500px;
+    background-repeat: repeat;
+     background-size: 100% 100%; 
+     
+   }
+  #navigation-bar ul {
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  #navigation-bar li {
+    float: left;
+    width: 20%;
+  }
+  #navigation-bar li:hover a::before {
+    right: 0;
+    left: 0;
+  }
+  #navigation-bar a {
+    color: #848484;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+    padding: 20px 0;
+    display: block;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  #navigation-bar a:hover {
+    color: #e74c3c;
+  }
+  #navigation-bar a::before {
+    content: "";
+    transition: all 0.4s ease-in-out;
+    position: absolute;
+    right: 50%;
+    left: 50%;
+    bottom: 0;
+    height: 2px;
+    background-color: #e74c3c;
+  }
+  #navigation-bar a:hover::before {
+    right: 0;
+    left: 0;
+  }
+   
+  li {
+      list-style: none;
+  }
+    form {
+                  width:500px;
+                  margin:10px auto;
+      float:right;
+  }
+  #search {
+                  padding:8px 25px;
+                  background:rgba(50, 50, 50, 0.2);
+                  border:0px solid #dbdbdb;
+  }
+  #button {
+                  position:relative;
+                  padding:6px 15px;
+                  left:-6px;
+                  border:2px solid #207cca;
+                  background-color:#207cca;
+                  color:#fafafa;
+  }
+  #button:hover  {
+                  background-color:#fafafa;
+                  color:#207cca;
+  }
+  
+  #centered {
+  position: absolute;
+  color:white;
+  font-size: 30px;
+    top: 40%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+  }
+  
+  #text {
+  position: absolute;
+  color:white;
+  font-size: 23px;
+    bottom: 45%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .myButton {
+      background-color:transparent;
+      border-radius:15px;
+      border:1px solid #d6bcd6;
+      display:inline-block;
+      cursor:pointer;
+      color:black;
+      font-family:Arial;
+      font-size:17px;
+      padding:7px 25px;
+      text-decoration:none;
+      float:bottom;
+  }
+  .myButton:hover {
+      background-color:transparent;
+  }
+  .myButton:active {
+      position:relative;
+      top:1px;
+  }
+  
+   

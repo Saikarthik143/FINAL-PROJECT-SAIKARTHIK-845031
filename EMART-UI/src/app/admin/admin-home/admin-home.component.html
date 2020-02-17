@@ -1,8 +1,6 @@
-<!-- <html>
-<head></head>
-<body > -->
+
     <div>
-        <marquee direction="rtl">
+        <marquee direction="right"  behavior="alternate" scrollamount="5" class="qus">
            <img src="assets\images\logo1.jpg" style="width:100px; height:100px;">
         </marquee>
     </div>
@@ -18,8 +16,8 @@
                   Categories
                 </button>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Add-Categories</a>
-                  <a class="dropdown-item" href="#">Add-sub-categories</a>
+                  <a class="dropdown-item" [routerLink]="['/admin-home/add-category']" >Add-Categories</a>
+                  <a class="dropdown-item" [routerLink]="['/admin-home/add-sub-category']">Add-sub-categories</a>
                  
                 </div>
               </div>
@@ -35,34 +33,21 @@
               </div>
 
               <li class="col-3 nav-item text-center">
-                <a class="nav-link btn-outline-primary" href="#">Contact</a>
+                <a class="nav-link btn-outline-primary" href="">Contact</a>
             </li>
         </ul>
     </div>
 </nav>
 
-<section>
+
     <div class="row">
-        <aside class="col-3">
+        <aside class="col-3 back" >
+            
 
-            <ul class="nav flex-column">
-                <li class="nav-item my-2 text-center">
-                    <a href="Index.html" class="nav-link btn-primary">Home</a>
-                </li>
-                <li class="nav-item my-2 text-center">
-                    <a href="PlaceGift.html" class="nav-link btn-primary">Place Gift Card Orders</a>
-                </li>
-                <li class="nav-item my-2 text-center">
-                    <a href="ViewGift.html" class="nav-link btn-primary">View Gift Card Orders</a>
-                </li>
-                <li class="nav-item my-2 text-center">
-                    <a href="ContactUs.html" class="nav-link btn-primary">Contact Us</a>
-                </li>
-            </ul>
-
+            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</h4>
         </aside>
         
-        <div id="carouselExampleIndicators" class="carousel slide col-8"  data-ride="carousel">
+        <!-- <div id="carouselExampleIndicators" class="carousel slide col-8"  data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -88,14 +73,18 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-        </div>
-        
-        
-        </section>
-    </div>
-<!-- </body>
+         -->
+         <div class="col-9">
+         <router-outlet></router-outlet>
+            </div>
 
-</html> -->
+    </div>
+    
+        
+        
+    
+
+
 
 
 

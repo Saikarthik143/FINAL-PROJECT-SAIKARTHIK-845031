@@ -19,6 +19,10 @@ import { SHomeComponent } from './Seller/shome/shome.component';
 import { AddItemsComponent } from './Seller/add-items/add-items.component';
 import { ViewitemsComponent } from './Seller/viewitems/viewitems.component';
 import { ViewreportComponent } from './Seller/viewreport/viewreport.component';
+import { CreatebuyerComponent } from './createbuyer/createbuyer.component';
+import { IndexComponent } from './account/index/index.component';
+import {ContactComponent} from './account/contact/contact.component';
+
 
 
 const routes: Routes = [
@@ -26,7 +30,9 @@ const routes: Routes = [
     {path:'login',component:LoginComponent},
     {path:'register-buyer',component:RegisterBuyerComponent},
     {path:'register-seller',component:RegisterSellerComponent},
-
+    {path:'createbuyer',component:CreatebuyerComponent},
+    {path:'index',component:IndexComponent},
+    {path:'contact',component:ContactComponent},
   
     {path:'admin-home',component:AdminHomeComponent,children:[
     {path:'add-category',component:AddCategoryComponent},
@@ -49,7 +55,8 @@ const routes: Routes = [
     {path:'viewprofile',component:ViewprofileComponent},
     {path:'viewreport',component:ViewreportComponent}
   ]},
-  {path:'',redirectTo:'login',pathMatch:'full'}
+  {path:'',redirectTo:'index',pathMatch:'full'},
+  
 ];
 
 @NgModule({

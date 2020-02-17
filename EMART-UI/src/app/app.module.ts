@@ -27,6 +27,10 @@ import { AddItemsComponent } from './Seller/add-items/add-items.component';
 import { ViewitemsComponent } from './Seller/viewitems/viewitems.component';
 import { ViewreportComponent } from './Seller/viewreport/viewreport.component';
 
+import { CreatebuyerComponent } from './createbuyer/createbuyer.component';
+import { IndexComponent } from './account/index/index.component';
+import { ContactComponent } from './account/contact/contact.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +56,13 @@ import { ViewreportComponent } from './Seller/viewreport/viewreport.component';
     SHomeComponent,
     AddItemsComponent,
     ViewitemsComponent,
-    ViewreportComponent
+    ViewreportComponent,
+    
+    CreatebuyerComponent,
+    
+    IndexComponent,
+    
+    ContactComponent
   ],
   imports: [
     BrowserModule,
