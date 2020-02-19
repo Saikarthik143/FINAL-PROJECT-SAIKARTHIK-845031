@@ -22,6 +22,10 @@ import { ViewreportComponent } from './Seller/viewreport/viewreport.component';
 import { CreatebuyerComponent } from './createbuyer/createbuyer.component';
 import { IndexComponent } from './account/index/index.component';
 import {ContactComponent} from './account/contact/contact.component';
+import { SerComponent } from './ser/ser.component';
+import { AboutComponent } from './about/about.component';
+import { EditProfileComponent } from './seller/edit-profile/edit-profile.component';
+import { EditProComponent } from './buyer/edit-pro/edit-pro.component';
 
 
 
@@ -33,28 +37,35 @@ const routes: Routes = [
     {path:'createbuyer',component:CreatebuyerComponent},
     {path:'index',component:IndexComponent},
     {path:'contact',component:ContactComponent},
-  
+    {path:'ser',component:SerComponent},
+    {path:'about',component:AboutComponent},
     {path:'admin-home',component:AdminHomeComponent,children:[
     {path:'add-category',component:AddCategoryComponent},
     {path:'add-sub-category',component:AddSubCategoryComponent},
-    
+    {path:'daily-report',component:DailyReportComponent},
     {path:'block-unblock-buyer',component:BlockUnblockBuyerComponent},
     {path:'block-unblock-seller',component:BlockUnblockSellerComponent},
-    {path:'daily-report',component:DailyReportComponent},
+    
   ]},
     {path:'home',component:HomeComponent,children:[
       {path:'search',component:SearchComponent},
       {path:'viewcart',component:ViewcartComponent},
       {path:'viewprofile',component:ViewprofileComponent},
       {path:'buy-product',component:BuyProductComponent},
-      {path:'purchase-history',component:PurchaseHistoryComponent}  
+      {path:'purchase-history',component:PurchaseHistoryComponent},
+      {path:'edit-pro',component:EditProComponent} 
+  
+     
   ]},
   {path:'shome',component:SHomeComponent,children:[
     {path:'add-items',component:AddItemsComponent},
     {path:'viewitems',component:ViewitemsComponent},
     {path:'viewprofile',component:ViewprofileComponent},
-    {path:'viewreport',component:ViewreportComponent}
+    {path:'viewreport',component:ViewreportComponent},
+    {path:'edit-profile',component:EditProfileComponent}
   ]},
+ 
+
   {path:'',redirectTo:'index',pathMatch:'full'},
   
 ];

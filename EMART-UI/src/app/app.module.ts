@@ -30,6 +30,10 @@ import { ViewreportComponent } from './Seller/viewreport/viewreport.component';
 import { CreatebuyerComponent } from './createbuyer/createbuyer.component';
 import { IndexComponent } from './account/index/index.component';
 import { ContactComponent } from './account/contact/contact.component';
+import { AboutComponent } from './about/about.component';
+import { SerComponent } from './ser/ser.component';
+import { EditProfileComponent } from './seller/edit-profile/edit-profile.component';
+import { EditProComponent } from './buyer/edit-pro/edit-pro.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +66,15 @@ import { ContactComponent } from './account/contact/contact.component';
     
     IndexComponent,
     
-    ContactComponent
+    ContactComponent,
+    
+    AboutComponent,
+    
+    SerComponent,
+    
+    EditProfileComponent,
+    
+    EditProComponent
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,8 @@
-<p>register-seller works!</p>
+
 <div class="card m-3">
     <h5 class="card-header text-center">seller Register form</h5>
     <div class="card-body">
-        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="Editform" (ngSubmit)="onSubmit()">
           <div class="row"> 
             <div class="form-group col-2">
                 <label>ID</label>
@@ -84,13 +84,6 @@
                 </div>
             </div>
         </div>
-            <!-- <div class="form-group col">
-                <label>Date</label>
-                <input type="date" formControlName="createdatetime" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.createdatetime.errors }" />
-                <div *ngIf="submitted && f.createdatetime.errors" class="invalid-feedback">
-                    <div *ngIf="f.createdatetime.errors.required">date is required</div>
-                </div>
-            </div> -->
            
        
          
@@ -99,9 +92,10 @@
         
             
             <div class="text-center">
-                <button class="btn btn-primary mr-1">Register</button>
+                <button class="btn btn-primary mr-1">Update</button>
                 <button class="btn btn-danger" type="reset" (click)="onReset()">Reset</button>
             </div>
         </form>
     </div>
 </div>
+

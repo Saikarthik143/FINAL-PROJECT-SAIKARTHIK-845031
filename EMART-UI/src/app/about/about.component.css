@@ -1,0 +1,12 @@
+.bg{
+    background-image:url('E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-UI\src\assets\images\clothe.jpg');
+    height: 500px;
+    background-repeat: repeat;
+     background-size: 100% 100%; 
+     
+   }
+   form {
+    width:500px;
+    margin:10px auto;
+float:right;
+}
