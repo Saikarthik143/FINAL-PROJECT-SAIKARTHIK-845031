@@ -14,8 +14,8 @@ export class EditProComponent implements OnInit {
 
   ngOnInit() {
     this.EditForm=this.formbuilder.group({
-      Bid:['',[Validators.required,Validators.pattern('^[E][0-9]{4}$')]],
-      username:['',[Validators.required,Validators.pattern('^[A-Z]{3,20}$')]],
+      Bid:['',[Validators.required,Validators.pattern('^[0-9]{1,20}$')]],
+      username:['',[Validators.required,Validators.pattern('^[A-Za-z]{3,20}$')]],
       password:['',[Validators.required,Validators.pattern('^[a-z]{7}[~!@#$%^&*()]{1}$')]],
       emailid:['',[Validators.required,Validators.email]],
       mobile:['',[Validators.required,Validators.pattern('^[6-9][0-9]{9}$')]],

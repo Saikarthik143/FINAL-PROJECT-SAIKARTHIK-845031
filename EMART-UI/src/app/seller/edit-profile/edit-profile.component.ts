@@ -14,12 +14,12 @@ export class EditProfileComponent implements OnInit {
   ngOnInit() {
     this.Editform=this.formbuilder.group({
       Sid:['',Validators.required],
-      username:['',[Validators.required,Validators.pattern('^[a-z]{3,20}$')]],
+      username:['',[Validators.required,Validators.pattern('^[a-zA-Z]{3,20}$')]],
       password:['',[Validators.required,Validators.pattern('^[a-z]{7}[~!@#$%^&*()]$')]],
-      companyname:['',[Validators.required,Validators.pattern('^[a-z]{3,20}$')]],
-      Gstin:['',[Validators.required,Validators.pattern('^[a-z]{3,10}$')]],
-      brief:['',[Validators.required]],
-      address:['',Validators.required],
+      companyname:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{0,80}$')]],
+      Gstin:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{3,10}$')]],
+      brief:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{0,80}$')]],
+      address:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{0,80}$')]],
       emailid:['',[Validators.required,Validators.email]],
       mobile:['',[Validators.required,Validators.pattern('^[6-9][0-9]{9}$')]],
       

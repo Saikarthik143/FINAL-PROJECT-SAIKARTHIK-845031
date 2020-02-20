@@ -15,8 +15,8 @@ submitted:boolean
       SubCategoryid:['',[Validators.required]],
       SubCategoryName:['',[Validators.required]],
       Category_id:['',[Validators.required]],
-      Brief:['',[Validators.required]],
-      Gst:['',[Validators.required]]
+      Brief:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]$')]],
+      Gst:['',[Validators.required,Validators.pattern('^[0-9]$')]]
     })
   }
   get f(){

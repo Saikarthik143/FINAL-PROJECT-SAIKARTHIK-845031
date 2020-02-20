@@ -13,14 +13,14 @@ export class AddItemsComponent implements OnInit {
 
   ngOnInit() {
     this.itemForm=this.formbuilder.group({
-      id:['',[Validators.required,Validators.pattern('^')]],
+      id:['',[Validators.required,Validators.pattern('^[0-9]{3,8}$')]],
       Category_id:['',[Validators.required]],
       SubCategoryid:['',[Validators.required]],
       item_name:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{3,20}$')]],
       description:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{3,20}$')]],
-      Price:['',[Validators.required,Validators.pattern('^[1-9][0-9]$')]],
-      stock_number:['',[Validators.required,Validators.pattern('^[0-9]$')]],
-      remarks:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{3,20}$')]]
+      Price:['',[Validators.required,Validators.pattern('^[1-9][0-9]{0,20}$')]],
+      stock_number:['',[Validators.required,Validators.pattern('^[0-9]{0,20}$')]],
+      remarks:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{0,80}$')]]
 
     })
   }
