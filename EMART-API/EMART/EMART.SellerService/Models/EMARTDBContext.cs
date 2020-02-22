@@ -150,6 +150,10 @@ namespace EMART.SellerService.Models
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
+                entity.Property(e => e.Sid)
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.StockNumber).HasColumnName("stock_number");
 
                 entity.Property(e => e.SubCategoryid)
@@ -160,6 +164,11 @@ namespace EMART.SellerService.Models
                     .WithMany(p => p.Items)
                     .HasForeignKey(d => d.CategoryId)
                     .HasConstraintName("FK__Items__Category___1A14E395");
+
+                entity.HasOne(d => d.S)
+                    .WithMany(p => p.Items)
+                    .HasForeignKey(d => d.Sid)
+                    .HasConstraintName("FK__Items__Sid__34C8D9D1");
 
                 entity.HasOne(d => d.SubCategory)
                     .WithMany(p => p.Items)

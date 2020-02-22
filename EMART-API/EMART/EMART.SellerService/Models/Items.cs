@@ -18,8 +18,10 @@ namespace EMART.SellerService.Models
         public string Remarks { get; set; }
         public string CategoryId { get; set; }
         public string SubCategoryid { get; set; }
+        public string Sid { get; set; }
 
         public virtual Category Category { get; set; }
+        public virtual Seller S { get; set; }
         public virtual SubCategory SubCategory { get; set; }
         public virtual ICollection<PurchaseHistory> PurchaseHistory { get; set; }
     }

@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using EMART.SellerService.Models;
 using EMART.SellerService.Repository;
 
+
 namespace EMART.SellerService
 {
     public class Startup
@@ -29,6 +30,8 @@ namespace EMART.SellerService
             services.AddControllers();
             services.AddTransient<ISellerRepo, SellerRepository>();
             services.AddDbContext<EMARTDBContext>();
+            services.AddTransient<IItemRepo, ItemRepository>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

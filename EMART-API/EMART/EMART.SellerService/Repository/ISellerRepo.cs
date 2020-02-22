@@ -8,6 +8,8 @@ namespace EMART.SellerService.Repository
 {
    public interface ISellerRepo
     {
-        void AddItems(Items items);
+        Seller GetProfile(string Sid);
+        void EditProfile(Seller Sid);
+       
     }
 }

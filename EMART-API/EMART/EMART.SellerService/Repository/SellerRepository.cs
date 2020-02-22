@@ -13,10 +13,15 @@ namespace EMART.SellerService.Repository
         {
             _context = context;
         }
-        public void AddItems(Items items)
+        public void EditProfile(Seller Sid)
         {
-            _context.Add(items);
+            _context.Seller.Update(Sid);
             _context.SaveChanges();
+        }
+
+        public Seller GetProfile(string Sid)
+        {
+            return _context.Seller.Find(Sid);
         }
     }
 }
