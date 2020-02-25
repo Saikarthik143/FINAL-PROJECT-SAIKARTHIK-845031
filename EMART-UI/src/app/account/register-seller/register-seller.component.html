@@ -91,7 +91,14 @@
                     <div *ngIf="f.createdatetime.errors.required">date is required</div>
                 </div>
             </div> -->
-           
+            <div class="form-group col-6">
+                <label>WebSite</label>
+                <input type="text" formControlName="website" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.website.errors }" />
+                <div *ngIf="submitted && f.website.errors" class="invalid-feedback">
+                    <div *ngIf="f.website.errors.required">company Name is required</div>
+                    <div *ngIf="f.website.errors.pattern">Enter only Alphabets</div>
+                </div>
+            </div>
        
          
                

@@ -26,7 +26,7 @@ import { SHomeComponent } from './Seller/shome/shome.component';
 import { AddItemsComponent } from './Seller/add-items/add-items.component';
 import { ViewitemsComponent } from './Seller/viewitems/viewitems.component';
 import { ViewreportComponent } from './Seller/viewreport/viewreport.component';
-
+import {HttpClientModule} from '@angular/common/Http';
 import { CreatebuyerComponent } from './createbuyer/createbuyer.component';
 import { IndexComponent } from './account/index/index.component';
 import { ContactComponent } from './account/contact/contact.component';
@@ -34,6 +34,7 @@ import { AboutComponent } from './about/about.component';
 import { SerComponent } from './ser/ser.component';
 import { EditProfileComponent } from './seller/edit-profile/edit-profile.component';
 import { EditProComponent } from './buyer/edit-pro/edit-pro.component';
+import { UserService } from './Services/user.service';
 
 @NgModule({
   declarations: [
@@ -80,9 +81,10 @@ import { EditProComponent } from './buyer/edit-pro/edit-pro.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

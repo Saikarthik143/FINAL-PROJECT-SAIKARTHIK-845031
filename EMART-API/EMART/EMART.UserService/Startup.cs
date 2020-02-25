@@ -29,6 +29,14 @@ namespace EMART.UserService
             services.AddControllers();
             services.AddTransient<IUserRepo, UserRepository>();
             services.AddDbContext<EMARTDBContext>();
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options =>
+                 options.AllowAnyOrigin()
+                         .AllowAnyMethod()
+                         .AllowAnyHeader()
+                        );
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,6 +48,7 @@ namespace EMART.UserService
             }
 
             app.UseRouting();
+            app.UseCors("AllowOrigin");
 
             app.UseAuthorization();
 
