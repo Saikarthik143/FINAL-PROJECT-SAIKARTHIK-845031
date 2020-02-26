@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormBuilder,Validators} from '@angular/forms';
+import { SubCategory } from 'src/app/Models/sub-category';
+import { AdminService } from 'src/app/Services/admin.service';
 @Component({
   selector: 'app-add-sub-category',
   templateUrl: './add-sub-category.component.html',
@@ -7,16 +9,17 @@ import {FormGroup,FormBuilder,Validators} from '@angular/forms';
 })
 export class AddSubCategoryComponent implements OnInit {
 SubForm:FormGroup;
-submitted:boolean
-  constructor(private formbuilder:FormBuilder) { }
+submitted:boolean;
+subcategory:SubCategory
+  constructor(private formbuilder:FormBuilder,private service:AdminService) { }
 
   ngOnInit() {
     this.SubForm=this.formbuilder.group({
       SubCategoryid:['',[Validators.required]],
       SubCategoryName:['',[Validators.required]],
-      Category_id:['',[Validators.required]],
-      Brief:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]$')]],
-      Gst:['',[Validators.required,Validators.pattern('^[0-9]$')]]
+      CategoryId:['',[Validators.required]],
+      Brief:['',[Validators.required]],
+      Gst:['',[Validators.required]]
     })
   }
   get f(){
@@ -25,6 +28,18 @@ submitted:boolean
 onSubmit(){
   this.submitted=true;
   if(this.SubForm.valid){
+    this.subcategory=new SubCategory();
+    this.subcategory.SubCategoryid=this.SubForm.value["SubCategoryid"];
+    this.subcategory.SubCategoryName=this.SubForm.value["SubCategoryName"];
+    this.subcategory.CategoryId=this.SubForm.value["CategoryId"];
+    this.subcategory.Brief=this.SubForm.value["Brief"];
+    this.subcategory.Gst=Number(this.SubForm.value["Gst"]);
+    console.log(this.subcategory);
+    this.service.AddSubCategory(this.subcategory).subscribe(res=>{
+      console.log('added')
+    },err=>{
+      console.log(err)
+    })
     alert("success");
   }
 }

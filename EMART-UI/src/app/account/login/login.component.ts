@@ -3,6 +3,8 @@ import {FormGroup,FormBuilder,Validators} from '@angular/forms';
 import { Buyer } from 'src/app/Models/buyer';
 import { Seller } from 'src/app/Models/seller';
 import { UserService } from 'src/app/Services/user.service';
+import { Route } from '@angular/compiler/src/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,11 +15,10 @@ form:FormGroup;
 submitted:boolean;
 buyer:Buyer;
 seller:Seller;
-list:Buyer[];
-list1:Seller[];
-user:string;
-pwd:string;
-  constructor(private formbuilder:FormBuilder, private service:UserService) { }
+
+username:string;
+password:string;
+  constructor(private formbuilder:FormBuilder, private service:UserService,private route:Router) { }
 
   ngOnInit() {
     this.form=this.formbuilder.group({
@@ -32,10 +33,20 @@ pwd:string;
   {
     this.submitted=true;
     if(this.form.valid){
-      if(this.user=='Admin'&&this.pwd=="12345"){
-
+      this.buyer=new Buyer();
+      this.seller=new Seller();
+      if(this.username=='Admin'&&this.password=="12345")
+      {
+            this.route.navigateByUrl('admin-home');
       }
-    
+    this.service.BuyerLogin(this.username,this.password).subscribe(res=>{
+      this.buyer=res;
+    },err=>{
+      console.log(err)
+    })
+    if(this.buyer.Username==this.username && this.buyer.Password==this.password){
+      this.route.navigateByUrl('home')
+    }
 
      
       alert("register successful")

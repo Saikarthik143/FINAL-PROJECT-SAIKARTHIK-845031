@@ -49,7 +49,7 @@
 
 
 
-    <div class="limiter">
+    <!-- <div class="limiter">
     <div class="container-login100" >
     <div class="wrap-login100 p-t-30 p-b-50">
     <span class="login100-form-title p-b-41">
@@ -85,7 +85,32 @@
     </form>
     </div>
     </div>
-    </div>
+    </div> -->
 
+    <div class="container login-container">
+        <div class="row">
+            <div class="col-md-6 login-form-1">
+                <h3>Login</h3>
+                
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input  type="password" class="form-control" placeholder="Your Password *" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input  type="submit" class="btnSubmit" value="Login" />
+                    </div>
+                    <div class="form-group" style="margin-left: 50px;">
+                        
+                            <a style="color:white;" [routerLink]="'/Land/registerbuyer'"  routerLinkActive="router-link-active" routerLinkActive="router-link-active">RegisterBuyer</a>
+                             <a style="color:white;" [routerLink]="'/Land/registerSeller'" >/RegisterSeller</a>
+                          
+                    </div>
+                   
+                    
+                </div>
+        </div>
+    </div>
  
     

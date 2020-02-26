@@ -16,11 +16,11 @@ seller:Seller;
 
   ngOnInit() {
     this.registerForm=this.formbuilder.group({
-      Sid:['',Validators.required],
-      username:['',[Validators.required,Validators.pattern('^[a-z]{3,20}$')]],
-      password:['',[Validators.required,Validators.pattern('^[a-z]{7}[~!@#$%^&*()]$')]],
-      companyname:['',[Validators.required,Validators.pattern('^[a-z]{3,20}$')]],
-      Gstin:['',[Validators.required,Validators.pattern('^[a-z]{3,10}$')]],
+      Sid:['',Validators.required,Validators.pattern('^[0-9]$')],
+      username:['',[Validators.required,Validators.pattern('^[A-za-z]{3,20}$')]],
+      password:['',[Validators.required,Validators.pattern('^[A-za-z]{7}[~!@#$%^&*()]$')]],
+      companyname:['',[Validators.required,Validators.pattern('^[A-za-z0-9]{3,20}$')]],
+      Gstin:['',[Validators.required,Validators.pattern('^[A-za-z0-9]{3,10}$')]],
       brief:['',[Validators.required]],
       address:['',Validators.required],
       website:['',Validators.required],

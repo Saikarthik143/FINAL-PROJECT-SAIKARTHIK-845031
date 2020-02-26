@@ -6,13 +6,7 @@
             <div class="offset-3">
             <div class="form-group col-8">
                 <label>SubCategoryid</label>
-                <select formControlName="SubCategoryid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.SubCategoryid.errors }">
-                    <option value=""></option>
-                    <option value="Clothes">Clothes</option>
-                    <option value="Electronics">Electronics</option>
-                    <option value="Accessories">Accessories</option>
-                    <option value="Grocery">Grocery</option>
-                </select>
+                <input type="text" formControlName="SubCategoryid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.SubCategoryid.errors }" />
                 <div *ngIf="submitted && f.SubCategoryid.errors" class="invalid-feedback">
                     <div *ngIf="f.SubCategoryid.errors.required">category is required</div>
                 </div>
@@ -21,9 +15,9 @@
                 <label> SubCategoryName</label>
                 <select formControlName="SubCategoryName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.SubCategoryName.errors }">
                     <option value=""></option>
-                    <option value="Clothes">Clothes</option>
-                    <option value="Electronics">Electronics</option>
-                    <option value="Accessories">Accessories</option>
+                    <option value="Jeans">Jeans</option>
+                    <option value="Mobile">Mobile</option>
+                    <option value="EarPhones">Earphones</option>
                     <option value="Grocery">Grocery</option>
                 </select>
                 <div *ngIf="submitted && f.SubCategoryName.errors" class="invalid-feedback">
@@ -31,16 +25,10 @@
                 </div>
             </div>
             <div class="form-group col-8 ">
-                <label>Category</label>
-                <select formControlName="Category_id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Category_id.errors }">
-                    <option value=""></option>
-                    <option value="Clothes">Clothes</option>
-                    <option value="Electronics">Electronics</option>
-                    <option value="Accessories">Accessories</option>
-                    <option value="Grocery">Grocery</option>
-                </select>
-                <div *ngIf="submitted && f.Category_id.errors" class="invalid-feedback">
-                    <div *ngIf="f.Category_id.errors.required">category is required</div>
+                <label>CategoryId</label>
+                <input type="text" formControlName="CategoryId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.CategoryId.errors }" />
+                <div *ngIf="submitted && f.CategoryId.errors" class="invalid-feedback">
+                    <div *ngIf="f.CategoryId.errors.required">category is required</div>
                 </div>
             </div>
            
