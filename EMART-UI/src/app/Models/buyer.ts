@@ -1,10 +1,10 @@
 export class Buyer {
-  public  Bid:number;
-  public  Username:string;
-   public Password:string;
-   public Emailid:string;
-   public Mobile:number;
-  public  Createdatetime:Date
+  public  bid:string;
+  public  username:string;
+   public password:string;
+   public emailid:string;
+   public mobile:number;
+  public  createdatetime:Date
     
 
 }

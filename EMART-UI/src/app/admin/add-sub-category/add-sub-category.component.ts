@@ -29,11 +29,11 @@ onSubmit(){
   this.submitted=true;
   if(this.SubForm.valid){
     this.subcategory=new SubCategory();
-    this.subcategory.SubCategoryid=this.SubForm.value["SubCategoryid"];
-    this.subcategory.SubCategoryName=this.SubForm.value["SubCategoryName"];
-    this.subcategory.CategoryId=this.SubForm.value["CategoryId"];
-    this.subcategory.Brief=this.SubForm.value["Brief"];
-    this.subcategory.Gst=Number(this.SubForm.value["Gst"]);
+    this.subcategory.subCategoryid=this.SubForm.value["SubCategoryid"];
+    this.subcategory.subCategoryName=this.SubForm.value["SubCategoryName"];
+    this.subcategory.categoryId=this.SubForm.value["CategoryId"];
+    this.subcategory.brief=this.SubForm.value["Brief"];
+    this.subcategory.gst=Number(this.SubForm.value["Gst"]);
     console.log(this.subcategory);
     this.service.AddSubCategory(this.subcategory).subscribe(res=>{
       console.log('added')

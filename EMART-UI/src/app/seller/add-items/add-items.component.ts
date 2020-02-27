@@ -16,13 +16,14 @@ export class AddItemsComponent implements OnInit {
   ngOnInit() {
     this.itemForm=this.formbuilder.group({
       id:['',[Validators.required,Validators.pattern('^[0-9]{3,8}$')]],
-      Category_id:['',[Validators.required]],
+      CategoryId:['',[Validators.required]],
       SubCategoryid:['',[Validators.required]],
       item_name:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{3,20}$')]],
       description:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{3,20}$')]],
-      Price:['',[Validators.required,Validators.pattern('^[1-9][0-9]{0,20}$')]],
+      Price:['',[Validators.required,Validators.pattern('^[1-9][0-9]{3,20}$')]],
       stock_number:['',[Validators.required,Validators.pattern('^[0-9]{0,20}$')]],
-      remarks:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{0,80}$')]]
+      remarks:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{0,80}$')]],
+      Sid:['',[Validators.required]]
 
     })
   }
@@ -33,17 +34,25 @@ onSubmit()
 {
   this.submitted=true;
   if(this.itemForm.valid){
-    this.item.id=this.itemForm.value["id"],
-    this.item.item_name=this.itemForm.value["item_name"],
-    this.item.Category_id=this.itemForm.value["Category_id"],
-    this.item.SubCategoryid=this.itemForm.value["SubCategoryid"],
+    this.item=new Items();
+    this.item.iid=(this.itemForm.value["id"]),
+    this.item.itemName=this.itemForm.value["item_name"],
+    this.item.categoryId=this.itemForm.value["CategoryId"],
+    this.item.subCategoryid=this.itemForm.value["SubCategoryid"],
     this.item.description=this.itemForm.value["description"],
-    this.item.Price=Number(this.itemForm.value["Price"]),
-    this.item.stock_number=Number(this.itemForm.value["stock_number"]),
-    this.item.remarks=this.itemForm.value["remarks"]
+    this.item.price=Number(this.itemForm.value["Price"]),
+    this.item.stockNumber=Number(this.itemForm.value["stock_number"]),
+    this.item.remarks=this.itemForm.value["remarks"],
+    this.item.sid=this.itemForm.value["Sid"],
+    console.log(this.item);
+    this.service.AddItem(this.item).subscribe(res=>{
+      console.log('added');
+    },err=>{
+      console.log(err);
+    })
    
     alert("register successful")
-console.log(JSON.stringify(this.itemForm.value));  
+  
   }
 }
 onReset(){

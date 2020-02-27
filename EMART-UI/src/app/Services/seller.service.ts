@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http';
 import  {Observable} from 'rxjs';
 import { Items } from '../Models/items';
+import { Seller } from '../Models/seller';
 const Requestheaders={headers:new HttpHeaders({
   'Content-Type':'application/json',
 })}
@@ -10,9 +11,22 @@ const Requestheaders={headers:new HttpHeaders({
 })
 export class SellerService {
   url:string='http://localhost:50605/Item/'
+  url1:string='http://localhost:50605/Seller/'
   constructor(private http:HttpClient) { }
   public AddItem(item:Items):Observable<any>
   {
     return this.http.post<any>(this.url+'AddItems',JSON.stringify(item),Requestheaders)
+  }
+  public GetItems(id:string):Observable<any>
+  {
+    return this.http.get<any>(this.url+'GetItem/'+id,Requestheaders)
+  }
+  public GetProfile(id:string):Observable<Seller>
+  {
+    return this.http.get<Seller>(this.url1+'Get/'+id,Requestheaders);
+  }
+  public EditProfile(id:Seller):Observable<any>
+  {
+    return this.http.put<any>(this.url+'Edit/'+id,Requestheaders);
   }
 }

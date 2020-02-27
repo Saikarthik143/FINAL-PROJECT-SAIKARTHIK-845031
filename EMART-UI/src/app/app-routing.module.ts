@@ -60,7 +60,7 @@ const routes: Routes = [
   {path:'shome',component:SHomeComponent,children:[
     {path:'add-items',component:AddItemsComponent},
     {path:'viewitems',component:ViewitemsComponent},
-    {path:'viewprofile',component:ViewprofileComponent},
+    
     {path:'viewreport',component:ViewreportComponent},
     {path:'edit-profile',component:EditProfileComponent}
   ]},

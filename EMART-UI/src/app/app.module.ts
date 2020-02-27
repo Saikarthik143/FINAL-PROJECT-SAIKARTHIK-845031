@@ -75,7 +75,9 @@ import { UserService } from './Services/user.service';
     
     EditProfileComponent,
     
-    EditProComponent
+    EditProComponent,
+    
+   
   ],
   imports: [
     BrowserModule,

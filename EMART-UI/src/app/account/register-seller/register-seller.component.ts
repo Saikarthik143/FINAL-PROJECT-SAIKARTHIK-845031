@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormBuilder,Validators} from '@angular/forms';
 import { Seller } from 'src/app/Models/seller';
 import { UserService } from 'src/app/Services/user.service';
+
 @Component({
   selector: 'app-register-seller',
   templateUrl: './register-seller.component.html',
@@ -16,12 +17,12 @@ seller:Seller;
 
   ngOnInit() {
     this.registerForm=this.formbuilder.group({
-      Sid:['',Validators.required,Validators.pattern('^[0-9]$')],
+      sid:['',[Validators.required,Validators.pattern('^[0-9]$')]],
       username:['',[Validators.required,Validators.pattern('^[A-za-z]{3,20}$')]],
       password:['',[Validators.required,Validators.pattern('^[A-za-z]{7}[~!@#$%^&*()]$')]],
-      companyname:['',[Validators.required,Validators.pattern('^[A-za-z0-9]{3,20}$')]],
-      Gstin:['',[Validators.required,Validators.pattern('^[A-za-z0-9]{3,10}$')]],
-      brief:['',[Validators.required]],
+      companyName:['',[Validators.required,Validators.pattern('^[A-za-z0-9]{3,20}$')]],
+      gstin:['',[Validators.required,Validators.pattern('^[A-za-z0-9]{3,10}$')]],
+      briefaboutcompany:['',[Validators.required]],
       address:['',Validators.required],
       website:['',Validators.required],
       emailid:['',[Validators.required,Validators.email]],
@@ -35,17 +36,18 @@ seller:Seller;
 onSubmit(){
   this.submitted=true;
   if(this.registerForm.valid){
-    this.seller=new Seller();
-    this.seller.Sid=this.registerForm.value["Sid"];
-    this.seller.Username=this.registerForm.value["username"];
-    this.seller.Password=this.registerForm.value["password"];
-    this.seller.CompanyName=this.registerForm.value["companyname"];
-    this.seller.Gstin=this.registerForm.value["Gstin"];
-    this.seller.Briefaboutcompany=this.registerForm.value["brief"];
-    this.seller.Address=this.registerForm.value["address"];
-    this.seller.Website=this.registerForm.value["website"];
-    this.seller.Emailid=this.registerForm.value["emailid"];
-    this.seller.Mobile=this.registerForm.value["mobile"];
+
+    this.seller=new Seller()
+    this.seller.sid=this.registerForm.value["sid"];
+    this.seller.username=this.registerForm.value["username"];
+    this.seller.password=this.registerForm.value["password"];
+    this.seller.companyName=this.registerForm.value["companyName"];
+    this.seller.gstin=this.registerForm.value["gstin"];
+    this.seller.briefaboutcompany=this.registerForm.value["briefaboutcompany"];
+    this.seller.address=this.registerForm.value["address"];
+    this.seller.website=this.registerForm.value["website"];
+    this.seller.emailid=this.registerForm.value["emailid"];
+    this.seller.mobile=this.registerForm.value["mobile"];
     console.log(this.seller);
     this.service.AddSeller(this.seller).subscribe(res=>{
       console.log('record added')

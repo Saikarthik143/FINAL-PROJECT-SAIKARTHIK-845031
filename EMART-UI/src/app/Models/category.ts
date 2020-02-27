@@ -1,5 +1,5 @@
 export class Category {
-    public CategoryId:string;
-    public  CategoryName:string;
-    public  BriefDetails:string;
+    public categoryId:string;
+    public  categoryName:string;
+    public  briefDetails:string;
 }

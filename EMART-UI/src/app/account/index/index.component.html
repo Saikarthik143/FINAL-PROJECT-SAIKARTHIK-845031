@@ -73,7 +73,7 @@
 
 
 
-<div class="limiter">
+<!-- <div class="limiter">
     <div class="container-login100" >
     <div class="wrap-login100 p-t-30 p-b-50">
     <span class="login100-form-title p-b-41">
@@ -109,8 +109,35 @@
     </form>
     </div>
     </div>
-    </div>
+    </div> -->
 
+    <div class="bg">
+    
+        <div class="container login-container">
+           <div class="row">
+               
+               <div class="col-md-5 login">
+                   <h2>Login</h2>
+                   
+                       <div class="form-group">
+                           <input type="text" class="form-control" placeholder="username" value="" />
+                       </div>
+                       <div class="form-group">
+                           <input  type="password" class="form-control" placeholder="Your Password" value="" />
+                       </div>
+                       <div class="form-group">
+                           <input  type="submit" class="btnSubmit" value="Login" />
+                       </div>
+                       <div class="text-center">
+             
+                           <a [routerLink]="['/createbuyer']" style="color: red;" >Create new account</a>
+                       
+                         </div>
+                      
+                       
+                   </div>
+           </div>
+       </div>
 
 
 

@@ -1,9 +1,19 @@
 import { Injectable } from '@angular/core';
-
+import {HttpClient,HttpHeaders} from '@angular/common/http';
+import  {Observable} from 'rxjs';
+import { Buyer } from '../Models/buyer';
+const Requestheaders={headers:new HttpHeaders({
+  'Content-Type':'application/json',
+})}
 @Injectable({
   providedIn: 'root'
 })
 export class BuyerService {
+  url:string='http://localhost:50605/Buyer/'
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
+  public GetProfile(id:string):Observable<Buyer>
+  {
+    return this.http.get<Buyer>(this.url+'Get/'+id,Requestheaders);
+  }
 }

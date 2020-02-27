@@ -6,10 +6,10 @@
           <div class="row"> 
             <div class="form-group col-2">
                 <label>ID</label>
-                <input type="text" formControlName="Sid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Sid.errors }" />
-                <div *ngIf="submitted && f.Sid.errors" class="invalid-feedback">
-                    <div *ngIf="f.Sid.errors.required">Seller id is required</div>
-                   <div *ngIf="f.Sid.errors.pattern">Enter only digits</div>
+                <input type="text" formControlName="sid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sid.errors }" />
+                <div *ngIf="submitted && f.sid.errors" class="invalid-feedback">
+                    <div *ngIf="f.sid.errors.required">Seller id is required</div>
+                   <div *ngIf="f.sid.errors.pattern">Enter only digits</div>
                 </div>
             </div>
                 <div class="form-group col-5">
@@ -32,26 +32,26 @@
           <div class="row">
                 <div class="form-group col-6">
                     <label>Company Name</label>
-                    <input type="text" formControlName="companyname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.companyname.errors }" />
-                    <div *ngIf="submitted && f.companyname.errors" class="invalid-feedback">
-                        <div *ngIf="f.companyname.errors.required">company Name is required</div>
-                        <div *ngIf="f.companyname.errors.pattern">Enter only Alphabets</div>
+                    <input type="text" formControlName="companyName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.companyName.errors }" />
+                    <div *ngIf="submitted && f.companyName.errors" class="invalid-feedback">
+                        <div *ngIf="f.companyName.errors.required">company Name is required</div>
+                        <div *ngIf="f.companyName.errors.pattern">Enter only Alphabets</div>
                     </div>
                 </div>
                 <div class="form-group col-6">
                     <label>Gstin</label>
-                    <input type="text" formControlName="Gstin" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Gstin.errors }" />
-                    <div *ngIf="submitted && f.Gstin.errors" class="invalid-feedback">
-                        <div *ngIf="f.Gstin.errors.required"> field is required</div>
-                        <div *ngIf="f.Gstin.errors.pattern">tax ident number</div>
+                    <input type="text" formControlName="gstin" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.gstin.errors }" />
+                    <div *ngIf="submitted && f.gstin.errors" class="invalid-feedback">
+                        <div *ngIf="f.gstin.errors.required"> field is required</div>
+                        <div *ngIf="f.gstin.errors.pattern">tax ident number</div>
                     </div>
                 </div>
           </div>
                 <div class="form-group col">
                     <label>Brief about company</label>
-                    <input type="text" formControlName="brief" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.brief.errors }" />
-                    <div *ngIf="submitted && f.brief.errors" class="invalid-feedback">
-                        <div *ngIf="f.brief.errors.required">  is required</div>
+                    <input type="text" formControlName="briefaboutcompany" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.briefaboutcompany.errors }" />
+                    <div *ngIf="submitted && f.briefaboutcompany.errors" class="invalid-feedback">
+                        <div *ngIf="f.briefaboutcompany.errors.required">  is required</div>
                         
                     </div>
                 </div>
@@ -106,7 +106,7 @@
         
             
             <div class="text-center">
-                <button class="btn btn-primary mr-1">Register</button>
+                <button class="btn btn-primary mr-1" >Register</button>
                 <button class="btn btn-danger" type="reset" (click)="onReset()">Reset</button>
             </div>
         </form>

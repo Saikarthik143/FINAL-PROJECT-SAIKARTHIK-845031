@@ -18,7 +18,7 @@ export class RegisterBuyerComponent implements OnInit {
   ngOnInit() {
     this.registerForm=this.formbuilder.group({
       Bid:['',[Validators.required,Validators.pattern('^[E][0-9]{4}$')]],
-      username:['',[Validators.required,Validators.pattern('^[A-Za-z]{3,20}$')]],
+      username:['',[Validators.required,Validators.pattern('^[A-Z a-z]{3,20}$')]],
       password:['',[Validators.required,Validators.pattern('^[a-z]{7}[~!@#$%^&*()]{1}$')]],
       emailid:['',[Validators.required,Validators.email]],
       mobile:['',[Validators.required,Validators.pattern('^[6-9][0-9]{9}$')]],
@@ -36,12 +36,12 @@ onSubmit()
   this.submitted=true;
   if(this.registerForm.valid){
     this.buyer=new Buyer() 
-    this.buyer.Bid=this.registerForm.value["Bid"];
-    this.buyer.Username=this.registerForm.value["username"];
-    this.buyer.Password=this.registerForm.value["password"];
-    this.buyer.Emailid=this.registerForm.value["emailid"];
-    this.buyer.Mobile=this.registerForm.value["mobile"];
-    this.buyer.Createdatetime=this.registerForm.value["createdatetime"];
+    this.buyer.bid=this.registerForm.value["Bid"];
+    this.buyer.username=this.registerForm.value["username"];
+    this.buyer.password=this.registerForm.value["password"];
+    this.buyer.emailid=this.registerForm.value["emailid"];
+    this.buyer.mobile=this.registerForm.value["mobile"];
+    this.buyer.createdatetime=this.registerForm.value["createdatetime"];
     console.log(this.buyer);
     this.service.AddBuyer(this.buyer).subscribe(res=>{
       console.log('record added')
