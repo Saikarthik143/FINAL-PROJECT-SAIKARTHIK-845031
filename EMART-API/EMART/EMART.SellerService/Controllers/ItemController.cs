@@ -45,6 +45,20 @@ namespace EMART.SellerService.Controllers
                 return NotFound(e.InnerException.Message);
             }
         }
+        [HttpGet]
+        [Route("GetAllCategories")]
+        public IActionResult GetAllCategories()
+        {
+            try
+            {
+                return Ok(_repo.GetAllCategories());
+
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
         [HttpDelete]
         [Route("Delete/{id}")]
         public IActionResult DeleteItem(string id)
@@ -60,7 +74,7 @@ namespace EMART.SellerService.Controllers
             }
         } 
         [HttpPut]
-        [Route("Update/{id}")]
+        [Route("Update")]
         public IActionResult Update(Items id)
         {
             try

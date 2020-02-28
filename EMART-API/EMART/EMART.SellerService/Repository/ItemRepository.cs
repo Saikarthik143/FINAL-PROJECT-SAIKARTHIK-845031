@@ -42,7 +42,10 @@ namespace EMART.SellerService.Repository
             _context.SaveChanges();
         }
 
-
+        public List<Category> GetAllCategories()
+        {
+            return _context.Category.ToList();
+        }
 
         public List<Items> ViewItems(string Sid)
         {

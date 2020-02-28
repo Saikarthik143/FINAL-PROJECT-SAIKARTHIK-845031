@@ -9,14 +9,8 @@
     <div class="card-body">
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <div class="offset-4">          
-              <div class="form-group col-6 ">
-                <label>ID</label>
-                <input type="text" placeholder="Buyerid" formControlName="Bid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Bid.errors }" />
-                <div *ngIf="submitted && f.Bid.errors" class="invalid-feedback">
-                    <div *ngIf="f.Bid.errors.required">Buyer id is required</div>
-                    <div *ngIf="f.Bid.errors.pattern">First char is E</div>
-                </div>
-            </div>
+              
+            
                 <div class="form-group col-6">
                     <label>User Name</label>
                     <input type="text" placeholder="Username" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />

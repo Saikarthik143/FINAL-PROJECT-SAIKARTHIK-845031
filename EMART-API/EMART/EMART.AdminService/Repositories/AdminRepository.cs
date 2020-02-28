@@ -19,6 +19,8 @@ namespace EMART.AdminService.Repositories
             _context.SaveChanges();
         }
 
+       
+
         public void AddSubCategory(SubCategory obj)
         {
             _context.Add(obj);

@@ -33,15 +33,15 @@ export class ViewprofileComponent implements OnInit {
      this.item=res;
      console.log(this.item)
      this.Editform.setValue({
-       Sid:this.item.Sid,
-       username:this.item.Username,
-       password:this.item.Password,
-       companyname:this.item.CompanyName,
-       Gstin:this.item.Gstin,
-       brief:this.item.Briefaboutcompany,
-       address:this.item.Address,
-       emailid:this.item.Emailid,
-       mobile:this.item.Mobile
+       Sid:this.item.sid,
+       username:this.item.username,
+       password:this.item.password,
+       companyname:this.item.companyName,
+       Gstin:this.item.gstin,
+       brief:this.item.briefaboutcompany,
+       address:this.item.address,
+       emailid:this.item.emailid,
+       mobile:this.item.mobile
      })
     },err=>{
       console.log(err)

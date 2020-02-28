@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\Emart\\EMART.SellerService\\EMART.SellerService.csproj": {}
+    "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\EMART\\EMART.SellerService\\EMART.SellerService.csproj": {}
   },
   "projects": {
-    "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\Emart\\EMART.SellerService\\EMART.SellerService.csproj": {
+    "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\EMART\\EMART.SellerService\\EMART.SellerService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\Emart\\EMART.SellerService\\EMART.SellerService.csproj",
+        "projectUniqueName": "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\EMART\\EMART.SellerService\\EMART.SellerService.csproj",
         "projectName": "EMART.SellerService",
-        "projectPath": "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\Emart\\EMART.SellerService\\EMART.SellerService.csproj",
+        "projectPath": "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\EMART\\EMART.SellerService\\EMART.SellerService.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\Emart\\EMART.SellerService\\obj\\",
+        "outputPath": "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\EMART\\EMART.SellerService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -38,6 +38,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.1.2, )"

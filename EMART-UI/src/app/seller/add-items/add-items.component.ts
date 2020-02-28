@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormBuilder,Validators} from '@angular/forms';
 import { SellerService } from 'src/app/Services/seller.service';
 import { Items } from 'src/app/Models/items';
+import { Category } from 'src/app/Models/category';
+import { SubCategory } from 'src/app/Models/sub-category';
 @Component({
   selector: 'app-add-items',
   templateUrl: './add-items.component.html',
@@ -11,7 +13,14 @@ export class AddItemsComponent implements OnInit {
   itemForm:FormGroup;
   submitted:boolean;
   item:Items;
-  constructor(private formbuilder:FormBuilder,private service:SellerService) { }
+  categorylist:Category[];
+  subcat:SubCategory[];
+  constructor(private formbuilder:FormBuilder,private service:SellerService) {
+    this.service.GetAllCategories().subscribe(res=>{
+      this.categorylist=res;
+      console.log(this.categorylist);
+    })
+   }
 
   ngOnInit() {
     this.itemForm=this.formbuilder.group({
@@ -35,7 +44,7 @@ onSubmit()
   this.submitted=true;
   if(this.itemForm.valid){
     this.item=new Items();
-    this.item.iid=(this.itemForm.value["id"]),
+    this.item.iid=(this.itemForm.value["id"]),//I+Math.floor(Math.random()*10000)
     this.item.itemName=this.itemForm.value["item_name"],
     this.item.categoryId=this.itemForm.value["CategoryId"],
     this.item.subCategoryid=this.itemForm.value["SubCategoryid"],
@@ -55,6 +64,9 @@ onSubmit()
   
   }
 }
+
+
+
 onReset(){
   this.submitted=false;
   this.itemForm.reset();

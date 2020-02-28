@@ -17,7 +17,7 @@ export class RegisterBuyerComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm=this.formbuilder.group({
-      Bid:['',[Validators.required,Validators.pattern('^[E][0-9]{4}$')]],
+      
       username:['',[Validators.required,Validators.pattern('^[A-Z a-z]{3,20}$')]],
       password:['',[Validators.required,Validators.pattern('^[a-z]{7}[~!@#$%^&*()]{1}$')]],
       emailid:['',[Validators.required,Validators.email]],
@@ -36,7 +36,7 @@ onSubmit()
   this.submitted=true;
   if(this.registerForm.valid){
     this.buyer=new Buyer() 
-    this.buyer.bid=this.registerForm.value["Bid"];
+    this.buyer.bid='B'+Math.round(Math.random()*1000);
     this.buyer.username=this.registerForm.value["username"];
     this.buyer.password=this.registerForm.value["password"];
     this.buyer.emailid=this.registerForm.value["emailid"];

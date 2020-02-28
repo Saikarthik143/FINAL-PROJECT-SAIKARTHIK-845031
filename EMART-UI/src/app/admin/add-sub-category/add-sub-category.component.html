@@ -4,22 +4,10 @@
     <div class="card-body bg-success">
         <form [formGroup]="SubForm" (ngSubmit)="onSubmit()">
             <div class="offset-3">
-            <div class="form-group col-8">
-                <label>SubCategoryid</label>
-                <input type="text" formControlName="SubCategoryid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.SubCategoryid.errors }" />
-                <div *ngIf="submitted && f.SubCategoryid.errors" class="invalid-feedback">
-                    <div *ngIf="f.SubCategoryid.errors.required">category is required</div>
-                </div>
-            </div>
+            
             <div class="form-group col-8">
                 <label> SubCategoryName</label>
-                <select formControlName="SubCategoryName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.SubCategoryName.errors }">
-                    <option value=""></option>
-                    <option value="Jeans">Jeans</option>
-                    <option value="Mobile">Mobile</option>
-                    <option value="EarPhones">Earphones</option>
-                    <option value="Grocery">Grocery</option>
-                </select>
+                <input type="text" formControlName="SubCategoryName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.SubCategoryName.errors }">
                 <div *ngIf="submitted && f.SubCategoryName.errors" class="invalid-feedback">
                     <div *ngIf="f.SubCategoryName.errors.required">category is required</div>
                 </div>

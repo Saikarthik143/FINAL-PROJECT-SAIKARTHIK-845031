@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\Emart\\EMART.Gateway\\EMART.Gateway.csproj": {}
+    "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\EMART\\EMART.Gateway\\EMART.Gateway.csproj": {}
   },
   "projects": {
-    "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\Emart\\EMART.Gateway\\EMART.Gateway.csproj": {
+    "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\EMART\\EMART.Gateway\\EMART.Gateway.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\Emart\\EMART.Gateway\\EMART.Gateway.csproj",
+        "projectUniqueName": "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\EMART\\EMART.Gateway\\EMART.Gateway.csproj",
         "projectName": "EMART.Gateway",
-        "projectPath": "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\Emart\\EMART.Gateway\\EMART.Gateway.csproj",
+        "projectPath": "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\EMART\\EMART.Gateway\\EMART.Gateway.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\Emart\\EMART.Gateway\\obj\\",
+        "outputPath": "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\EMART\\EMART.Gateway\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",

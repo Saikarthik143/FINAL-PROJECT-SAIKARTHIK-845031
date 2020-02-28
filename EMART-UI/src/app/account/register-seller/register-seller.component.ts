@@ -17,7 +17,7 @@ seller:Seller;
 
   ngOnInit() {
     this.registerForm=this.formbuilder.group({
-      sid:['',[Validators.required,Validators.pattern('^[0-9]$')]],
+    
       username:['',[Validators.required,Validators.pattern('^[A-za-z]{3,20}$')]],
       password:['',[Validators.required,Validators.pattern('^[A-za-z]{7}[~!@#$%^&*()]$')]],
       companyName:['',[Validators.required,Validators.pattern('^[A-za-z0-9]{3,20}$')]],
@@ -26,7 +26,7 @@ seller:Seller;
       address:['',Validators.required],
       website:['',Validators.required],
       emailid:['',[Validators.required,Validators.email]],
-      mobile:['',[Validators.required,Validators.pattern('^[6-9][0-9]{9}$')]],
+      mobile:['',[Validators.required,Validators.pattern('^[6-9][0-9]{9}$')]]
      
     })
   }
@@ -35,10 +35,11 @@ seller:Seller;
   }
 onSubmit(){
   this.submitted=true;
-  if(this.registerForm.valid){
+  if(this.registerForm.valid)
+  {
 
-    this.seller=new Seller()
-    this.seller.sid=this.registerForm.value["sid"];
+    this.seller=new Seller();
+    this.seller.sid='S'+Math.round(Math.random()*1000);
     this.seller.username=this.registerForm.value["username"];
     this.seller.password=this.registerForm.value["password"];
     this.seller.companyName=this.registerForm.value["companyName"];
@@ -55,10 +56,11 @@ onSubmit(){
       console.log(err);
     })
     alert("register success");
-    
   }
+    
+  
   else 
-  alert("invalid details")
+   alert("invalid details");
 }
 onReset(){
   this.submitted=false;

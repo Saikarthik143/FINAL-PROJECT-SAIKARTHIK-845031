@@ -10,12 +10,13 @@ import { AdminService } from 'src/app/Services/admin.service';
 export class AddSubCategoryComponent implements OnInit {
 SubForm:FormGroup;
 submitted:boolean;
-subcategory:SubCategory
+subcategory:SubCategory;
+public category=[{name:"Clothes"},{name:'Electronics'},{name:'Accesories'},{name:'Grocery'}];
   constructor(private formbuilder:FormBuilder,private service:AdminService) { }
 
   ngOnInit() {
     this.SubForm=this.formbuilder.group({
-      SubCategoryid:['',[Validators.required]],
+      
       SubCategoryName:['',[Validators.required]],
       CategoryId:['',[Validators.required]],
       Brief:['',[Validators.required]],
@@ -29,7 +30,7 @@ onSubmit(){
   this.submitted=true;
   if(this.SubForm.valid){
     this.subcategory=new SubCategory();
-    this.subcategory.subCategoryid=this.SubForm.value["SubCategoryid"];
+    this.subcategory.subCategoryid='SC'+Math.round(Math.random()*1000);
     this.subcategory.subCategoryName=this.SubForm.value["SubCategoryName"];
     this.subcategory.categoryId=this.SubForm.value["CategoryId"];
     this.subcategory.brief=this.SubForm.value["Brief"];

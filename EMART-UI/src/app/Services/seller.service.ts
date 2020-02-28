@@ -5,6 +5,7 @@ import { Items } from '../Models/items';
 import { Seller } from '../Models/seller';
 const Requestheaders={headers:new HttpHeaders({
   'Content-Type':'application/json',
+  'Authorization': 'Bearer '+localStorage.getItem('token')
 })}
 @Injectable({
   providedIn: 'root'
@@ -28,5 +29,13 @@ export class SellerService {
   public EditProfile(id:Seller):Observable<any>
   {
     return this.http.put<any>(this.url+'Edit/'+id,Requestheaders);
+  }
+  public UpdateItems(items:Items):Observable<any>
+  {
+    return this.http.put<any>(this.url+'Update',items,Requestheaders);
+  }
+  public GetAllCategories():Observable<any>
+  {
+    return this.http.get<any>(this.url+'GetAllCategories',Requestheaders);
   }
 }

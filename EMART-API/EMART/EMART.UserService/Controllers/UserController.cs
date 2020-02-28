@@ -6,24 +6,35 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using EMART.UserService.Models;
 using EMART.UserService.Repositories;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.Configuration;
+using System.Security.Claims;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
+using Microsoft.AspNetCore.Authorization;
+
 namespace EMART.UserService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+   
     public class UserController : ControllerBase
     {
         private readonly IUserRepo _repo;
-        public UserController(IUserRepo repo)
+        private readonly IConfiguration configuration;
+        public UserController(IConfiguration configuration,IUserRepo repo)
         {
+            this.configuration = configuration;
             _repo = repo;
         }
+        
         [HttpGet]
         [Route("login/{uname}/{pwd}")]
         public IActionResult Login(string uname, string pwd)
         {
             try
             {
-                return Ok(_repo.BuyerLogin(uname, pwd));
+                return Ok(GenerateJwtToken(uname));
             }
             catch (Exception e)
             {
@@ -36,12 +47,40 @@ namespace EMART.UserService.Controllers
         {
             try
             {
-                return Ok(_repo.SellerLogin(uname, pwd));
+                return Ok(GenerateJwtToken(uname));
             }
             catch (Exception e)
             {
                 return NotFound(e.InnerException.Message);
             }
+        }
+        private Token GenerateJwtToken(string uname)
+        {
+            var claims = new List<Claim>
+            {
+                new Claim(JwtRegisteredClaimNames.Sub, uname),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(ClaimTypes.NameIdentifier, uname),
+                new Claim(ClaimTypes.Role,uname)
+            };
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JwtKey"]));
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            // recommended is 5 min
+            var expires = DateTime.Now.AddDays(Convert.ToDouble(configuration["JwtExpireDays"]));
+            var token = new JwtSecurityToken(
+                configuration["JwtIssuer"],
+                configuration["JwtIssuer"],
+                claims,
+                expires: expires,
+                signingCredentials: credentials
+            );
+
+            var response = new Token
+            {
+                uname = uname,
+                token = new JwtSecurityTokenHandler().WriteToken(token)
+            };
+            return response;
         }
         [HttpPost]
         [Route("AddBuyer")]

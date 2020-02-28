@@ -44,7 +44,7 @@ password:string;
     },err=>{
       console.log(err)
     })
-    if(this.buyer.Username==this.username && this.buyer.Password==this.password){
+    if(this.buyer.username==this.username && this.buyer.password==this.password){
       this.route.navigateByUrl('home')
     }
 

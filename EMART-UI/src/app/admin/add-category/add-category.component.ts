@@ -17,7 +17,7 @@ category:Category;
 
   ngOnInit() {
     this.addForm=this.formbuilder.group({
-      CategoryId:['',[Validators.required]],
+     
       CategoryName:['',[Validators.required]],
       BriefDetails:['',[Validators.required]]
 
@@ -30,7 +30,7 @@ onSubmit(){
   this.submitted=true;
   if(this.addForm.valid){
     this.category=new Category();
-    this.category.categoryId=this.addForm.value["CategoryId"];
+    this.category.categoryId='C'+Math.round(Math.random()*1000);
     this.category.categoryName=this.addForm.value["CategoryName"];
     this.category.briefDetails=this.addForm.value["BriefDetails"];
     console.log(this.category);

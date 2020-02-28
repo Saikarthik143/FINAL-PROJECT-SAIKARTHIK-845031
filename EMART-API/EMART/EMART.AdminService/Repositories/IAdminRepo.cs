@@ -13,5 +13,6 @@ namespace EMART.AdminService.Repositories
         void AddSubCategory(SubCategory subcategory);
         void DeleteCategory(string cid);
         void DeleteSubCategory(string scid);
+        
     }
 }

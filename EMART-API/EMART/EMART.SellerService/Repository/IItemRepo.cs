@@ -14,6 +14,6 @@ namespace EMART.SellerService.Repository
         void DeleteItem(string id);
         void UpdateItem(Items items);
         Items GetItem(string itemid);
-        
+        List<Category> GetAllCategories();
     }
 }

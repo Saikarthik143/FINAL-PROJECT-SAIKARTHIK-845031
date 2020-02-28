@@ -4,14 +4,7 @@
     <div class="card-body">
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
           <div class="row"> 
-            <div class="form-group col-2">
-                <label>ID</label>
-                <input type="text" formControlName="sid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sid.errors }" />
-                <div *ngIf="submitted && f.sid.errors" class="invalid-feedback">
-                    <div *ngIf="f.sid.errors.required">Seller id is required</div>
-                   <div *ngIf="f.sid.errors.pattern">Enter only digits</div>
-                </div>
-            </div>
+            
                 <div class="form-group col-5">
                     <label>User Name</label>
                     <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
@@ -49,7 +42,7 @@
           </div>
                 <div class="form-group col">
                     <label>Brief about company</label>
-                    <input type="text" formControlName="briefaboutcompany" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.briefaboutcompany.errors }" />
+                    <textarea rows="4" cols="50"formControlName="briefaboutcompany" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.briefaboutcompany.errors }" ></textarea>
                     <div *ngIf="submitted && f.briefaboutcompany.errors" class="invalid-feedback">
                         <div *ngIf="f.briefaboutcompany.errors.required">  is required</div>
                         

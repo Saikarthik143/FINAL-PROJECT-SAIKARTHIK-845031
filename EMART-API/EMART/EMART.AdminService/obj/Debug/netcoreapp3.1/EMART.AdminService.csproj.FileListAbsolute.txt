@@ -127,5 +127,12 @@ E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.AdminService\bin\Debug\
 E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.AdminService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DiagnosticAdapter.dll
 E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.AdminService\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.AdminService\bin\Debug\netcoreapp3.1\Ocelot.dll
+E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.AdminService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.AdminService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.AdminService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.AdminService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.AdminService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.AdminService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.AdminService\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.AdminService\obj\Debug\netcoreapp3.1\EMART.AdminService.MvcApplicationPartsAssemblyInfo.cs
 E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.AdminService\obj\Debug\netcoreapp3.1\EMART.AdminService.MvcApplicationPartsAssemblyInfo.cache

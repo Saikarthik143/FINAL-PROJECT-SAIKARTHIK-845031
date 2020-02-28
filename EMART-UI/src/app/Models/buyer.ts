@@ -5,6 +5,4 @@ export class Buyer {
    public emailid:string;
    public mobile:number;
   public  createdatetime:Date
-    
-
 }
