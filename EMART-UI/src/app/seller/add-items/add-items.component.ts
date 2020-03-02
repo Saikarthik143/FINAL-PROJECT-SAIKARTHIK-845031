@@ -20,13 +20,14 @@ export class AddItemsComponent implements OnInit {
       this.categorylist=res;
       console.log(this.categorylist);
     })
+    
    }
-
+   
   ngOnInit() {
     this.itemForm=this.formbuilder.group({
-      id:['',[Validators.required,Validators.pattern('^[0-9]{3,8}$')]],
+      
       CategoryId:['',[Validators.required]],
-      SubCategoryid:['',[Validators.required]],
+      SubCategoryid:[''],
       item_name:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{3,20}$')]],
       description:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{3,20}$')]],
       Price:['',[Validators.required,Validators.pattern('^[1-9][0-9]{3,20}$')]],
@@ -35,6 +36,7 @@ export class AddItemsComponent implements OnInit {
       Sid:['',[Validators.required]]
 
     })
+   
   }
 get f(){
   return this.itemForm.controls;
@@ -42,9 +44,12 @@ get f(){
 onSubmit()
 {
   this.submitted=true;
+  this.item=new Items();
+  this.item.subCategoryid=this.itemForm.value["SubCategoryid"],
+  console.log(this.item.subCategoryid);
   if(this.itemForm.valid){
     this.item=new Items();
-    this.item.iid=(this.itemForm.value["id"]),//I+Math.floor(Math.random()*10000)
+    this.item.iid='I'+Math.floor(Math.random()*10000)
     this.item.itemName=this.itemForm.value["item_name"],
     this.item.categoryId=this.itemForm.value["CategoryId"],
     this.item.subCategoryid=this.itemForm.value["SubCategoryid"],
@@ -54,8 +59,10 @@ onSubmit()
     this.item.remarks=this.itemForm.value["remarks"],
     this.item.sid=this.itemForm.value["Sid"],
     console.log(this.item);
+    
     this.service.AddItem(this.item).subscribe(res=>{
       console.log('added');
+      
     },err=>{
       console.log(err);
     })
@@ -64,6 +71,14 @@ onSubmit()
   
   }
 }
+GetSubCategory()
+   {
+    let id=this.itemForm.value["CategoryId"]
+     this.service.GetSubCategory(id).subscribe(res=>{
+       this.subcat=res;
+       console.log(this.subcat)
+     })
+   }
 
 
 

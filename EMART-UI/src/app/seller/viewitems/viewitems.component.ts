@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Items } from 'src/app/Models/items';
 import { SellerService } from 'src/app/Services/seller.service';
 import {FormGroup,FormBuilder,Validators} from '@angular/forms';
+import { Category } from 'src/app/Models/category';
 
 @Component({
   selector: 'app-viewitems',
@@ -12,12 +13,14 @@ export class ViewitemsComponent implements OnInit {
 list:Items[];
 item:Items;
 itemForm:FormGroup;
+category:Category;
+Show:boolean=true;
   constructor(private service:SellerService,private formbuilder:FormBuilder) { 
    
   }
   Search(){
   let id="1"
-  this.service(id).subscribe(res=>{
+  this.service.ViewItems(id).subscribe(res=>{
     this.list=res;
     console.log(this.list);
 
@@ -40,7 +43,11 @@ itemForm:FormGroup;
     })
     this.Search();
   }
+  Update1(){
+    this.Show=!this.Show;
+  }
   Update(){
+    
     this.item=new Items();
       this.item.iid=(this.itemForm.value["id"]),//I+Math.floor(Math.random()*10000)
       this.item.itemName=this.itemForm.value["item_name"],
@@ -52,10 +59,39 @@ itemForm:FormGroup;
       this.item.remarks=this.itemForm.value["remarks"],
       this.item.sid=this.itemForm.value["Sid"],
       console.log(this.item);
+      
       this.service.UpdateItems(this.item).subscribe(res=>{
         console.log('added');
+        alert('Updated')
       },err=>{
         console.log(err);
       })
+     
+    }
+    Delete(){
+      let id=this.itemForm.value["id"]
+      this.service.Delete(id).subscribe(res=>{
+        console.log('deleted');
+       
+      })
+    }
+    View(){
+      let id1=this.itemForm.value["id"];
+     console.log(id1);
+    this.service.GetItems(id1).subscribe(res=>{
+      this.item=res;
+      console.log(this.item);
+      this.itemForm.setValue({
+        id:this.item.iid,
+        CategoryId:this.item.categoryId,
+        SubCategoryid:this.item.subCategoryid,
+        Sid:this.item.sid,
+        item_name:this.item.itemName,
+        Price:this.item.price,
+        description:this.item.description,
+        stock_number:this.item.stockNumber,
+        remarks:this.item.remarks
+      })
+    })
     }
 }

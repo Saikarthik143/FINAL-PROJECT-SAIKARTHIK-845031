@@ -32,6 +32,24 @@ export class EditProfileComponent implements OnInit {
     })
     this.GetProfile();
   }
+  EditProfile(){
+    this.item=new Seller();
+    this.item.sid=this.Editform.value["Sid"],
+    this.item.username=this.Editform.value["Username"],
+    this.item.password=this.Editform.value["Password"],
+    this.item.companyName=this.Editform.value["CompanyName"],
+    this.item.gstin=this.Editform.value["Gstin"],
+    this.item.briefaboutcompany=this.Editform.value["Briefaboutcompany"],
+    this.item.address=this.Editform.value["Address"],
+    this.item.emailid=this.Editform.value["Emailid"],
+    this.item.mobile=this.Editform.value["Mobile"],
+    this.item.website=this.Editform.value["Website"],
+    console.log(this.item)
+    this.service.EditProfile(this.item).subscribe(res=>{
+      alert('updated');
+      console.log('added');
+    })
+  }
   get f(){
     return this.Editform.controls;
   }
@@ -40,7 +58,7 @@ onSubmit(){
   
   }
 GetProfile(){
-  let id="3";
+  let id="1";
     this.service.GetProfile(id).subscribe(res=>{
      this.item=res;
      console.log(this.item);

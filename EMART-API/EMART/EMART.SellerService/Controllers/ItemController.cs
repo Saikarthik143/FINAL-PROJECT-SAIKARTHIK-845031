@@ -59,6 +59,20 @@ namespace EMART.SellerService.Controllers
                 return NotFound(ex.Message);
             }
         }
+        [HttpGet]
+        [Route("GetSubCategory/{id}")]
+        public IActionResult GetSubCategory(string id)
+        {
+            try
+            {
+                return Ok(_repo.GetSubCategories(id));
+
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
         [HttpDelete]
         [Route("Delete/{id}")]
         public IActionResult DeleteItem(string id)

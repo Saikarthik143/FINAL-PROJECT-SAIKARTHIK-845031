@@ -4,18 +4,11 @@
         <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
             <div class="offset-2">
            <div class="row">
-            <div class="form-group col-2 ">
-                <label>ID</label>
-                <input type="text" formControlName="id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.id.errors }" />
-                <div *ngIf="submitted && f.id.errors" class="invalid-feedback">
-                    <div *ngIf="f.id.errors.required">Item id is required</div>
-                    <div *ngIf="f.id.errors.pattern">Enter only digits</div>
-                </div>
-            </div>
+            
            
-            <div class="form-group col-5 ">
+            <div class="form-group col-6 ">
                 <label> Category Name</label>
-                <select formControlName="CategoryId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.CategoryId.errors }">
+                <select formControlName="CategoryId" class="form-control" (change)="GetSubCategory()" [ngClass]="{ 'is-invalid': submitted && f.CategoryId.errors }">
                     <option value=""></option>
                     <option *ngFor="let item of categorylist" value="{{item.categoryId}}">{{item.categoryName}}</option>
                     
@@ -24,11 +17,11 @@
                     <div *ngIf="f.CategoryId.errors.required">category is required</div>
                 </div>
             </div>
-            <div class="form-group col-5">
+            <div class="form-group col-6">
                 <label>SubCategoryid</label>
                 <select formControlName="SubCategoryid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.SubCategoryid.errors }">
                     <option value=""></option>
-                    <option *ngFor="let item of categorylist" value="{{item.categoryid}}">{{item.categoryname}}</option>
+                    <option *ngFor="let item of subcat" value="{{item.subCategoryid}}">{{item.subCategoryName}}</option>
                     
                 </select>
                 <div *ngIf="submitted && f.SubCategoryid.errors" class="invalid-feedback">

@@ -28,7 +28,7 @@ export class SellerService {
   }
   public EditProfile(id:Seller):Observable<any>
   {
-    return this.http.put<any>(this.url+'Edit/'+id,Requestheaders);
+    return this.http.put<any>(this.url+'Edit',id,Requestheaders);
   }
   public UpdateItems(items:Items):Observable<any>
   {
@@ -37,5 +37,16 @@ export class SellerService {
   public GetAllCategories():Observable<any>
   {
     return this.http.get<any>(this.url+'GetAllCategories',Requestheaders);
+  }
+  public ViewItems(id:string):Observable<any>
+  {
+    return this.http.get<any>(this.url+'View/'+id,Requestheaders);
+  }
+  public GetSubCategory(id:string):Observable<any>
+  {
+    return this.http.get<any>(this.url+'GetSubCategory/'+id,Requestheaders);
+  }
+  public Delete(id:string):Observable<any>{
+    return this.http.delete<any>(this.url+'Delete/'+id,Requestheaders);
   }
 }

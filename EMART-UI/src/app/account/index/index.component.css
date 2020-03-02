@@ -35,7 +35,7 @@
     margin-bottom:8%;
     color:white;
 }
-.btnSubmit{
+.btn{
     font-weight: 600;
    width: 50%;
    align-items: center;
@@ -58,7 +58,9 @@
 .abc{
   background:rgba(0, 0, 0, 0.5);
 }
-  
+input {
+  border-radius: 1.5rem;
+}
   
     form {
                   width:500px;

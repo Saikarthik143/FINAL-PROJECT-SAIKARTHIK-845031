@@ -15,5 +15,6 @@ namespace EMART.SellerService.Repository
         void UpdateItem(Items items);
         Items GetItem(string itemid);
         List<Category> GetAllCategories();
+        List<SubCategory> GetSubCategories(string cid);
     }
 }

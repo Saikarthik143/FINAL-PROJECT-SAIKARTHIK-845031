@@ -46,13 +46,17 @@ namespace EMART.SellerService.Repository
         {
             return _context.Category.ToList();
         }
-
+        
         public List<Items> ViewItems(string Sid)
         {
             List<Items> a = _context.Items.Where(e => e.Sid == Sid).ToList();
             return a;
         }
 
-       
+        public List<SubCategory> GetSubCategories(string CategoryId)
+        {
+            List<SubCategory> subCategories = _context.SubCategory.Where(e => e.CategoryId == CategoryId).ToList();
+            return subCategories;
+        }
     }
 }
