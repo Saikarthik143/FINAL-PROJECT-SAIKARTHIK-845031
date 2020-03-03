@@ -3,27 +3,36 @@
        <img src="assets\images\logo1.jpg" style="width:100px; height:100px;">
     </marquee>
 </div> -->
+<div>
+       
+    <img src="assets/images/logo.jpg" alt="Not" style="width: 100px; height: 50px;">
 
-<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+<form>
+                    <input type="text" placeholder="Search..." required>
+               <i class="fa fa-search"></i>
+</form>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-danger">
     <div class="col">
         <ul class="nav row nav pills">
             <li class="col-sm-2 nav-item text-center">
-                <a class="nav-link btn-outline-primary" href="#"><i class="fa fa-fw fa-home"></i>Home </a>
+                <a class="nav-link btn-outline-warning" href="#"><i class="fa fa-fw fa-home"></i>Home </a>
             </li>
             <li class="col-sm-2 nav-item text-center">
-                <a class="nav-link btn-outline-primary"[routerLink]="['/home/viewprofile']"><span class="glyphicon glyphicon-sunglasses"></span>View Cart</a>
+                <a class="nav-link btn-outline-warning"><span class="glyphicon glyphicon-sunglasses"></span>View Cart</a>
             </li>
             <li class="col-sm-2 nav-item text-center">
-                <a class="nav-link btn-outline-primary"[routerLink]="['/home/edit-pro']" ><i class="fa fa-fw fa-user "></i>ViewProfile</a>
+                <a class="nav-link btn-outline-warning" [routerLink]="['/home/viewprofile']" ><i class="fa fa-fw fa-user "></i>ViewProfile</a>
             </li>
             <li class="col-sm-2 nav-item text-center">
-                <a class="nav-link btn-outline-primary" href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Buy Product</a>
+                <a class="nav-link btn-outline-warning" href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Buy Product</a>
             </li>
             <li class="col-sm-2 nav-item text-center">
-                <a class="nav-link btn-outline-primary" href="#"><span class="glyphicon glyphicon-time"></span>Purchase-History</a>
+                <a class="nav-link btn-outline-warning" [routerLink]="['/home/purchase-history']" routerLinkActive="router-link-active" ><span class="glyphicon glyphicon-time"></span>Purchase-History</a>
             </li>
             <li class="col-sm-2 nav-item text-center">
-                <a class="nav-link btn-outline-primary" href="#"><i class="fa fa-fw fa-user"></i>Logout</a>
+                <a class="nav-link btn-outline-warning" href="#"><i class="fa fa-fw fa-user"></i>Logout</a>
             </li>
         </ul>
     </div>

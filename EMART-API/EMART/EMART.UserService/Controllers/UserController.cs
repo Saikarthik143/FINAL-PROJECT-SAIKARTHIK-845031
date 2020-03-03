@@ -32,29 +32,53 @@ namespace EMART.UserService.Controllers
         [Route("login/{uname}/{pwd}")]
         public IActionResult Login(string uname, string pwd)
         {
+            Token token = null;
             try
             {
-                return Ok(GenerateJwtToken(uname));
+
+                Buyer buyer = _repo.BuyerLogin(uname, pwd);
+                if (buyer != null)
+                {
+                    token = new Token() { buyerid = buyer.Bid, token = GenerateJwtToken(uname), message = "success" };
+                }
+                else
+                {
+                    token = new Token() { token = null, message = "unsuccess" };
+                }
+                return Ok(token);
+
             }
             catch (Exception e)
             {
-                return NotFound(e.InnerException.Message);
+                return NotFound(e.Message);
             }
         }
         [HttpGet]
         [Route("Slogin/{uname}/{pwd}")]
         public IActionResult SLogin(string uname, string pwd)
         {
+            Token token = null;
             try
             {
-                return Ok(GenerateJwtToken(uname));
+
+                Seller seller = _repo.SellerLogin(uname, pwd);
+                if (seller != null)
+                {
+                    token = new Token() { buyerid = seller.Sid, token = GenerateJwtToken(uname), message = "success" };
+                }
+                else
+                {
+                    token = new Token() { token = null, message = "unsuccess" };
+                }
+                return Ok(token);
+
             }
             catch (Exception e)
             {
-                return NotFound(e.InnerException.Message);
+                return NotFound(e.Message);
             }
         }
-        private Token GenerateJwtToken(string uname)
+        private string GenerateJwtToken(string uname)
         {
             var claims = new List<Claim>
             {
@@ -80,7 +104,7 @@ namespace EMART.UserService.Controllers
                 uname = uname,
                 token = new JwtSecurityTokenHandler().WriteToken(token)
             };
-            return response;
+            return response.ToString();
         }
         [HttpPost]
         [Route("AddBuyer")]

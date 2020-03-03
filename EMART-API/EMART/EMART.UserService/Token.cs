@@ -9,5 +9,8 @@ namespace EMART.UserService
     {
         public string uname { get; set; }
         public string token { get; set; }
+        public string buyerid { get; set; }
+        public string sellerid { get; set; }
+        public string message { get; set; }
     }
 }

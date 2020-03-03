@@ -58,7 +58,7 @@ onSubmit(){
   
   }
 GetProfile(){
-  let id="1";
+  let id="4";
     this.service.GetProfile(id).subscribe(res=>{
      this.item=res;
      console.log(this.item);

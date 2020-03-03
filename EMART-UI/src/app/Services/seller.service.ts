@@ -28,7 +28,7 @@ export class SellerService {
   }
   public EditProfile(id:Seller):Observable<any>
   {
-    return this.http.put<any>(this.url+'Edit',id,Requestheaders);
+    return this.http.put<any>(this.url1+'Edit',id,Requestheaders);
   }
   public UpdateItems(items:Items):Observable<any>
   {

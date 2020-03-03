@@ -17,4 +17,8 @@ export class BuyerService {
   {
     return this.http.get<Buyer>(this.url+'Get/'+id,Requestheaders);
   }
+  public EditProfile(id:Buyer):Observable<Buyer>
+  {
+    return this.http.put<any>(this.url+'Edit',id,Requestheaders);
+  }
 }

@@ -10,6 +10,7 @@
                 <input type="text" formControlName="CategoryName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.CategoryName.errors }">
                 <div *ngIf="submitted && f.CategoryName.errors" class="invalid-feedback">
                     <div *ngIf="f.CategoryName.errors.required">category is required</div>
+                    <div *ngIf="f.CategoryName.errors.pattern">follow the pattern</div>
                 </div>
             </div>
            

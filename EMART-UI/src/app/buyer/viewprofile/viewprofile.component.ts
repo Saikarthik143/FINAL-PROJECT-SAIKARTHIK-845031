@@ -11,6 +11,7 @@ export class ViewprofileComponent implements OnInit {
   EditForm:FormGroup;
   submitted:boolean;
   item:Buyer;
+  show:boolean;
   constructor(private formbuilder:FormBuilder,private service:BuyerService) { }
 
   ngOnInit() {
@@ -24,6 +25,19 @@ export class ViewprofileComponent implements OnInit {
      
     })
     this.GetProfile();
+  }
+  EditProfile(){
+    this.item=new Buyer();
+    this.item.bid=this.EditForm.value["Bid"];
+    this.item.username=this.EditForm.value["username"];
+    this.item.password=this.EditForm.value["password"];
+    this.item.emailid=this.EditForm.value["emailid"];
+    this.item.mobile=this.EditForm.value["mobile"];
+    console.log(this.item)
+    this.service.EditProfile(this.item).subscribe(res=>{
+      alert('updated');
+      console.log('added');
+    })
   }
   GetProfile(){
     let id="E0000";

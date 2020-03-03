@@ -19,7 +19,7 @@ namespace EMART.BuyerService.Controllers
             _repo = repo;
         }
         [HttpPut]
-        [Route("Edit/{id}")]
+        [Route("Edit")]
         public IActionResult EditProfile(Buyer id)
         {
             try

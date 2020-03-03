@@ -18,7 +18,7 @@ category:Category;
   ngOnInit() {
     this.addForm=this.formbuilder.group({
      
-      CategoryName:['',[Validators.required]],
+      CategoryName:['',[Validators.required,Validators.pattern('^[a-z A-Z0-9]{1,30}$')]],
       BriefDetails:['',[Validators.required]]
 
     })

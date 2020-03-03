@@ -13,17 +13,19 @@ namespace EMART.UserService.Repositories
         {
             _context = context;
         }
-        public bool BuyerLogin(string username, string password)
+        public Buyer BuyerLogin(string username, string password)
         {
-            var x = _context.Buyer.Where(e => e.Username == username && e.Password == password).ToList();
-            if (x.Count == 0)
+            Buyer buyer = _context.Buyer.SingleOrDefault(e => e.Username == username && e.Password == password);
+            
+            //var x = _context.Seller.Where(e => e.Username == username && e.Password == password).ToList();
+            if (buyer.Username == username && buyer.Password == password)
             {
-                return false;
+
+                return buyer;
             }
             else
-
-
-                return true;
+                Console.WriteLine("login");
+            return null;
         }
 
         public void BuyerRegister(Buyer buyer)
@@ -32,15 +34,18 @@ namespace EMART.UserService.Repositories
             _context.SaveChanges();
         }
 
-        public bool SellerLogin(string username, string password)
+        public Seller SellerLogin(string username, string password)
         {
-            var x = _context.Seller.Where(e => e.Username == username && e.Password == password).ToList();
-            if (x.Count == 0)
+            Seller seller = _context.Seller.SingleOrDefault(e => e.Username == username && e.Password == password);
+            //var x = _context.Seller.Where(e => e.Username == username && e.Password == password).ToList();
+            if (seller.Username == username && seller.Password == password)
             {
-                return false;
+
+                return seller;
             }
             else
-                return true;
+                Console.WriteLine("login");
+                return null;
         }
 
         public void SellerRegister(Seller seller)
