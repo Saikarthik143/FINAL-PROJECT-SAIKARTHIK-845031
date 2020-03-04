@@ -39,7 +39,7 @@ namespace EMART.UserService.Controllers
                 Buyer buyer = _repo.BuyerLogin(uname, pwd);
                 if (buyer != null)
                 {
-                    token = new Token() { buyerid = buyer.Bid, token = GenerateJwtToken(uname), message = "success" };
+                    token = new Token() { buyerid = buyer.Bid, token = GenerateJwtToken(uname), message = "success",uname=uname };
                 }
                 else
                 {
@@ -64,7 +64,7 @@ namespace EMART.UserService.Controllers
                 Seller seller = _repo.SellerLogin(uname, pwd);
                 if (seller != null)
                 {
-                    token = new Token() { buyerid = seller.Sid, token = GenerateJwtToken(uname), message = "success" };
+                    token = new Token() { sellerid = seller.Sid, token = GenerateJwtToken(uname), message = "success",uname=uname};
                 }
                 else
                 {
@@ -104,7 +104,7 @@ namespace EMART.UserService.Controllers
                 uname = uname,
                 token = new JwtSecurityTokenHandler().WriteToken(token)
             };
-            return response.ToString();
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
         [HttpPost]
         [Route("AddBuyer")]

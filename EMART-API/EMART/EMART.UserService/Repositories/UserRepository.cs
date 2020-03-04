@@ -16,16 +16,16 @@ namespace EMART.UserService.Repositories
         public Buyer BuyerLogin(string username, string password)
         {
             Buyer buyer = _context.Buyer.SingleOrDefault(e => e.Username == username && e.Password == password);
-            
+            return buyer;
             //var x = _context.Seller.Where(e => e.Username == username && e.Password == password).ToList();
-            if (buyer.Username == username && buyer.Password == password)
-            {
+            //if (buyer.Username == username && buyer.Password == password)
+            //{
 
-                return buyer;
-            }
-            else
-                Console.WriteLine("login");
-            return null;
+            //    return buyer;
+            //}
+            //else
+            //    Console.WriteLine("login failed");
+            //return null;
         }
 
         public void BuyerRegister(Buyer buyer)
@@ -37,15 +37,17 @@ namespace EMART.UserService.Repositories
         public Seller SellerLogin(string username, string password)
         {
             Seller seller = _context.Seller.SingleOrDefault(e => e.Username == username && e.Password == password);
-            //var x = _context.Seller.Where(e => e.Username == username && e.Password == password).ToList();
-            if (seller.Username == username && seller.Password == password)
-            {
+            return seller;
 
-                return seller;
-            }
-            else
-                Console.WriteLine("login");
-                return null;
+            //var x = _context.Seller.Where(e => e.Username == username && e.Password == password).ToList();
+            //if (seller.Username == username && seller.Password == password)
+            //{
+
+            //    return seller;
+            //}
+            //else
+            //    Console.WriteLine("login failed");
+            //    return null;
         }
 
         public void SellerRegister(Seller seller)

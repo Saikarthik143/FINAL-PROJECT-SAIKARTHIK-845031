@@ -5,11 +5,14 @@
 </div>
 <div class="container">
     
-        <div class="card m-3">
-    <h5 class="card-header text-center">Buyer Register form</h5>
+    
+        <div class="card m-3" style="background-color: #d0c9c3;"><marquee direction="rtl">
+            <p>register-buyer works!</p>
+        </marquee>
+    <h3 class="card-header text-center" style="background-color: #414654;color: whitesmoke;">Buyer Register form</h3>
     <div class="card-body">
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-        <div class="offset-4">          
+            <div class="offset-4"> 
               
             
                 <div class="form-group col-6">
@@ -73,7 +76,7 @@
             </div>
         </form>
     </div>
-</div>
+  </div>
 </div>
 
 <router-outlet></router-outlet>

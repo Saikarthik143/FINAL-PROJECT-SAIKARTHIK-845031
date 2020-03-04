@@ -1,1 +1,26 @@
-<p>search works!</p>
+<table class="table table-bordered">
+    <tr>
+       
+        <th>Itemid</th>
+        <th>ItemName</th>
+        <th>CategoryId</th>
+        <th>SubcategoryId</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>StockNumber</th>
+        <th>Remarks</th>
+        <th>sid</th>
+    </tr>
+    <tr *ngFor="let i of list">
+        <td>{{i.iid}}</td>
+        <td>{{i.itemName}}</td>
+        <td>{{i.categoryId}}</td>
+        <td>{{i.subCategoryid}}</td>
+        <td>{{i.description}}</td>
+        <td>{{i.price}}</td>
+        <td>{{i.stockNumber}}</td>
+        <td>{{i.remarks}}</td>
+        <td>{{i.sid}}</td>
+    </tr>
+</table>
+

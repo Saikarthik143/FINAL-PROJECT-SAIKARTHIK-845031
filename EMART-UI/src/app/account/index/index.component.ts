@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Buyer } from 'src/app/Models/buyer';
-
+import { Token } from 'src/app/Models/token';
 import { Seller } from 'src/app/Models/seller';
 import { UserService } from 'src/app/Services/user.service';
 import { Router } from '@angular/router';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-index',
@@ -12,48 +13,109 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-uname:string;
-pass:string;
+
 buyer:Buyer;
 seller:Seller;
 loginForm:FormGroup;
-msg:string;
+submitted:boolean;
+token:Token;
+role:string;
   constructor(private formbuilder:FormBuilder, private service:UserService,private route:Router) { 
   
   }
 
   ngOnInit() {
 this.loginForm=this.formbuilder.group({
-  username1:[''],
-  password1:['']
+  username:['',Validators.required],
+  password:['',Validators.required],
+  role:['']
 })
 
   }
    public Login(){
-     if(this.uname=="Admin" && this.pass=="12345"){
-       this.route.navigateByUrl('admin-home');
-     }
-     else {
-       alert("invalid");
-     }
-      this.buyer=new Buyer();
+    this.submitted=true;
+     if(this.loginForm.valid)
+     {
+     this.token=new Token();
+     this.buyer=new Buyer();
+     this.seller=new Seller();
+     let uname=this.loginForm.value["username"];
+     let pass=this.loginForm.value["password"];
+     let role=this.loginForm.value['role'];
+     //Admin login
+    
+    
       
-       this.uname=this.loginForm.value["username1"];
-       this.pass=this.loginForm.value["password1"];
-       console.log(this.uname);
-       console.log(this.pass);
-      this.service.BuyerLogin(this.uname,this.pass).subscribe(res=>{
-        this.buyer=res;
-        console.log(this.buyer)
-      // if(this.buyer.username==this.uname && this.buyer.password==this.pass)
-      if(this.msg=="sucess")
+      //buyer login
+      
+       
+       if(role=='buyer'){
+        let token=new Token();
+      this.service.BuyerLogin(uname,pass).subscribe(res=>{
+      
+       token=res;
+        
+      
+      console.log(token);
+      if(token.message=='success')
+    {
+      localStorage.setItem('buyerid',token.buyerid);
+     
+      this.route.navigateByUrl("home");
+    }
+    else {
+      alert('invalid buyer');
+    }
+    
+    });
+  }
+    //seller login
+    if(role=='seller')
+    {
+      let token=new Token();
+    this.service.SellerLogin(uname,pass).subscribe(res=>{
+     token=res;
+      console.log(token);
+      if(token.message=='success')
       {
-        alert('Login success');
-       this.route.navigateByUrl('/home');
+        localStorage.setItem('sellerid',token.sellerid);
+        this.route.navigateByUrl("shome");
       }
       else{
-        alert('Invalid Credentials');
+        alert('invalid seller')
       }
-    })
+     
+    });
   }
-}
+  if(uname=="Admin" &&pass=="12345"){
+     
+    this.route.navigateByUrl("admin-home");
+   }
+     }
+    // alert(this.role);
+    // switch(this.role){
+    //   case "buyer":
+    //     this.route.navigateByUrl("home");
+    //     break;
+    //     case "seller":
+    //     this.route.navigateByUrl("shome");
+    //     break;
+    //     case "admin":
+    //     this.route.navigateByUrl("admin-home");
+    //     break;
+    //     default:
+    //       alert("invalid credentials");
+    // }
+   
+  
+ 
+   }
+  
+  onSubmit(){
+   
+    //this.Login();
+  }
+  get f(){
+   return this.loginForm.controls;
+  }
+   }

@@ -21,4 +21,10 @@ export class BuyerService {
   {
     return this.http.put<any>(this.url+'Edit',id,Requestheaders);
   }
+  public Search(name:string):Observable<any>{
+    return this.http.get<any>(this.url+'SearchItems/'+name,Requestheaders)
+  }
+  public GetItems():Observable<any>{
+    return this.http.get<any>(this.url+'GetItems',Requestheaders);
+  }
 }

@@ -19,7 +19,7 @@ Show:boolean=true;
    
   }
   Search(){
-  let id="1"
+  let id=localStorage.getItem('sellerid');
   this.service.ViewItems(id).subscribe(res=>{
     this.list=res;
     console.log(this.list);

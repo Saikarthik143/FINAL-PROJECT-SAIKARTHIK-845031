@@ -40,7 +40,7 @@ export class ViewprofileComponent implements OnInit {
     })
   }
   GetProfile(){
-    let id="E0000";
+    let id=localStorage.getItem('buyerid');
     this.service.GetProfile(id).subscribe(res=>{
       this.item=res;
       console.log(this.item);

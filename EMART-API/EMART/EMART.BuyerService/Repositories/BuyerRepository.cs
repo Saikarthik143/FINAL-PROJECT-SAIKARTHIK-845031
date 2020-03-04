@@ -30,6 +30,11 @@ namespace EMART.BuyerService.Repositories
             return _context.Category.ToList();
         }
 
+        public List<Items> GetItems()
+        {
+            return _context.Items.ToList();
+        }
+
         public Buyer GetProfile(string bid)
         {
             return _context.Buyer.Find(bid);

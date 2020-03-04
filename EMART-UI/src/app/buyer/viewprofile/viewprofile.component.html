@@ -53,7 +53,7 @@
         
             <div class="form-group col-6">
                 <label>Date</label>
-                <input type="date" formControlName="createdatetime" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.createdatetime.errors }" />
+                <input type="text" formControlName="createdatetime" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.createdatetime.errors }" />
                 <div *ngIf="submitted && f.createdatetime.errors" class="invalid-feedback">
                     <div *ngIf="f.createdatetime.errors.required">date is required</div>
                 </div>

@@ -58,7 +58,7 @@ onSubmit(){
   
   }
 GetProfile(){
-  let id="4";
+  let id=localStorage.getItem('sellerid');
     this.service.GetProfile(id).subscribe(res=>{
      this.item=res;
      console.log(this.item);

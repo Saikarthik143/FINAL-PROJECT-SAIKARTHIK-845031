@@ -18,6 +18,19 @@ namespace EMART.BuyerService.Controllers
         {
             _repo = repo;
         }
+        [HttpGet]
+        [Route("GetItems")]
+        public IActionResult GetItems()
+        {
+            try
+            {
+                return Ok(_repo.GetItems());
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
+        }
         [HttpPut]
         [Route("Edit")]
         public IActionResult EditProfile(Buyer id)

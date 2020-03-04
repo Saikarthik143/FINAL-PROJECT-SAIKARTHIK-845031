@@ -38,31 +38,38 @@
 
 
     <div class="bg">
-        <form [formGroup]="loginForm" >
+        <form [formGroup]="loginForm" (ngSubmit)="Login()" >
         <div class="container login-container">
            <div class="row">
                
                <div class="col-md-5 login">
                    <h2>Login</h2>
+                   <div>
+                    <label> <input type="radio" formControlName="role" value="buyer" name="role">Buyer
+                    </label>
+                    <label> <input type="radio" formControlName="role" value="seller" name="role">Seller
+                    </label>
+                </div>
                    
                    <div class="form-group">
                     <label>User Name</label>
-                    <input type="text" placeholder="Username"  formControlName="username1" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                    <input type="text" placeholder="Username"  formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" required />
                     <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
                         <div *ngIf="f.username.errors.required"> Name is required</div>
-                        <div *ngIf="f.username.errors.pattern">Enter only Alphabets</div>
+                        
                     </div>
                 </div>
                 <div class="form-group ">
                     <label>Password</label>
-                    <input type="password"  placeholder="password" formControlName="password1" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <input type="password"  placeholder="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
                     <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                         <div *ngIf="f.password.errors.required">Password is required</div>
-                        <div *ngIf="f.password.errors.pattern">Password must be 8 letters and last digit is special character</div>
+                       
                     </div>
                 </div>
+               
                        <div class="form-group">
-                        <button class="btn btn-primary mr-1" (click)="Login()" >login</button>
+                        <button class="btn btn-primary mr-1"  >login</button>
                        </div>
                        <div class="text-center">
              
