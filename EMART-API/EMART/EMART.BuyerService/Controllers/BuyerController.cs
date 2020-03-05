@@ -62,14 +62,15 @@ namespace EMART.BuyerService.Controllers
         [Route("View/{Bid}")]
         public IActionResult Purchase(string Bid)
         {
-            try {
+            try
+            {
                 return Ok(_repo.Purchase(Bid));
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return NotFound(e.Message);
             }
-            
+
         }
         [HttpGet]
         [Route("SearchItems/{name}")]

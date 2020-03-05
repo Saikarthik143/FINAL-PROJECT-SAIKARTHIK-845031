@@ -44,7 +44,7 @@ namespace EMART.BuyerService.Repositories
 
         public List<SubCategory> GetSubCategories(string CategoryId)
         {
-            List<SubCategory> subCategories= _context.SubCategory.Where(e=>e.CategoryId==CategoryId).ToList();
+            List<SubCategory> subCategories= _context.SubCategory.Where(e=>e.Categoryid==CategoryId).ToList();
             return subCategories;
         }
 
@@ -57,7 +57,12 @@ namespace EMART.BuyerService.Repositories
 
         public List<Items> Search(string name)
         {
-            return _context.Items.Where(e => e.ItemName == name).ToList();
+            return _context.Items.Where(e => e.Itemname== name).ToList();
+        }
+
+        public List<Items> SearchByCategory(string name)
+        {
+            throw new NotImplementedException();
         }
     }
 }

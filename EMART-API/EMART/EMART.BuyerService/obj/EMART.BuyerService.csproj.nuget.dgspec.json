@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\EMART\\EMART.BuyerService\\EMART.BuyerService.csproj": {}
+    "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\Emart\\EMART.BuyerService\\EMART.BuyerService.csproj": {}
   },
   "projects": {
-    "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\EMART\\EMART.BuyerService\\EMART.BuyerService.csproj": {
+    "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\Emart\\EMART.BuyerService\\EMART.BuyerService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\EMART\\EMART.BuyerService\\EMART.BuyerService.csproj",
+        "projectUniqueName": "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\Emart\\EMART.BuyerService\\EMART.BuyerService.csproj",
         "projectName": "EMART.BuyerService",
-        "projectPath": "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\EMART\\EMART.BuyerService\\EMART.BuyerService.csproj",
+        "projectPath": "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\Emart\\EMART.BuyerService\\EMART.BuyerService.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\EMART\\EMART.BuyerService\\obj\\",
+        "outputPath": "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\Emart\\EMART.BuyerService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",

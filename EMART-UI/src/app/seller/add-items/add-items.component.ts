@@ -15,6 +15,9 @@ export class AddItemsComponent implements OnInit {
   item:Items;
   categorylist:Category[];
   subcat:SubCategory[];
+  items:Items[];
+  imagename:string;
+selectedFile : File = null;
   constructor(private formbuilder:FormBuilder,private service:SellerService) {
     this.service.GetAllCategories().subscribe(res=>{
       this.categorylist=res;
@@ -33,7 +36,8 @@ export class AddItemsComponent implements OnInit {
       Price:['',[Validators.required,Validators.pattern('^[1-9][0-9]{3,20}$')]],
       stock_number:['',[Validators.required,Validators.pattern('^[0-9]{0,20}$')]],
       remarks:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{0,80}$')]],
-      Sid:['',[Validators.required]]
+      Sid:['',[Validators.required]],
+      
 
     })
    
@@ -58,6 +62,8 @@ onSubmit()
     this.item.stockNumber=Number(this.itemForm.value["stock_number"]),
     this.item.remarks=this.itemForm.value["remarks"],
     this.item.sid=this.itemForm.value["Sid"],
+    this.item.imagename=this.imagename;
+    
     console.log(this.item);
     
     this.service.AddItem(this.item).subscribe(res=>{
@@ -80,7 +86,9 @@ GetSubCategory()
      })
    }
 
-
+   fileEvent(event){
+    this.imagename = event.target.files[0].name;
+}
 
 onReset(){
   this.submitted=false;

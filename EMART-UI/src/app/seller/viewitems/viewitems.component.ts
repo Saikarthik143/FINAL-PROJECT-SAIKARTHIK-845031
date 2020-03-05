@@ -32,7 +32,7 @@ Show:boolean=true;
   ngOnInit() {
     this.itemForm=this.formbuilder.group({
       id:['',[Validators.required,Validators.pattern('^[0-9]{3,8}$')]],
-      CategoryId:['',[Validators.required]],
+      categoryid:['',[Validators.required]],
       SubCategoryid:['',[Validators.required]],
       item_name:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{3,20}$')]],
       description:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{3,20}$')]],
@@ -51,7 +51,7 @@ Show:boolean=true;
     this.item=new Items();
       this.item.iid=(this.itemForm.value["id"]),//I+Math.floor(Math.random()*10000)
       this.item.itemName=this.itemForm.value["item_name"],
-      this.item.categoryId=this.itemForm.value["CategoryId"],
+      this.item.categoryId=this.itemForm.value["categoryid"],
       this.item.subCategoryid=this.itemForm.value["SubCategoryid"],
       this.item.description=this.itemForm.value["description"],
       this.item.price=Number(this.itemForm.value["Price"]),
@@ -83,8 +83,8 @@ Show:boolean=true;
       console.log(this.item);
       this.itemForm.setValue({
         id:this.item.iid,
-        CategoryId:this.item.categoryId,
-        SubCategoryid:this.item.subCategoryid,
+       // categoryid:this.item.categoryId,
+       // SubCategoryid:this.item.subCategoryid,
         Sid:this.item.sid,
         item_name:this.item.itemName,
         Price:this.item.price,

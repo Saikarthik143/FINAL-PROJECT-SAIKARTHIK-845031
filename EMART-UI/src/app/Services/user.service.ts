@@ -32,4 +32,5 @@ url:string='http://localhost:50605/User/'
    {
      return this.http.get<any>(this.url+'Slogin/'+uname+'/'+pwd,Requestheaders)
    }
+  
 }

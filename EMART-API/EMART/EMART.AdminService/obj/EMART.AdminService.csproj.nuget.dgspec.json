@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\EMART\\EMART.AdminService\\EMART.AdminService.csproj": {}
+    "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\Emart\\EMART.AdminService\\EMART.AdminService.csproj": {}
   },
   "projects": {
-    "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\EMART\\EMART.AdminService\\EMART.AdminService.csproj": {
+    "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\Emart\\EMART.AdminService\\EMART.AdminService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\EMART\\EMART.AdminService\\EMART.AdminService.csproj",
+        "projectUniqueName": "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\Emart\\EMART.AdminService\\EMART.AdminService.csproj",
         "projectName": "EMART.AdminService",
-        "projectPath": "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\EMART\\EMART.AdminService\\EMART.AdminService.csproj",
+        "projectPath": "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\Emart\\EMART.AdminService\\EMART.AdminService.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\EMART\\EMART.AdminService\\obj\\",
+        "outputPath": "E:\\FINAL-PROJECT-SAIKARTHIK-845031\\EMART-API\\Emart\\EMART.AdminService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",

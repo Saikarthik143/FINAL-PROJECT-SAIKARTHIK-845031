@@ -11,6 +11,7 @@ const Requestheaders={headers:new HttpHeaders({
 })
 export class BuyerService {
   url:string='http://localhost:50605/Buyer/'
+  url1:string='http://localhost:50605/Item/'
 
   constructor(private http:HttpClient) { }
   public GetProfile(id:string):Observable<Buyer>
@@ -26,5 +27,8 @@ export class BuyerService {
   }
   public GetItems():Observable<any>{
     return this.http.get<any>(this.url+'GetItems',Requestheaders);
+  }
+  public GetItemById(id:string):Observable<any>{
+    return this.http.get<any>(this.url1+'GetItem/'+id,Requestheaders);
   }
 }

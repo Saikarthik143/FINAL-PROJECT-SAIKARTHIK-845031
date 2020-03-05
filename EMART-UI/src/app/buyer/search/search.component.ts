@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder,Validators } from '@angular/forms';
 import { BuyerService } from 'src/app/Services/buyer.service';
 import { Items } from 'src/app/Models/items';
+import { BuyProductComponent } from '../buy-product/buy-product.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -11,11 +13,12 @@ import { Items } from 'src/app/Models/items';
 export class SearchComponent implements OnInit {
 itemForm:FormGroup;
 list:Items;
-  constructor(private formbuilder:FormBuilder,private service:BuyerService) {
-    this.service.GetItems().subscribe(res=>{
-      this.list=res;
-      console.log(this.list);
-    })
+item:Items;
+  constructor(private route:Router, private formbuilder:FormBuilder,private service:BuyerService) {
+    // this.service.GetItems().subscribe(res=>{
+    //   this.list=res;
+    //   console.log(this.list);
+    // })
    }
 
   ngOnInit() {
@@ -30,6 +33,22 @@ list:Items;
       remarks:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{0,80}$')]],
       Sid:['',[Validators.required]]
     })
+  }
+  Search(name:string){
+    
+    this.service.Search(name).subscribe(res=>{
+      this.list=res;
+      console.log(this.list);
+     
+      }
+
+      )
+    
+  
+  }
+  BuyNow(item:Items){
+    localStorage.setItem('item',JSON.stringify(item));
+    this.route.navigateByUrl('/home/buy-product');
   }
 
 }

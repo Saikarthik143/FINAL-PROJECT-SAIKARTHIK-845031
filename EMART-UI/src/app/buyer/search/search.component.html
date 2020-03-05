@@ -1,26 +1,30 @@
-<table class="table table-bordered">
-    <tr>
-       
-        <th>Itemid</th>
-        <th>ItemName</th>
-        <th>CategoryId</th>
-        <th>SubcategoryId</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th>StockNumber</th>
-        <th>Remarks</th>
-        <th>sid</th>
-    </tr>
-    <tr *ngFor="let i of list">
-        <td>{{i.iid}}</td>
-        <td>{{i.itemName}}</td>
-        <td>{{i.categoryId}}</td>
-        <td>{{i.subCategoryid}}</td>
-        <td>{{i.description}}</td>
-        <td>{{i.price}}</td>
-        <td>{{i.stockNumber}}</td>
-        <td>{{i.remarks}}</td>
-        <td>{{i.sid}}</td>
-    </tr>
-</table>
+
+<div>
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" [(ngModel)]="item_name" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="Search(item_name)" >Search</button>
+</div>
+<div class="container">
+<div class="row">
+     
+<div class="card-deck" >
+    <div class="card"*ngFor="let i of list" style="width:20%;">
+      <img class="card-img-top" src="/assets/images/cloth.jpg" alt="Card image cap">
+      <div class="card-body"  >
+        <h5 class="card-title text-center">Item</h5>
+       <td> ItemId:{{i.iid}}</td><br>
+        <td>ItemName:{{i.itemName}}</td><br>
+       <td> Description:{{i.description}}</td><br>
+       <td>price:{{i.price}}</td><br>
+       <td>Stock:{{i.stockNumber}}</td><br>
+        <td>Remarks:{{i.remarks}}</td>
+      </div>
+      
+      <div class="text-center">
+        <button class="btn btn-primary mr-1">Add</button>
+        <button class="btn btn-primary" (click)="BuyNow(i)">Buy</button>
+    </div>
+    </div>
+   </div>
+    </div>
+  </div>
 

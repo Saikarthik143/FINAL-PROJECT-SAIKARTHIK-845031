@@ -40,7 +40,7 @@ namespace EMART.SellerService.Controllers
             {
                 return Ok(_repo.ViewItems(Sid));
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return NotFound(e.InnerException.Message);
             }

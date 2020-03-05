@@ -8,4 +8,5 @@ export class Items {
     public categoryId:string;
     public  subCategoryid:string;
     public sid:string;
+    public imagename:string;
 }

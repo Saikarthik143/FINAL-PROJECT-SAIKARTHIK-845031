@@ -11,9 +11,9 @@ namespace EMART.UserService.Models
             SubCategory = new HashSet<SubCategory>();
         }
 
-        public string CategoryId { get; set; }
-        public string CategoryName { get; set; }
-        public string BriefDetails { get; set; }
+        public string Categoryid { get; set; }
+        public string Categoryname { get; set; }
+        public string Briefdetails { get; set; }
 
         public virtual ICollection<Items> Items { get; set; }
         public virtual ICollection<SubCategory> SubCategory { get; set; }

@@ -10,7 +10,7 @@
                 <label> Category Name</label>
                 <select formControlName="CategoryId" class="form-control" (change)="GetSubCategory()" [ngClass]="{ 'is-invalid': submitted && f.CategoryId.errors }">
                     <option value=""></option>
-                    <option *ngFor="let item of categorylist" value="{{item.categoryId}}">{{item.categoryName}}</option>
+                    <option *ngFor="let item of categorylist" value="{{item.categoryid}}">{{item.categoryname}}</option>
                     
                 </select>
                 <div *ngIf="submitted && f.CategoryId.errors" class="invalid-feedback">
@@ -87,6 +87,13 @@
                     </div>
                 </div>
            </div>
+           <div class="form-group">
+               <label>Image</label>
+               <input type="file"  (change)="fileEvent($event)">
+           </div>
+           <div class="text-center">
+               
+           </div>
             </div>
             <div class="text-center">
                 <button class="btn btn-primary mr-1">Add</button>
@@ -96,7 +103,7 @@
         </form>
     </div>
 </div>
-           
+      
        
        <router-outlet></router-outlet>
        

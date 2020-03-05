@@ -12,7 +12,7 @@ namespace EMART.SellerService.Models
 
         public string SubCategoryid { get; set; }
         public string SubCategoryName { get; set; }
-        public string CategoryId { get; set; }
+        public string Categoryid { get; set; }
         public string Brief { get; set; }
         public decimal Gst { get; set; }
 
