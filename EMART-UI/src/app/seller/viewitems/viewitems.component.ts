@@ -3,6 +3,7 @@ import { Items } from 'src/app/Models/items';
 import { SellerService } from 'src/app/Services/seller.service';
 import {FormGroup,FormBuilder,Validators} from '@angular/forms';
 import { Category } from 'src/app/Models/category';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-viewitems',
@@ -15,7 +16,8 @@ item:Items;
 itemForm:FormGroup;
 category:Category;
 Show:boolean=true;
-  constructor(private service:SellerService,private formbuilder:FormBuilder) { 
+
+  constructor(private route:Router  ,private service:SellerService,private formbuilder:FormBuilder) { 
    
   }
   Search(){
@@ -34,12 +36,13 @@ Show:boolean=true;
       id:['',[Validators.required,Validators.pattern('^[0-9]{3,8}$')]],
       categoryid:['',[Validators.required]],
       SubCategoryid:['',[Validators.required]],
-      item_name:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{3,20}$')]],
-      description:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{3,20}$')]],
+      itemname:['',[Validators.required,Validators.pattern('^[a-z A-Z0-9]{3,20}$')]],
+      description:['',[Validators.required,Validators.pattern('^[a-z A-Z0-9]{3,20}$')]],
       Price:['',[Validators.required,Validators.pattern('^[1-9][0-9]{3,20}$')]],
-      stock_number:['',[Validators.required,Validators.pattern('^[0-9]{0,20}$')]],
-      remarks:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{0,80}$')]],
-      Sid:['',[Validators.required]]
+      stocknumber:['',[Validators.required,Validators.pattern('^[0-9]{0,20}$')]],
+      remarks:['',[Validators.required,Validators.pattern('^[a-z A-Z0-9]{0,80}$')]],
+      Sid:['',[Validators.required]],
+      imagename:['',[Validators.required]]
     })
     this.Search();
   }
@@ -50,14 +53,15 @@ Show:boolean=true;
     
     this.item=new Items();
       this.item.iid=(this.itemForm.value["id"]),//I+Math.floor(Math.random()*10000)
-      this.item.itemName=this.itemForm.value["item_name"],
+      this.item.itemname=this.itemForm.value["itemname"],
       this.item.categoryId=this.itemForm.value["categoryid"],
       this.item.subCategoryid=this.itemForm.value["SubCategoryid"],
       this.item.description=this.itemForm.value["description"],
       this.item.price=Number(this.itemForm.value["Price"]),
-      this.item.stockNumber=Number(this.itemForm.value["stock_number"]),
+      this.item.stocknumber=Number(this.itemForm.value["stocknumber"]),
       this.item.remarks=this.itemForm.value["remarks"],
       this.item.sid=this.itemForm.value["Sid"],
+      this.item.imagename=this.itemForm.value["imagename"]
       console.log(this.item);
       
       this.service.UpdateItems(this.item).subscribe(res=>{
@@ -75,23 +79,27 @@ Show:boolean=true;
        
       })
     }
-    View(){
-      let id1=this.itemForm.value["id"];
+    View(id:string){
+      let id1=id;
      console.log(id1);
     this.service.GetItems(id1).subscribe(res=>{
       this.item=res;
       console.log(this.item);
-      this.itemForm.setValue({
+      this.itemForm.patchValue({
         id:this.item.iid,
-       // categoryid:this.item.categoryId,
-       // SubCategoryid:this.item.subCategoryid,
+       categoryid:this.item.categoryId,
+       SubCategoryid:this.item.subCategoryid,
         Sid:this.item.sid,
-        item_name:this.item.itemName,
+        itemname:this.item.itemname,
         Price:this.item.price,
         description:this.item.description,
-        stock_number:this.item.stockNumber,
+        stocknumber:this.item.stocknumber,
         remarks:this.item.remarks
       })
     })
+    }
+    Logout(){
+      localStorage.clear();
+      this.route.navigateByUrl('index');
     }
 }

@@ -31,11 +31,11 @@ selectedFile : File = null;
       
       CategoryId:['',[Validators.required]],
       SubCategoryid:[''],
-      item_name:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{3,20}$')]],
-      description:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{3,20}$')]],
+      item_name:['',[Validators.required,Validators.pattern('^[a-z A-Z0-9]{3,20}$')]],
+      description:['',[Validators.required,Validators.pattern('^[a-z A-Z0-9]{3,20}$')]],
       Price:['',[Validators.required,Validators.pattern('^[1-9][0-9]{3,20}$')]],
       stock_number:['',[Validators.required,Validators.pattern('^[0-9]{0,20}$')]],
-      remarks:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{0,80}$')]],
+      remarks:['',[Validators.required,Validators.pattern('^[a-z A-Z0-9]{0,80}$')]],
       Sid:['',[Validators.required]],
       
 
@@ -54,12 +54,12 @@ onSubmit()
   if(this.itemForm.valid){
     this.item=new Items();
     this.item.iid='I'+Math.floor(Math.random()*10000)
-    this.item.itemName=this.itemForm.value["item_name"],
+    this.item.itemname=this.itemForm.value["item_name"],
     this.item.categoryId=this.itemForm.value["CategoryId"],
     this.item.subCategoryid=this.itemForm.value["SubCategoryid"],
     this.item.description=this.itemForm.value["description"],
     this.item.price=Number(this.itemForm.value["Price"]),
-    this.item.stockNumber=Number(this.itemForm.value["stock_number"]),
+    this.item.stocknumber=Number(this.itemForm.value["stock_number"]),
     this.item.remarks=this.itemForm.value["remarks"],
     this.item.sid=this.itemForm.value["Sid"],
     this.item.imagename=this.imagename;

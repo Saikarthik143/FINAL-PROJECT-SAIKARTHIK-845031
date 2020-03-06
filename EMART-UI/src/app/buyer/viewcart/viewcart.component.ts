@@ -1,4 +1,5 @@
  import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-viewcart',
@@ -9,18 +10,12 @@ export class ViewcartComponent implements OnInit {
  
   img:string;
   selectedFile:File=null;
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit() {
   }
-//   On(event){
-//     this.selectedFile=<File>event.target.files[0]
-//   }
-//   onUpload(){
-//     const fd=new FormData();
-//     fd.append('image',this.selectedFile,this.selectedFile.name)
-//   this.http.post('url',fd);
-//   }
-// }
-// }
+  Logout(){
+    localStorage.clear();
+    this.route.navigateByUrl('index');
+  }
 }

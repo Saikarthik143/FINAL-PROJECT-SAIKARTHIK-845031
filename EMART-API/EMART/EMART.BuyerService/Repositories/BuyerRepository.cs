@@ -60,9 +60,16 @@ namespace EMART.BuyerService.Repositories
             return _context.Items.Where(e => e.Itemname== name).ToList();
         }
 
-        public List<Items> SearchByCategory(string name)
+        
+
+        public List<Items> SearchItemByCategory(string id)
         {
-            throw new NotImplementedException();
+            return _context.Items.Where(e => e.Categoryid == id).ToList();
+        }
+
+        public List<Items> SearchItemBySubCategory(string id)
+        {
+            return _context.Items.Where(e => e.SubCategoryid == id).ToList();
         }
     }
 }

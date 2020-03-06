@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormBuilder,Validators} from '@angular/forms';
 import { BuyerService } from 'src/app/Services/buyer.service';
 import { Buyer } from 'src/app/Models/buyer';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-viewprofile',
   templateUrl: './viewprofile.component.html',
@@ -12,7 +13,7 @@ export class ViewprofileComponent implements OnInit {
   submitted:boolean;
   item:Buyer;
   show:boolean;
-  constructor(private formbuilder:FormBuilder,private service:BuyerService) { }
+  constructor(private formbuilder:FormBuilder,private service:BuyerService,private route:Router) { }
 
   ngOnInit() {
     this.EditForm=this.formbuilder.group({
@@ -57,5 +58,8 @@ export class ViewprofileComponent implements OnInit {
     })
 
   }
-
+  Logout(){
+    localStorage.clear();
+    this.route.navigateByUrl('index');
+  }
 }

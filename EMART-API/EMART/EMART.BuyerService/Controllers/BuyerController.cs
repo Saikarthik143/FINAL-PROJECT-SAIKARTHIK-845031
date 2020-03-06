@@ -85,6 +85,32 @@ namespace EMART.BuyerService.Controllers
                 return NotFound(e.Message);
             }
         }
+        [HttpGet]
+        [Route("SearchItemByCategory/{id}")]
+        public IActionResult SearchItemByCategory(string id)
+        {
+            try
+            {
+                return Ok(_repo.SearchItemByCategory(id));
+            }
+            catch(Exception e)
+            {
+                return NotFound(e.InnerException.Message);
+            }
+        }
+        [HttpGet]
+        [Route("SearchItemBySubCategory/{id}")]
+        public IActionResult SearchItemBySubCategory(string id)
+        {
+            try
+            {
+                return Ok(_repo.SearchItemBySubCategory(id));
+            }
+            catch(Exception e)
+            {
+                return NotFound(e.InnerException.Message);
+            }
+        }
         [HttpPost]
         [Route("BuyItem")]
         public IActionResult BuyItem(PurchaseHistory purchase)
@@ -96,7 +122,7 @@ namespace EMART.BuyerService.Controllers
             }
             catch (Exception e)
             {
-                return NotFound(e.Message);
+                return NotFound(e.InnerException.Message);
             }
         }
         [HttpGet]

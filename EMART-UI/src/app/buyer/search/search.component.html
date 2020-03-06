@@ -1,29 +1,43 @@
 
-<div>
+<div class="text-center">
     <input class="form-control mr-sm-2" type="search" placeholder="Search" [(ngModel)]="item_name" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="Search(item_name)" >Search</button>
-</div>
+    <br>
+    <h3>Advance Search</h3>
+
+    <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="Show()">Advance Search</button>
+  </div>
+  <br>
+  <div class="text-center" [hidden]="show">
+    <label>Search By category</label>
+    <select [(ngModel)]="category">
+      <option *ngFor="let item of clist" value="{{item.categoryid}}">{{item.categoryname}}</option>
+    </select>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="SearchByCategory(category)">Search</button>
+  </div>
 <div class="container">
 <div class="row">
      
-<div class="card-deck" >
-    <div class="card"*ngFor="let i of list" style="width:20%;">
+<div class="col-md-4" *ngFor="let i of list">
+    <div class="card " style="width:350px;">
       <img class="card-img-top" src="/assets/images/cloth.jpg" alt="Card image cap">
-      <div class="card-body"  >
+      <div class="card-body"  > 
         <h5 class="card-title text-center">Item</h5>
        <td> ItemId:{{i.iid}}</td><br>
-        <td>ItemName:{{i.itemName}}</td><br>
+        <td>ItemName:{{i.itemname}}</td><br>
        <td> Description:{{i.description}}</td><br>
        <td>price:{{i.price}}</td><br>
-       <td>Stock:{{i.stockNumber}}</td><br>
+       <td>Stock:{{i.stocknumber}}</td><br>
         <td>Remarks:{{i.remarks}}</td>
       </div>
-      
+      <div class="card-footer">
       <div class="text-center">
         <button class="btn btn-primary mr-1">Add</button>
         <button class="btn btn-primary" (click)="BuyNow(i)">Buy</button>
     </div>
     </div>
+    </div>
+    <br>
    </div>
     </div>
   </div>

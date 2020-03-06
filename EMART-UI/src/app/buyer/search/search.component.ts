@@ -4,6 +4,8 @@ import { BuyerService } from 'src/app/Services/buyer.service';
 import { Items } from 'src/app/Models/items';
 import { BuyProductComponent } from '../buy-product/buy-product.component';
 import { Router } from '@angular/router';
+import { Category } from 'src/app/Models/category';
+import { Cart } from 'src/app/Models/cart';
 
 @Component({
   selector: 'app-search',
@@ -12,13 +14,17 @@ import { Router } from '@angular/router';
 })
 export class SearchComponent implements OnInit {
 itemForm:FormGroup;
-list:Items;
+list:Items[];
 item:Items;
+show:boolean=true;
+clist:Category[];
+category:string;
+cart:Cart;
   constructor(private route:Router, private formbuilder:FormBuilder,private service:BuyerService) {
-    // this.service.GetItems().subscribe(res=>{
-    //   this.list=res;
-    //   console.log(this.list);
-    // })
+    this.service.GetCategory().subscribe(res=>{
+      this.clist=res;
+      console.log(this.clist);
+    })
    }
 
   ngOnInit() {
@@ -34,15 +40,16 @@ item:Items;
       Sid:['',[Validators.required]]
     })
   }
+  Show(){
+    this.show=!this.show;
+  }
   Search(name:string){
     
     this.service.Search(name).subscribe(res=>{
       this.list=res;
       console.log(this.list);
      
-      }
-
-      )
+      })
     
   
   }
@@ -50,5 +57,29 @@ item:Items;
     localStorage.setItem('item',JSON.stringify(item));
     this.route.navigateByUrl('/home/buy-product');
   }
+SearchByCategory(id:string){
+  this.service.SearchByCategory(id).subscribe(res=>{
+    this.list=res;
+    console.log(this.list);
 
+  })
+}
+Logout(){
+  localStorage.clear();
+  this.route.navigateByUrl('index');
+}
+  AddtoCart(item1:Items){
+    this.cart=new Cart();
+    this.cart.iid=item1.iid,
+    this.cart.itemname=item1.itemname,
+    this.cart.price=item1.price,
+    this.cart.sid=item1.sid,
+    this.cart.categoryId=item1.categoryId,
+    this.cart.subCategoryid=item1.subCategoryid,
+    this.cart.description=item1.description,
+    this.cart.remarks=item1.remarks,
+    this.cart.stocknumber=item1.stocknumber
+    console.log(this.cart)
+  
+  }
 }

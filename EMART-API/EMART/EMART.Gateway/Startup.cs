@@ -28,6 +28,14 @@ namespace EMART.Gateway
         {
             services.AddControllers();
             services.AddOcelot(Configuration);
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options =>
+                 options.AllowAnyOrigin()
+                         .AllowAnyMethod()
+                         .AllowAnyHeader()
+                        );
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,7 +49,7 @@ namespace EMART.Gateway
             app.UseRouting();
             app.UseOcelot();
             app.UseHttpsRedirection();
-
+            app.UseCors("AllowOrigin");
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

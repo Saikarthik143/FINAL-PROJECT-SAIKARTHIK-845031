@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormBuilder,Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-edit-pro',
   templateUrl: './edit-pro.component.html',
@@ -10,7 +11,7 @@ export class EditProComponent implements OnInit {
   EditForm:FormGroup;
   submitted:boolean;
 
-  constructor(private formbuilder:FormBuilder) { }
+  constructor(private formbuilder:FormBuilder,private route:Router) { }
 
   ngOnInit() {
     this.EditForm=this.formbuilder.group({
@@ -40,5 +41,9 @@ console.log(JSON.stringify(this.EditForm.value));
 onReset(){
   this.submitted=false;
   this.EditForm.reset();
+}
+Logout(){
+  localStorage.clear();
+  this.route.navigateByUrl('index');
 }
 }

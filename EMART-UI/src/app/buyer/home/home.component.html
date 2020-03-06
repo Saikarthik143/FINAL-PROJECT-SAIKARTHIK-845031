@@ -5,12 +5,9 @@
 </div> -->
 <div>
        
-    <img src="assets/images/logo.jpg" alt="Not" style="width: 100px; height: 50px;">
+    <img src="assets/images/logo4.png" alt="Not" style="width: 100px; height: 50px;">
 
-<form>
-                    <input type="text" placeholder="Search..." required>
-               <i class="fa fa-search"></i>
-</form>
+
 </div>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-danger">
@@ -32,7 +29,7 @@
                 <a class="nav-link btn-outline-warning" [routerLink]="['/home/purchase-history']" routerLinkActive="router-link-active" ><span class="glyphicon glyphicon-time"></span>Purchase-History</a>
             </li>
             <li class="col-sm-2 nav-item text-center">
-                <a class="nav-link btn-outline-warning" href="#"><i class="fa fa-fw fa-user"></i>Logout</a>
+                <button class="nav-link btn-outline-warning" (click)="Logout()"><i class="fa fa-fw fa-user"></i>Logout</button>
             </li>
         </ul>
     </div>
