@@ -18,7 +18,7 @@ export class AddItemsComponent implements OnInit {
   items:Items[];
   imagename:string;
 selectedFile : File = null;
-  constructor(private formbuilder:FormBuilder,private service:SellerService) {
+  constructor(private formbuilder:FormBuilder,private service:SellerService ) {
     this.service.GetAllCategories().subscribe(res=>{
       this.categorylist=res;
       console.log(this.categorylist);
@@ -33,10 +33,10 @@ selectedFile : File = null;
       SubCategoryid:[''],
       item_name:['',[Validators.required,Validators.pattern('^[a-z A-Z0-9]{3,20}$')]],
       description:['',[Validators.required,Validators.pattern('^[a-z A-Z0-9]{3,20}$')]],
-      Price:['',[Validators.required,Validators.pattern('^[1-9][0-9]{3,20}$')]],
+      Price:['',[Validators.required,Validators.pattern('^[1-9][0-9]{1,20}$')]],
       stock_number:['',[Validators.required,Validators.pattern('^[0-9]{0,20}$')]],
       remarks:['',[Validators.required,Validators.pattern('^[a-z A-Z0-9]{0,80}$')]],
-      Sid:['',[Validators.required]],
+     // Sid:['',[Validators.required]],
       
 
     })
@@ -49,25 +49,27 @@ onSubmit()
 {
   this.submitted=true;
   this.item=new Items();
+  let sid=localStorage.getItem('sellerid')
   this.item.subCategoryid=this.itemForm.value["SubCategoryid"],
   console.log(this.item.subCategoryid);
   if(this.itemForm.valid){
     this.item=new Items();
     this.item.iid='I'+Math.floor(Math.random()*10000)
     this.item.itemname=this.itemForm.value["item_name"],
-    this.item.categoryId=this.itemForm.value["CategoryId"],
+    this.item.categoryid=this.itemForm.value["CategoryId"],
     this.item.subCategoryid=this.itemForm.value["SubCategoryid"],
     this.item.description=this.itemForm.value["description"],
     this.item.price=Number(this.itemForm.value["Price"]),
     this.item.stocknumber=Number(this.itemForm.value["stock_number"]),
     this.item.remarks=this.itemForm.value["remarks"],
-    this.item.sid=this.itemForm.value["Sid"],
+    this.item.sid=sid,
     this.item.imagename=this.imagename;
     
     console.log(this.item);
     
     this.service.AddItem(this.item).subscribe(res=>{
-      console.log('added');
+      console.log(this.item);
+      alert('added')
       
     },err=>{
       console.log(err);
@@ -94,4 +96,5 @@ onReset(){
   this.submitted=false;
   this.itemForm.reset();
 }
+
 }

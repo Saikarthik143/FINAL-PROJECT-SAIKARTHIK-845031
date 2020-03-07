@@ -45,6 +45,7 @@ onSubmit(){
     console.log(this.subcategory);
     this.service.AddSubCategory(this.subcategory).subscribe(res=>{
       console.log('added')
+      alert('added')
     },err=>{
       console.log(err)
     })

@@ -36,6 +36,7 @@ onSubmit(){
     console.log(this.category);
     this.service.AddCategory(this.category).subscribe(res=>{
       console.log('record added')
+      alert('added')
     },err=>{
       console.log(err)
     })

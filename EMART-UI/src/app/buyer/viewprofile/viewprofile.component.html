@@ -5,14 +5,14 @@
     <div class="card-body">
         <form [formGroup]="EditForm" >
         <div class="offset-4">        
-            <div class="form-group col-6 ">
+            <!-- <div class="form-group col-6 ">
                 <label>ID</label>
                 <input type="text" formControlName="Bid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Bid.errors }" />
                 <div *ngIf="submitted && f.Bid.errors" class="invalid-feedback">
                     <div *ngIf="f.Bid.errors.required">Buyer id is required</div>
                     <div *ngIf="f.Bid.errors.pattern">First char is E</div>
                 </div>
-            </div>
+            </div> -->
                 <div class="form-group col-6">
                     <label>User Name</label>
                     <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />

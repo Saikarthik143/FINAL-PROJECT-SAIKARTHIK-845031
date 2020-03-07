@@ -125,6 +125,20 @@ namespace EMART.BuyerService.Controllers
                 return NotFound(e.InnerException.Message);
             }
         }
+        [HttpPost]
+        [Route("AddtoCart")]
+        public IActionResult AddToCart(Cart cart)
+        {
+            try
+            {
+                _repo.AddToCart(cart);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.InnerException.Message);
+            }
+        }
         [HttpGet]
         [Route("GetCategory")]
         public IActionResult GetCategory()
@@ -134,6 +148,19 @@ namespace EMART.BuyerService.Controllers
                 return Ok(_repo.GetCategories());
             }
             catch(Exception e)
+            {
+                return NotFound(e.Message);
+            }
+        }
+        [HttpGet]
+        [Route("GetCart/{bid}")]
+        public IActionResult GetCart(string bid)
+        {
+            try
+            {
+                return Ok(_repo.GetCarts(bid));
+            }
+            catch (Exception e)
             {
                 return NotFound(e.Message);
             }
@@ -149,6 +176,20 @@ namespace EMART.BuyerService.Controllers
             catch(Exception e)
             {
                 return NotFound(e.Message);
+            }
+        }
+        [HttpDelete]
+        [Route("DeleteCart/{cartid}")]
+        public IActionResult DeleteCart(string cartid)
+        {
+            try
+            {
+                _repo.DeleteCart(cartid);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.InnerException.Message);
             }
         }
     }

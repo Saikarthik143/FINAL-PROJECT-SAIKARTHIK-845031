@@ -15,12 +15,13 @@
     </select>
     <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="SearchByCategory(category)">Search</button>
   </div>
+  <br>
 <div class="container">
 <div class="row">
      
 <div class="col-md-4" *ngFor="let i of list">
     <div class="card " style="width:350px;">
-      <img class="card-img-top" src="/assets/images/cloth.jpg" alt="Card image cap">
+      <img class="card-img-top" src="/assets/images/{{i.imagename}}" alt="Card image cap">
       <div class="card-body"  > 
         <h5 class="card-title text-center">Item</h5>
        <td> ItemId:{{i.iid}}</td><br>
@@ -32,7 +33,7 @@
       </div>
       <div class="card-footer">
       <div class="text-center">
-        <button class="btn btn-primary mr-1">Add</button>
+        <button class="btn btn-primary mr-1" (click)=" AddtoCart(i)">Add</button>
         <button class="btn btn-primary" (click)="BuyNow(i)">Buy</button>
     </div>
     </div>

@@ -30,22 +30,22 @@
   <table class="table table-bordered">
     <tr>
       <th>PurchaseId</th>
-      <th>BuyerId</th>
+    
       <th>SellerId</th>
       <th>Transactiontype</th>
       <th>Itemid</th>
       <th>numberofitems</th>
-      <th>Date</th>
+      
       <th>Remarks</th>
     </tr>
     <tr *ngFor="let item of list">
       <td>{{item.id}}</td>
-      <td>{{item.bid}}</td>
+     
       <td>{{item.sid}}</td>
       <td>{{item.transactiontype}}</td>
         <td>{{item.iid}}</td>
           <td>{{item.numberofitems}}</td>
-          <td>{{item.datetime}}</td>
+          
           <td>{{item.remarks}}</td>
     </tr>
   </table>

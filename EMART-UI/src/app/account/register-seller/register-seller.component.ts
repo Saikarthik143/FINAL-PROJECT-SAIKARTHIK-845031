@@ -18,10 +18,10 @@ seller:Seller;
   ngOnInit() {
     this.registerForm=this.formbuilder.group({
     
-      username:['',[Validators.required,Validators.pattern('^[A-za-z]{3,20}$')]],
+      username:['',[Validators.required,Validators.pattern('^[A-z a-z]{3,20}$')]],
       password:['',[Validators.required,Validators.pattern('^[A-za-z]{7}[~!@#$%^&*()]$')]],
-      companyName:['',[Validators.required,Validators.pattern('^[A-za-z0-9]{3,20}$')]],
-      gstin:['',[Validators.required,Validators.pattern('^[A-za-z0-9]{3,10}$')]],
+      companyName:['',[Validators.required,Validators.pattern('^[A-z a-z0-9]{3,20}$')]],
+      gstin:['',[Validators.required,Validators.pattern('^[A-z a-z0-9]{3,10}$')]],
       briefaboutcompany:['',[Validators.required]],
       address:['',Validators.required],
       website:['',Validators.required],
@@ -52,6 +52,7 @@ onSubmit(){
     console.log(this.seller);
     this.service.AddSeller(this.seller).subscribe(res=>{
       console.log('record added')
+      alert('register success')
     },err=>{
       console.log(err);
     })

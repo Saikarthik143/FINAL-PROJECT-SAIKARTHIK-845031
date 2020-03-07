@@ -16,6 +16,7 @@ namespace EMART.AdminService.Models
         }
 
         public virtual DbSet<Buyer> Buyer { get; set; }
+        public virtual DbSet<Cart> Cart { get; set; }
         public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<Discount> Discount { get; set; }
         public virtual DbSet<Items> Items { get; set; }
@@ -70,6 +71,81 @@ namespace EMART.AdminService.Models
                     .IsRequired()
                     .HasMaxLength(30)
                     .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Cart>(entity =>
+            {
+                entity.Property(e => e.Cartid)
+                    .HasColumnName("cartid")
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Bid)
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Categoryid)
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Description)
+                    .HasColumnName("description")
+                    .HasMaxLength(30)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Iid)
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Imagename)
+                    .HasColumnName("imagename")
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Itemname)
+                    .HasColumnName("itemname")
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Remarks)
+                    .HasColumnName("remarks")
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Sid)
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Stocknumber).HasColumnName("stocknumber");
+
+                entity.Property(e => e.SubCategoryid)
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.B)
+                    .WithMany(p => p.Cart)
+                    .HasForeignKey(d => d.Bid)
+                    .HasConstraintName("FK__Cart__Bid__06CD04F7");
+
+                entity.HasOne(d => d.Category)
+                    .WithMany(p => p.Cart)
+                    .HasForeignKey(d => d.Categoryid)
+                    .HasConstraintName("FK__Cart__Categoryid__03F0984C");
+
+                entity.HasOne(d => d.I)
+                    .WithMany(p => p.Cart)
+                    .HasForeignKey(d => d.Iid)
+                    .HasConstraintName("FK__Cart__Iid__02FC7413");
+
+                entity.HasOne(d => d.S)
+                    .WithMany(p => p.Cart)
+                    .HasForeignKey(d => d.Sid)
+                    .HasConstraintName("FK__Cart__Sid__05D8E0BE");
+
+                entity.HasOne(d => d.SubCategory)
+                    .WithMany(p => p.Cart)
+                    .HasForeignKey(d => d.SubCategoryid)
+                    .HasConstraintName("FK__Cart__SubCategor__04E4BC85");
             });
 
             modelBuilder.Entity<Category>(entity =>
@@ -129,10 +205,6 @@ namespace EMART.AdminService.Models
                 entity.HasKey(e => e.Iid)
                     .HasName("PK__Items__C4962F84E509D502");
 
-                entity.HasIndex(e => e.Imagename)
-                    .HasName("UQ__Items__F2B3DD48CE1999BA")
-                    .IsUnique();
-
                 entity.HasIndex(e => e.Itemname)
                     .HasName("UQ__Items__65E94BE58F86A452")
                     .IsUnique();
@@ -181,16 +253,19 @@ namespace EMART.AdminService.Models
                 entity.HasOne(d => d.Category)
                     .WithMany(p => p.Items)
                     .HasForeignKey(d => d.Categoryid)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK__Items__Categoryi__59FA5E80");
 
                 entity.HasOne(d => d.S)
                     .WithMany(p => p.Items)
                     .HasForeignKey(d => d.Sid)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK__Items__Sid__5BE2A6F2");
 
                 entity.HasOne(d => d.SubCategory)
                     .WithMany(p => p.Items)
                     .HasForeignKey(d => d.SubCategoryid)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK__Items__SubCatego__5AEE82B9");
             });
 
@@ -235,6 +310,7 @@ namespace EMART.AdminService.Models
                 entity.HasOne(d => d.I)
                     .WithMany(p => p.PurchaseHistory)
                     .HasForeignKey(d => d.Iid)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK__PurchaseHis__Iid__60A75C0F");
 
                 entity.HasOne(d => d.S)

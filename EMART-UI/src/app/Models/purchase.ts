@@ -5,7 +5,8 @@ export class Purchase {
     transactiontype:string;
     iid:string;
     numberofitems:number;
-    datetime:string;
+    datetime:Date;
     remarks:string;
+    cartid:string
 }
 

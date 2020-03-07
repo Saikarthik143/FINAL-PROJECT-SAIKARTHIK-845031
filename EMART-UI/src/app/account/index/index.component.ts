@@ -48,8 +48,10 @@ this.loginForm=this.formbuilder.group({
       
       //buyer login
       
-       
-       if(role=='buyer'){
+      if(role=='buyer'||role=='seller')
+       {
+       if(role=='buyer')
+       {
         let token=new Token();
       this.service.BuyerLogin(uname,pass).subscribe(res=>{
       
@@ -60,7 +62,7 @@ this.loginForm=this.formbuilder.group({
       if(token.message=='success')
     {
       localStorage.setItem('buyerid',token.buyerid);
-     
+     alert('login success')
       this.route.navigateByUrl("home");
     }
     else {
@@ -70,7 +72,7 @@ this.loginForm=this.formbuilder.group({
     });
   }
     //seller login
-    if(role=='seller')
+    else if(role=='seller')
     {
       let token=new Token();
     this.service.SellerLogin(uname,pass).subscribe(res=>{
@@ -79,6 +81,7 @@ this.loginForm=this.formbuilder.group({
       if(token.message=='success')
       {
         localStorage.setItem('sellerid',token.sellerid);
+        alert('login success')
         this.route.navigateByUrl("shome");
       }
       else{
@@ -87,8 +90,10 @@ this.loginForm=this.formbuilder.group({
      
     });
   }
+}
+  else
   if(uname=="Admin" &&pass=="12345"){
-     
+     alert('login success')
     this.route.navigateByUrl("admin-home");
    }
      }

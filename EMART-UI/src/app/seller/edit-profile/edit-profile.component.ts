@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormBuilder,Validators} from '@angular/forms';
 import { Seller } from 'src/app/Models/seller';
 import { SellerService } from 'src/app/Services/seller.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.component.html',
@@ -11,7 +12,7 @@ export class EditProfileComponent implements OnInit {
   Editform:FormGroup;
   submitted:boolean;
   item:Seller
-  constructor(private formbuilder:FormBuilder,private service:SellerService) {
+  constructor(private formbuilder:FormBuilder,private service:SellerService,private route:Router) {
     
     //console.log(this.item);
    }
@@ -83,5 +84,9 @@ GetProfile(){
 onReset(){
   this.submitted=false;
   this.Editform.reset();
+}
+Logout(){
+  localStorage.clear();
+  this.route.navigateByUrl('index');
 }
 }

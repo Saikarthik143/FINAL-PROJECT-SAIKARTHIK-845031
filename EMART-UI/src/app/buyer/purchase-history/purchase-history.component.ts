@@ -9,8 +9,13 @@ import { Purchase } from 'src/app/Models/purchase';
   styleUrls: ['./purchase-history.component.css']
 })
 export class PurchaseHistoryComponent implements OnInit {
-list:Purchase;
+list:Purchase[];
   constructor(private service:BuyerService,private route:Router) {
+    let bid=localStorage.getItem('buyerid');
+    this.service.PurchaseHistory(bid).subscribe(res=>{
+      this.list=res;
+      console.log(this.list);
+    })
    
    }
 

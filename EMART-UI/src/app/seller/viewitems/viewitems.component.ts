@@ -52,15 +52,16 @@ Show:boolean=true;
   Update(){
     
     this.item=new Items();
+    let sid=localStorage.getItem('sellerid')
       this.item.iid=(this.itemForm.value["id"]),//I+Math.floor(Math.random()*10000)
       this.item.itemname=this.itemForm.value["itemname"],
-      this.item.categoryId=this.itemForm.value["categoryid"],
+      this.item.categoryid=this.itemForm.value["categoryid"],
       this.item.subCategoryid=this.itemForm.value["SubCategoryid"],
       this.item.description=this.itemForm.value["description"],
       this.item.price=Number(this.itemForm.value["Price"]),
       this.item.stocknumber=Number(this.itemForm.value["stocknumber"]),
       this.item.remarks=this.itemForm.value["remarks"],
-      this.item.sid=this.itemForm.value["Sid"],
+      this.item.sid=sid,
       this.item.imagename=this.itemForm.value["imagename"]
       console.log(this.item);
       
@@ -72,10 +73,11 @@ Show:boolean=true;
       })
      
     }
-    Delete(){
-      let id=this.itemForm.value["id"]
+    Delete(id:string){
+     
       this.service.Delete(id).subscribe(res=>{
         console.log('deleted');
+        alert('deletd')
        
       })
     }
@@ -87,14 +89,15 @@ Show:boolean=true;
       console.log(this.item);
       this.itemForm.patchValue({
         id:this.item.iid,
-       categoryid:this.item.categoryId,
+       categoryid:this.item.categoryid,
        SubCategoryid:this.item.subCategoryid,
         Sid:this.item.sid,
         itemname:this.item.itemname,
         Price:this.item.price,
         description:this.item.description,
         stocknumber:this.item.stocknumber,
-        remarks:this.item.remarks
+        remarks:this.item.remarks,
+        imagename:this.item.imagename
       })
     })
     }

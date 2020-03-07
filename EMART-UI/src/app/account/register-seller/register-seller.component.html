@@ -44,7 +44,7 @@
                     <label>Brief about company</label>
                     <textarea rows="4" cols="50"formControlName="briefaboutcompany" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.briefaboutcompany.errors }" ></textarea>
                     <div *ngIf="submitted && f.briefaboutcompany.errors" class="invalid-feedback">
-                        <div *ngIf="f.briefaboutcompany.errors.required">  is required</div>
+                        <div *ngIf="f.briefaboutcompany.errors.required"> Field  is required</div>
                         
                     </div>
                 </div>

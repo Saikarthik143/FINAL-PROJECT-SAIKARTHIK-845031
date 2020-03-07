@@ -5,19 +5,17 @@
 </div> -->
 <div>
        
-    <img src="assets/images/logo4.png" alt="Not" style="width: 100px; height: 50px;">
+  <a [routerLink]="['/home']">   <img src="assets/images/logo4.png" alt="Not" style="width: 100px; height: 50px;">
 
-
+</a>
 </div>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-danger">
     <div class="col">
         <ul class="nav row nav pills">
+           
             <li class="col-sm-2 nav-item text-center">
-                <a class="nav-link btn-outline-warning" href="#"><i class="fa fa-fw fa-home"></i>Home </a>
-            </li>
-            <li class="col-sm-2 nav-item text-center">
-                <a class="nav-link btn-outline-warning" [routerLink]="['/home/search']"  ><span class="glyphicon glyphicon-sunglasses"></span>View Cart</a>
+                <a class="nav-link btn-outline-warning" [routerLink]="['/home/search']"  ><span class="glyphicon glyphicon-sunglasses"></span>Search</a>
             </li>
             <li class="col-sm-2 nav-item text-center">
                 <a class="nav-link btn-outline-warning" [routerLink]="['/home/viewprofile']" ><i class="fa fa-fw fa-user "></i>ViewProfile</a>
@@ -29,7 +27,10 @@
                 <a class="nav-link btn-outline-warning" [routerLink]="['/home/purchase-history']" routerLinkActive="router-link-active" ><span class="glyphicon glyphicon-time"></span>Purchase-History</a>
             </li>
             <li class="col-sm-2 nav-item text-center">
-                <button class="nav-link btn-outline-warning" (click)="Logout()"><i class="fa fa-fw fa-user"></i>Logout</button>
+                <a class="nav-link btn-outline-warning" [routerLink]="['/home/viewcart']"  >View cart</a>
+            </li>
+            <li class="col-sm-2 nav-item text-center">
+                <button class="nav-link btn-outline-warning" (click)="Logout()"><i class="fa fa-fw fa-home"></i>Logout </button>
             </li>
         </ul>
     </div>
