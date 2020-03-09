@@ -14,6 +14,8 @@ export class ViewcartComponent implements OnInit {
  item:Items
   
   constructor(private route:Router,private service:BuyerService) {
+    if(localStorage.getItem('buyerid'))
+    {
     let buyerid=localStorage.getItem('buyerid');
     this.service.GetCarts(buyerid).subscribe(res=>{
       this.cartlist=res;
@@ -21,6 +23,12 @@ export class ViewcartComponent implements OnInit {
     },err=>{
       console.log(err)
     })
+    }
+    else 
+    {
+      alert(' please login in first');
+      this.route.navigateByUrl('index');
+    }
    }
 
   ngOnInit() {

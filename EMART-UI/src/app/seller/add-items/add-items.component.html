@@ -1,8 +1,14 @@
-<div class="card m-3">
-    <h5 class="card-header bg-info text-center">add Items</h5>
-    <div class="card-body bg-light">
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+
+<div class="card m-3 col-6" style="background-color: #d0c9c3; border-radius: 1.5rem;"><marquee direction="rtl">
+    <p>Add Items</p>
+</marquee>
+    <h3 class="card-header  text-center" style="background-color: #414654;color: whitesmoke; border-radius: 1.5rem;">Add Items form</h3>
+    <div class="card-body ">
         <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
-            <div class="offset-2">
+        
            <div class="row">
             
            
@@ -25,33 +31,34 @@
                     
                 </select>
                 <div *ngIf="submitted && f.SubCategoryid.errors" class="invalid-feedback">
-                    <div *ngIf="f.SubCategoryid.errors.required">category is required</div>
+                    <div *ngIf="f.SubCategoryid.errors.required"> Subcategory is required</div>
                 </div>
             </div>
     
             </div>
             <div class="row">
-                <div class="form-group col-6">
+                <div class="form-group col-12">
                     <label>Item Name</label>
-                    <input type="text" formControlName="item_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.item_name.errors }" />
+                    <input type="text" formControlName="item_name" placeholder="Eg:oneplus7t" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.item_name.errors }" />
                     <div *ngIf="submitted && f.item_name.errors" class="invalid-feedback">
                         <div *ngIf="f.item_name.errors.required"> Name is required</div>
                         <div *ngIf="f.item_name.errors.pattern">please Enter valid details</div>
                     </div>
                 </div>
+                
+            </div>
+            <div class="row">
                 <div class="form-group col-6">
                     <label>Price</label>
-                    <input type="text" formControlName="Price" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Price.errors }" />
+                    <input type="text" formControlName="Price" placeholder="Eg:1000" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Price.errors }" />
                     <div *ngIf="submitted && f.Price.errors" class="invalid-feedback">
                         <div *ngIf="f.Price.errors.required">price is required</div>
                         <div *ngIf="f.Price.errors.pattern">Enter only digits</div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
                 <div class="form-group col-6">
                     <label>Stock</label>
-                    <input type="text" formControlName="stock_number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.stock_number.errors }" />
+                    <input type="text" formControlName="stock_number" placeholder="Eg:3" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.stock_number.errors }" />
                     <div *ngIf="submitted && f.stock_number.errors" class="invalid-feedback">
                         <div *ngIf="f.stock_number.errors.required">quantity is required</div>
                         <div *ngIf="f.stock_number.errors.pattern">Enter only digits</div>
@@ -59,10 +66,11 @@
                 </div>
             
         
-           
-                <div class="form-group col-6">
+            </div>
+            <div class="row">
+                <div class="form-group col-12 text-center">
                     <label>description</label>
-                    <input type="text" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
+                    <textarea  row="5" col="40" formControlName="description"  placeholder="Eg:6000mah" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" ></textarea>
                     <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
                         <div *ngIf="f.description.errors.required">Descripton is required</div>
                         <div *ngIf="f.description.errors.pattern"> must be a valid </div>
@@ -71,9 +79,9 @@
             </div>
             
            <div class="row">
-                <div class="form-group col-10 text-center">
+                <div class="form-group col-12 text-center">
                     <label>remarks</label>
-                    <input type="text" formControlName="remarks" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.remarks.errors }" />
+                    <textarea type="text" formControlName="remarks" placeholder="Eg:good" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.remarks.errors }" ></textarea>
                     <div *ngIf="submitted && f.remarks.errors" class="invalid-feedback">
                         <div *ngIf="f.remarks.errors.required"> is required</div>
                     </div>
@@ -89,12 +97,12 @@
            </div>
            <div class="form-group">
                <label>Image</label>
-               <input type="file"  (change)="fileEvent($event)">
+               <input type="file"  (change)="fileEvent($event)" >
            </div>
            <div class="text-center">
                
            </div>
-            </div>
+            
             <div class="text-center">
                 <button class="btn btn-primary mr-1">Add</button>
                 <button class="btn btn-danger" type="reset" (click)="onReset()">Reset</button>
@@ -103,11 +111,9 @@
         </form>
     </div>
 </div>
-      
+<div class="col-3"></div>
+      </div>
+</div>
        
        <router-outlet></router-outlet>
        
-         
-               
-               
-        

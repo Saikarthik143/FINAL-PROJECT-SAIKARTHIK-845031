@@ -1,9 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="card m-3 col-6"  style="background-color: #d0c9c3; border-radius: 1.5rem;"><marquee direction="rtl">
+            <p>Edit Form</p>
+        </marquee>
+    <h5 class="card-header text-center" style="background-color: #414654; color: whitesmoke; border-radius: 1.5rem;">Seller Edit form</h5>
 
-<div class="card m-3">
-    <h5 class="card-header text-center">seller Register form</h5>
     <div class="card-body">
         <form [formGroup]="Editform" (ngSubmit)="onSubmit()">
-          <div class="row"> 
+           
+          <!-- <div class="row"> 
             <div class="form-group col-2">
                 <label>ID</label>
                 <input type="text" formControlName="Sid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Sid.errors }" />
@@ -19,8 +25,9 @@
                         <div *ngIf="f.Username.errors.required"> Name is required</div>
                         <div *ngIf="f.Username.errors.pattern">Enter only Alphabets</div>
                     </div>
-                </div>
-                <div class="form-group col-5">
+                </div> -->
+                <div class="row">
+                <div class="form-group col-6">
                     <label>Password</label>
                     <input type="password" maxlength="8" formControlName="Password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Password.errors }" />
                     <div *ngIf="submitted && f.Password.errors" class="invalid-feedback">
@@ -28,8 +35,6 @@
                         <div *ngIf="f.Password.errors.pattern">Password must be 8 letters and last digit is special character</div>
                     </div>
                 </div>
-          </div>
-          <div class="row">
                 <div class="form-group col-6">
                     <label>Company Name</label>
                     <input type="text" formControlName="CompanyName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.CompanyName.errors }" />
@@ -38,6 +43,17 @@
                         <div *ngIf="f.CompanyName.errors.pattern">Enter only Alphabets</div>
                     </div>
                 </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-6">
+                <label>Email</label>
+                <input type="text" formControlName="Emailid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Emailid.errors }" />
+                <div *ngIf="submitted && f.Emailid.errors" class="invalid-feedback">
+                    <div *ngIf="f.Emailid.errors.required">Email is required</div>
+                    <div *ngIf="f.Emailid.errors.email">Email must be a valid email address</div>
+                </div>
+            </div>
+                
                 <div class="form-group col-6">
                     <label>Gstin</label>
                     <input type="text" formControlName="Gstin" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Gstin.errors }" />
@@ -49,7 +65,7 @@
           </div>
                 <div class="form-group col">
                     <label>Brief about company</label>
-                    <input type="text" formControlName="Briefaboutcompany" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Briefaboutcompany.errors }" />
+                    <textarea row="5" col="40" type="text" formControlName="Briefaboutcompany" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Briefaboutcompany.errors }" ></textarea>
                     <div *ngIf="submitted && f.Briefaboutcompany.errors" class="invalid-feedback">
                         <div *ngIf="f.Briefaboutcompany.errors.required">  is required</div>
                         
@@ -64,14 +80,14 @@
                     </div>
                 </div>
                 <div class="row">
-                <div class="form-group col-6">
-                    <label>Email</label>
-                    <input type="text" formControlName="Emailid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Emailid.errors }" />
-                    <div *ngIf="submitted && f.Emailid.errors" class="invalid-feedback">
-                        <div *ngIf="f.Emailid.errors.required">Email is required</div>
-                        <div *ngIf="f.Emailid.errors.email">Email must be a valid email address</div>
+                    <div class="form-group col-6">
+                        <label>WebSite</label>
+                        <input type="text" formControlName="Website" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Website.errors }" />
+                        <div *ngIf="submitted && f.Website.errors" class="invalid-feedback">
+                            <div *ngIf="f.Website.errors.required">company Name is required</div>
+                            <div *ngIf="f.Website.errors.pattern">Enter only Alphabets</div>
+                        </div>
                     </div>
-                </div>
                
             
            
@@ -86,14 +102,7 @@
         </div>
            
        
-        <div class="form-group col-6">
-            <label>WebSite</label>
-            <input type="text" formControlName="Website" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Website.errors }" />
-            <div *ngIf="submitted && f.Website.errors" class="invalid-feedback">
-                <div *ngIf="f.Website.errors.required">company Name is required</div>
-                <div *ngIf="f.Website.errors.pattern">Enter only Alphabets</div>
-            </div>
-        </div>
+       
                
                
         
@@ -102,7 +111,10 @@
                 <button class="btn btn-primary" (click)="EditProfile()">Update</button>
                
             </div>
+      
         </form>
     </div>
 </div>
-
+<div class="col-3"></div>
+</div>
+</div>

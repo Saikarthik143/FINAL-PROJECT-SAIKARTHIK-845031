@@ -59,7 +59,10 @@ namespace EMART.BuyerService.Repositories
             return _context.Buyer.Find(bid);
         }
 
-       
+        public PurchaseHistory GetpurchaseHistory(string id)
+        {
+            return _context.PurchaseHistory.Find(id);
+        }
 
         public List<SubCategory> GetSubCategories(string CategoryId)
         {

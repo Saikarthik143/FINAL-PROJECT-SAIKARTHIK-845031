@@ -11,7 +11,15 @@ export class EditProComponent implements OnInit {
   EditForm:FormGroup;
   submitted:boolean;
 
-  constructor(private formbuilder:FormBuilder,private route:Router) { }
+  constructor(private formbuilder:FormBuilder,private route:Router) { 
+    if(localStorage.getItem('buyerid'))
+    {}
+    else 
+    {
+      alert(' please login in first');
+      this.route.navigateByUrl('index');
+    }
+  }
 
   ngOnInit() {
     this.EditForm=this.formbuilder.group({

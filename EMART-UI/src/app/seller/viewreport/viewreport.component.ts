@@ -8,7 +8,15 @@ import { Router } from '@angular/router';
 })
 export class ViewreportComponent implements OnInit {
 
-  constructor(private route:Router) { }
+  constructor(private route:Router) {
+    if(localStorage.getItem('sellerid'))
+    {}
+    else 
+    {
+      alert(' please login in first');
+      this.route.navigateByUrl('index');
+    }
+   }
 
   ngOnInit() {
   }

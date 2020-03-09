@@ -4,6 +4,7 @@ import { SellerService } from 'src/app/Services/seller.service';
 import { Items } from 'src/app/Models/items';
 import { Category } from 'src/app/Models/category';
 import { SubCategory } from 'src/app/Models/sub-category';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-items',
   templateUrl: './add-items.component.html',
@@ -18,12 +19,18 @@ export class AddItemsComponent implements OnInit {
   items:Items[];
   imagename:string;
 selectedFile : File = null;
-  constructor(private formbuilder:FormBuilder,private service:SellerService ) {
+  constructor(private formbuilder:FormBuilder,private service:SellerService,private route:Router ) {
     this.service.GetAllCategories().subscribe(res=>{
       this.categorylist=res;
       console.log(this.categorylist);
     })
-    
+    if(localStorage.getItem('sellerid'))
+    {}
+    else 
+    {
+      alert(' please login in first');
+      this.route.navigateByUrl('index');
+    }
    }
    
   ngOnInit() {

@@ -13,7 +13,15 @@ export class ViewprofileComponent implements OnInit {
   submitted:boolean;
   item:Buyer;
   show:boolean;
-  constructor(private formbuilder:FormBuilder,private service:BuyerService,private route:Router) { }
+  constructor(private formbuilder:FormBuilder,private service:BuyerService,private route:Router) { 
+    if(localStorage.getItem('buyerid'))
+    {}
+    else 
+    {
+      alert(' please login in first');
+      this.route.navigateByUrl('index');
+    }
+  }
 
   ngOnInit() {
     this.EditForm=this.formbuilder.group({

@@ -178,6 +178,19 @@ namespace EMART.BuyerService.Controllers
                 return NotFound(e.Message);
             }
         }
+        [HttpGet]
+        [Route("GetPurchase/{pid}")]
+        public IActionResult GetPurchase(string pid)
+        {
+            try
+            {
+                return Ok(_repo.GetpurchaseHistory(pid));
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
+        }
         [HttpDelete]
         [Route("DeleteCart/{cartid}")]
         public IActionResult DeleteCart(string cartid)

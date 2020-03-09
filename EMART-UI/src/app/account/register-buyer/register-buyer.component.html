@@ -1,29 +1,25 @@
-<div>
-    <marquee direction="rtl">
-        <p>register-buyer works!</p>
-    </marquee>
-</div>
 <div class="container">
+    <div class="row">
+        <div class="col-3"></div>
     
-    
-        <div class="card m-3" style="background-color: #d0c9c3;"><marquee direction="rtl">
+        <div class="card m-3 col-6" style="background-color: #d0c9c3; border-radius: 1.5rem;"><marquee direction="rtl">
             <p>register-buyer works!</p>
         </marquee>
-    <h3 class="card-header text-center" style="background-color: #414654;color: whitesmoke;">Buyer Register form</h3>
+    <h3 class="card-header text-center" style="background-color: #414654;color: whitesmoke; border-radius: 1.5rem;">Buyer Register form</h3>
     <div class="card-body">
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-            <div class="offset-4"> 
+            <div class="offset-2"> 
               
             
-                <div class="form-group col-6">
-                    <label>User Name</label>
+                <div class="form-group col-10 ">
+                    <label class="a">User Name</label>
                     <input type="text" placeholder="Username" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
                     <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
                         <div *ngIf="f.username.errors.required"> Name is required</div>
                         <div *ngIf="f.username.errors.pattern">Enter only Alphabets</div>
                     </div>
                 </div>
-                <div class="form-group col-6">
+                <div class="form-group col-10">
                     <label>Password</label>
                     <input type="password" placeholder="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
                     <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
@@ -33,7 +29,7 @@
                 </div>
         
            
-                <div class="form-group col-6">
+                <div class="form-group col-10">
                     <label>Email</label>
                     <input type="text" placeholder="Email" formControlName="emailid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.emailid.errors }" />
                     <div *ngIf="submitted && f.emailid.errors" class="invalid-feedback">
@@ -46,16 +42,16 @@
                
             
            
-            <div class="form-group col-6">
+            <div class="form-group col-10">
                 <label>Mobile</label>
-                <input type="text" placeholder="Mobile" formControlName="mobile" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" />
+                <input type="text" placeholder="Mobile" maxlength="10" formControlName="mobile" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" />
                 <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
                     <div *ngIf="f.mobile.errors.required">Mobile no is required</div>
                     <div *ngIf="f.mobile.errors.pattern">Mobile no Must be Valid</div>
                 </div>
             </div>
         
-            <div class="form-group col-6">
+            <div class="form-group col-10">
                 <label>Date</label>
                 <input type="date" formControlName="createdatetime" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.createdatetime.errors }" />
                 <div *ngIf="submitted && f.createdatetime.errors" class="invalid-feedback">
@@ -76,9 +72,10 @@
             </div>
         </form>
     </div>
+        </div>
+    <div class="col-3"></div>
   </div>
 </div>
 
 <router-outlet></router-outlet>
-
 

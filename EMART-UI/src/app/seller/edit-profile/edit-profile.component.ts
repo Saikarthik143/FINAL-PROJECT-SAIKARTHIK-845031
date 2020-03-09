@@ -15,6 +15,13 @@ export class EditProfileComponent implements OnInit {
   constructor(private formbuilder:FormBuilder,private service:SellerService,private route:Router) {
     
     //console.log(this.item);
+    if(localStorage.getItem('buyerid'))
+    {}
+    else 
+    {
+      alert(' please login in first');
+      this.route.navigateByUrl('index');
+    }
    }
 
   ngOnInit() {

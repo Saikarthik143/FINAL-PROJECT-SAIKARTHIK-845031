@@ -18,7 +18,13 @@ category:Category;
 Show:boolean=true;
 
   constructor(private route:Router  ,private service:SellerService,private formbuilder:FormBuilder) { 
-   
+    if(localStorage.getItem('sellerid'))
+    {}
+    else 
+    {
+      alert(' please login in first');
+      this.route.navigateByUrl('index');
+    }
   }
   Search(){
   let id=localStorage.getItem('sellerid');

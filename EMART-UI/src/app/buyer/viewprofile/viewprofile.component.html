@@ -1,10 +1,14 @@
-<p>viewprofile works!</p>
 
-<div class="card m-3">
-    <h5 class="card-header">Buyer Register form</h5>
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+<div class="card m-3 col-6"  style="background-color: #d0c9c3; border-radius: 1.5rem;"><marquee direction="rtl">
+    <p>register-buyer works!</p>
+</marquee>
+    <h3 class="card-header" style="background-color: #414654;color: whitesmoke; border-radius: 1.5rem;">Buyer Register form</h3>
     <div class="card-body">
         <form [formGroup]="EditForm" >
-        <div class="offset-4">        
+        <div class="offset-1">        
             <!-- <div class="form-group col-6 ">
                 <label>ID</label>
                 <input type="text" formControlName="Bid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Bid.errors }" />
@@ -13,7 +17,7 @@
                     <div *ngIf="f.Bid.errors.pattern">First char is E</div>
                 </div>
             </div> -->
-                <div class="form-group col-6">
+                <div class="form-group ">
                     <label>User Name</label>
                     <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
                     <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
@@ -21,7 +25,7 @@
                         <div *ngIf="f.username.errors.pattern">Enter only Alphabets</div>
                     </div>
                 </div>
-                <div class="form-group col-6">
+                <div class="form-group ">
                     <label>Password</label>
                     <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
                     <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
@@ -31,7 +35,7 @@
                 </div>
         
            
-                <div class="form-group col-6">
+                <div class="form-group ">
                     <label>Email</label>
                     <input type="text" formControlName="emailid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.emailid.errors }" />
                     <div *ngIf="submitted && f.emailid.errors" class="invalid-feedback">
@@ -42,7 +46,7 @@
                
             
            
-            <div class="form-group col-6">
+            <div class="form-group ">
                 <label>Mobile</label>
                 <input type="text" formControlName="mobile" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" />
                 <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
@@ -51,7 +55,7 @@
                 </div>
             </div>
         
-            <div class="form-group col-6">
+            <div class="form-group ">
                 <label>Date</label>
                 <input type="text" formControlName="createdatetime" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.createdatetime.errors }" />
                 <div *ngIf="submitted && f.createdatetime.errors" class="invalid-feedback">
@@ -68,8 +72,11 @@
        
             <div class="text-center">
                 <button class="btn btn-primary mr-1" (click)="EditProfile()">Update</button>
-                <button class="btn btn-danger" type="reset" (click)="onReset()">Reset</button>
+                <!-- <button class="btn btn-danger" type="reset" (click)="onReset()">Reset</button> -->
             </div>
         </form>
     </div>
+</div>
+<div class="col-3"></div>
+</div>
 </div>

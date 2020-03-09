@@ -11,12 +11,20 @@ import { Purchase } from 'src/app/Models/purchase';
 export class PurchaseHistoryComponent implements OnInit {
 list:Purchase[];
   constructor(private service:BuyerService,private route:Router) {
+    if(localStorage.getItem('buyerid'))
+    {
+   
     let bid=localStorage.getItem('buyerid');
     this.service.PurchaseHistory(bid).subscribe(res=>{
       this.list=res;
       console.log(this.list);
     })
-   
+  }
+    else 
+    {
+      alert(' please login in first');
+      this.route.navigateByUrl('index');
+    }
    }
 
   ngOnInit() {
