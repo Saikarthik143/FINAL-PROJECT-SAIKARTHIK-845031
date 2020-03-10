@@ -62,6 +62,7 @@ this.loginForm=this.formbuilder.group({
       if(token.message=='success')
     {
       localStorage.setItem('buyerid',token.buyerid);
+      localStorage.setItem('username',token.uname);
      alert('login success')
       this.route.navigateByUrl("home");
     }
@@ -81,6 +82,7 @@ this.loginForm=this.formbuilder.group({
       if(token.message=='success')
       {
         localStorage.setItem('sellerid',token.sellerid);
+        localStorage.setItem('username',token.uname);
         alert('login success')
         this.route.navigateByUrl("shome");
       }

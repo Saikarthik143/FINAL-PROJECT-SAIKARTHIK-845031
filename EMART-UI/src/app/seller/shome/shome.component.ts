@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./shome.component.css']
 })
 export class SHomeComponent implements OnInit {
-
+username:string;
   constructor(private route:Router) {
     if(localStorage.getItem('sellerid'))
     {}

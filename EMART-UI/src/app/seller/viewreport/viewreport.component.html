@@ -1,1 +1,17 @@
-<p>viewreport works!</p>
+<div class="container">
+    <br>
+    <table class="table table-bordered">
+        <tr style="background-color: yellow;">
+            <th>Sold ItemId</th>
+            <th>Quantity</th>
+            <th>Transactiontype</th>
+            <th>Transaction Id</th>
+        </tr>
+        <tr *ngFor="let item of plist">
+            <td>{{item.iid}}</td>
+            <td>{{item.numberofitems}}</td>
+            <td>{{item.transactiontype}}</td>
+            <td>{{item.id}}</td>
+        </tr>
+    </table>
+</div>

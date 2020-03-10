@@ -20,16 +20,16 @@
                 <a class="nav-link btn-outline-warning" [routerLink]="['/shome/edit-profile']" ><i class="fa fa-fw fa-user"></i>Edit Profile</a>
             </li>
             <li class="col-sm-2 nav-item text-center">
-                <a class="nav-link btn-outline-warning"><span class="glyphicon glyphicon-time"></span>viewreport</a>
+                <a class="nav-link btn-outline-warning" [routerLink]="['/shome/viewreport']" ><span class="glyphicon glyphicon-time"></span>viewreport</a>
             </li>
             <li class="col-sm-2 nav-item text-center">
-                <button class="nav-link btn-outline-primary" (click)="Logout()"><i class="fa fa-fw fa-user"></i>Logout</button>
+                <button class="nav-link btn-outline-warning" (click)="Logout()"><i class="fa fa-fw fa-user"></i>Logout</button>
             </li>
         </ul>
     </div>
 </nav>
-<div class="container">
-<div class="row">
+<!-- <div class="container">
+<div class="row"> -->
     <!-- <aside class="col-3 back" >
         
 
@@ -39,6 +39,6 @@
 
 
 <router-outlet></router-outlet>
-</div>
+<!-- </div>
 
-</div> 
+</div>  -->

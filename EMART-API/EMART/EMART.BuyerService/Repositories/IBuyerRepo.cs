@@ -19,6 +19,8 @@ namespace EMART.BuyerService.Repositories
         List<SubCategory> GetSubCategories(string CategoryId);
         List<Items> GetItems();
         void  AddToCart(Cart cart);
+        int GetCount(string bid);
+        bool CheckCartItem(string buyerid, string itemid);
         List<Cart> GetCarts(string bid);
         void DeleteCart(string cartid);
         PurchaseHistory GetpurchaseHistory(string id);

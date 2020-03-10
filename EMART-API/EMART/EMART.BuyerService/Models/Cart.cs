@@ -20,8 +20,5 @@ namespace EMART.BuyerService.Models
 
         public virtual Buyer B { get; set; }
         public virtual Category Category { get; set; }
-        public virtual Items I { get; set; }
-        public virtual Seller S { get; set; }
-        public virtual SubCategory SubCategory { get; set; }
     }
 }

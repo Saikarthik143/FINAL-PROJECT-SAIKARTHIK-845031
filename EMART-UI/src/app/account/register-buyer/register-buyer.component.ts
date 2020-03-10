@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormBuilder,Validators} from '@angular/forms';
 import { UserService } from 'src/app/Services/user.service';
 import { Buyer } from 'src/app/Models/buyer';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-register-buyer',
   templateUrl: './register-buyer.component.html',
@@ -13,7 +14,7 @@ export class RegisterBuyerComponent implements OnInit {
   buyer:Buyer;
   list:Buyer[]
 
-  constructor(private formbuilder:FormBuilder,private service:UserService) { }
+  constructor(private formbuilder:FormBuilder,private service:UserService,private route:Router) { }
 
   ngOnInit() {
     this.registerForm=this.formbuilder.group({
@@ -46,12 +47,13 @@ onSubmit()
     this.service.AddBuyer(this.buyer).subscribe(res=>{
       console.log('record added')
       alert('register success')
+      this.route.navigateByUrl('index');
     },err=>{
       console.log(err);
     })
 
    
-    alert("register successful")
+   
 
   }
 }

@@ -26,6 +26,17 @@ namespace EMART.BuyerService.Repositories
             _context.SaveChanges();
         }
 
+        public bool CheckCartItem(string buyerid, string itemid)
+        {
+            Cart cart = _context.Cart.SingleOrDefault(e => e.Bid == buyerid && e.Iid == itemid);
+            if (cart != null)
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
         public void DeleteCart(string cartid)
         {
             Cart cart = _context.Cart.Find(cartid);
@@ -47,6 +58,11 @@ namespace EMART.BuyerService.Repositories
         public List<Category> GetCategories()
         {
             return _context.Category.ToList();
+        }
+
+        public int GetCount(string bid)
+        {
+            return _context.Cart.Where(e => e.Bid == bid).ToList().Count;
         }
 
         public List<Items> GetItems()

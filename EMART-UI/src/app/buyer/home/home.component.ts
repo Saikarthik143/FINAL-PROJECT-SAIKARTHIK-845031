@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BuyerService } from 'src/app/Services/buyer.service';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +8,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor(private route:Router) {
+count:number;
+username:string;
+  constructor(private route:Router,private service:BuyerService) {
     if(localStorage.getItem('buyerid'))
-    {}
+    {
+      this.username=localStorage.getItem('username');
+      console.log(this.username);
+      let bid=localStorage.getItem('buyerid');
+      this.service.GetCount(bid).subscribe(res=>{
+        this.count=res;
+        console.log(this.count);
+      })
+    }
     else 
     {
       alert(' please login in first');

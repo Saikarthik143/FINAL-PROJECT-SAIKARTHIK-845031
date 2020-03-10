@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SellerService } from 'src/app/Services/seller.service';
+import { Purchase } from 'src/app/Models/purchase';
 
 @Component({
   selector: 'app-viewreport',
@@ -7,10 +9,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./viewreport.component.css']
 })
 export class ViewreportComponent implements OnInit {
-
-  constructor(private route:Router) {
+plist:Purchase[];
+  constructor(private route:Router,private service:SellerService) {
     if(localStorage.getItem('sellerid'))
-    {}
+    {
+      let sid=localStorage.getItem('sellerid');
+      this.service.GetReports(sid).subscribe(res=>{
+        this.plist=res;
+        console.log(this.plist);
+      })
+    }
     else 
     {
       alert(' please login in first');

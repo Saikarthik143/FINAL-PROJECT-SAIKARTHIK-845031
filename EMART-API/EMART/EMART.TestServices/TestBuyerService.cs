@@ -20,19 +20,19 @@ namespace EMART.TestServices
         public void  TestSearchItemByName()
         {
             var result = _repo.Search("honor");
-            Assert.NotNull(result);
+            Assert.IsNotNull(result);
         }
         [Test]
         public void TestSearchItemByCategory()
         {
             var result = _repo.SearchItemByCategory("C2");
-            Assert.NotNull(result);
+            Assert.IsNotNull(result);
         }
         [Test]
         public void TestSearchItemBySubCategory()
         {
             var result = _repo.SearchItemBySubCategory("SC150");
-            Assert.NotNull(result);
+            Assert.IsNotNull(result);
         }
         [Test]
         public  void TestBuyItem()
@@ -91,25 +91,45 @@ namespace EMART.TestServices
             var result = _repo.GetItems();
             Assert.IsNotNull(result);
         }
-        //[Test]
-        //public void TestAddToCart()
-        //{
-        //    _repo.AddToCart(new Cart()
-        //    {
-        //        Cartid = "C234",
-        //        Iid = "I7754",
-        //        Itemname = "normal",
-        //        Price = 1299,
-        //        Description = "good",
-        //        Stocknumber = 5,
-        //        Remarks = "none",
-        //        Categoryid = "C244",
-        //        SubCategoryid = "SC367",
-        //        Bid = "B01",
-        //        Sid = "S000",
-        //        Imagename = "mi7.jpg"
-        //    });
-        //    var result=_repo.AddToCart("")
-        //}
+        [Test]
+        public void TestAddToCart()
+        {
+            _repo.AddToCart(new Cart()
+            {
+                Cartid = "C234",
+                Iid = "I7754",
+                Itemname = "normal",
+                Price = 1299,
+                Description = "good",
+                Stocknumber = 5,
+                Remarks = "none",
+                Categoryid = "C244",
+                SubCategoryid = "SC367",
+                Bid = "B01",
+                Sid = "S000",
+                Imagename = "mi7.jpg"
+            });
+            var result = _repo.CheckCartItem("B01", "I7754");
+            Assert.NotNull(result);
+        }
+        [Test]
+        public void TestGetCartItems()
+        {
+            var result = _repo.GetCarts("B01");
+            Assert.IsNotNull(result);
+        }
+        [Test]
+        public void TestDeleteCartItem()
+        {
+            _repo.DeleteCart("C12");
+            var result = _repo.GetCarts("C12");
+            Assert.Null(result);
+        }
+        [Test]
+        public void TestGetCount()
+        {
+            var result = _repo.GetCount("B01");
+            Assert.NotNull(result);
+        }
     }
 }

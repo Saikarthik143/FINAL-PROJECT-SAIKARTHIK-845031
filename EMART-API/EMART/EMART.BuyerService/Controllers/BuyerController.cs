@@ -179,6 +179,32 @@ namespace EMART.BuyerService.Controllers
             }
         }
         [HttpGet]
+        [Route("GetCount/{bid}")]
+        public IActionResult GetCount(string bid)
+        {
+            try
+            {
+                return Ok(_repo.GetCount(bid));
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
+        }
+        [HttpGet]
+        [Route("CheckCartItem/{bid}/{iid}")]
+        public IActionResult CheckCartItem(string bid,string iid)
+        {
+            try
+            {
+                return Ok(_repo.CheckCartItem(bid, iid));
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
+        }
+        [HttpGet]
         [Route("GetPurchase/{pid}")]
         public IActionResult GetPurchase(string pid)
         {

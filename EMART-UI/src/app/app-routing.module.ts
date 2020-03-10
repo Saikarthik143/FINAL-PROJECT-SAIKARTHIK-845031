@@ -31,7 +31,7 @@ import { EditProComponent } from './buyer/edit-pro/edit-pro.component';
 
 const routes: Routes = [
   
-    {path:'login',component:LoginComponent},
+    //{path:'login',component:LoginComponent},
     {path:'register-buyer',component:RegisterBuyerComponent},
     {path:'register-seller',component:RegisterSellerComponent},
     {path:'createbuyer',component:CreatebuyerComponent},
@@ -66,7 +66,7 @@ const routes: Routes = [
   ]},
  
 
-  {path:'',redirectTo:'index',pathMatch:'full'},
+  {path:'',component:IndexComponent},
   
 ];
 

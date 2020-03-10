@@ -13,7 +13,6 @@ import { ViewcartComponent } from './Buyer/viewcart/viewcart.component';
 import { PurchaseHistoryComponent } from './Buyer/purchase-history/purchase-history.component';
 import { ViewprofileComponent } from './Buyer/viewprofile/viewprofile.component';
 import { BuyProductComponent } from './Buyer/buy-product/buy-product.component';
-import { LoginComponent } from './Account/login/login.component';
 import { RegisterSellerComponent } from './Account/register-seller/register-seller.component';
 import { RegisterBuyerComponent } from './Account/register-buyer/register-buyer.component';
 import { AdminHomeComponent } from './Admin/admin-home/admin-home.component';
@@ -49,7 +48,6 @@ import { UserService } from './Services/user.service';
     PurchaseHistoryComponent,
     ViewprofileComponent,
     BuyProductComponent,
-    LoginComponent,
     RegisterSellerComponent,
     RegisterBuyerComponent,
     AdminHomeComponent,
@@ -62,23 +60,14 @@ import { UserService } from './Services/user.service';
     AddItemsComponent,
     ViewitemsComponent,
     ViewreportComponent,
-    
     CreatebuyerComponent,
-    
     IndexComponent,
-    
     ContactComponent,
-    
     AboutComponent,
-    
     SerComponent,
-    
     EditProfileComponent,
-    
     EditProComponent,
-    
-   
-  ],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,

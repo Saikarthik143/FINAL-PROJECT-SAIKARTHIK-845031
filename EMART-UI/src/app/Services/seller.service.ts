@@ -49,4 +49,7 @@ export class SellerService {
   public Delete(id:string):Observable<any>{
     return this.http.delete<any>(this.url+'Delete/'+id,Requestheaders);
   }
+  public GetReports(sid:string):Observable<any>{
+    return this.http.get<any>(this.url1+'GetReports/'+sid,Requestheaders)
+  }
 }

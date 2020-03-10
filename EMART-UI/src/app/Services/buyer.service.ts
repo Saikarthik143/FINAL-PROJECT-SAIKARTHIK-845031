@@ -58,4 +58,7 @@ export class BuyerService {
   public GetCarts(bid:string):Observable<any>{
     return this.http.get<any>(this.url+'GetCart/'+bid,Requestheaders);
   }
+  public GetCount(bid:string):Observable<any>{
+    return this.http.get<any>(this.url+'GetCount/'+bid,Requestheaders);
+  }
 }

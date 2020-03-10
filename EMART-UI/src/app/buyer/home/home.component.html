@@ -29,7 +29,7 @@
                 <a class="nav-link btn-outline-warning" [routerLink]="['/home/purchase-history']" routerLinkActive="router-link-active" ><span class="glyphicon glyphicon-time"></span>Purchase-History</a>
             </li>
             <li class="col-sm-2 nav-item text-center">
-                <a class="nav-link btn-outline-warning" [routerLink]="['/home/viewcart']"  >View cart</a>
+                <a class="nav-link btn-outline-warning" [routerLink]="['/home/viewcart']" >{{count}}View cart</a>
             </li>
             <li class="col-sm-2 nav-item text-center">
                 <button class="nav-link btn-outline-warning" (click)="Logout()"><i class="fa fa-fw fa-home"></i>Logout </button>
@@ -39,6 +39,7 @@
 </nav>
 
 <marquee direction="rtl">Stay Home and Shop Online</marquee>
+<h3 class="text-center">Welcome,{{username}}</h3>
 
 <router-outlet></router-outlet>
    

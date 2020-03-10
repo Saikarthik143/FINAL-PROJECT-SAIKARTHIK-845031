@@ -29,7 +29,7 @@ namespace EMART.SellerService.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-1UI4VQI\\SQLEXPRESS;Initial Catalog=EMARTDB;Integrated Security=True");
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-1UI4VQI\\SQLEXPRESS;Initial Catalog=EMARTDB;Persist Security Info=True;User ID=sa;Password=pass@word1");
             }
         }
 
@@ -125,27 +125,14 @@ namespace EMART.SellerService.Models
                 entity.HasOne(d => d.B)
                     .WithMany(p => p.Cart)
                     .HasForeignKey(d => d.Bid)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK__Cart__Bid__06CD04F7");
 
                 entity.HasOne(d => d.Category)
                     .WithMany(p => p.Cart)
                     .HasForeignKey(d => d.Categoryid)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK__Cart__Categoryid__03F0984C");
-
-                entity.HasOne(d => d.I)
-                    .WithMany(p => p.Cart)
-                    .HasForeignKey(d => d.Iid)
-                    .HasConstraintName("FK__Cart__Iid__02FC7413");
-
-                entity.HasOne(d => d.S)
-                    .WithMany(p => p.Cart)
-                    .HasForeignKey(d => d.Sid)
-                    .HasConstraintName("FK__Cart__Sid__05D8E0BE");
-
-                entity.HasOne(d => d.SubCategory)
-                    .WithMany(p => p.Cart)
-                    .HasForeignKey(d => d.SubCategoryid)
-                    .HasConstraintName("FK__Cart__SubCategor__04E4BC85");
             });
 
             modelBuilder.Entity<Category>(entity =>
@@ -408,11 +395,6 @@ namespace EMART.SellerService.Models
                     .IsRequired()
                     .HasMaxLength(30)
                     .IsUnicode(false);
-
-                entity.HasOne(d => d.Category)
-                    .WithMany(p => p.SubCategory)
-                    .HasForeignKey(d => d.Categoryid)
-                    .HasConstraintName("FK__SubCatego__Categ__5535A963");
             });
 
             OnModelCreatingPartial(modelBuilder);

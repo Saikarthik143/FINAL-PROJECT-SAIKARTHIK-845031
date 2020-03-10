@@ -15,7 +15,7 @@ export class EditProfileComponent implements OnInit {
   constructor(private formbuilder:FormBuilder,private service:SellerService,private route:Router) {
     
     //console.log(this.item);
-    if(localStorage.getItem('buyerid'))
+    if(localStorage.getItem('sellerid'))
     {}
     else 
     {

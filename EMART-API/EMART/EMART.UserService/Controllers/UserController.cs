@@ -39,7 +39,7 @@ namespace EMART.UserService.Controllers
                 Buyer buyer = _repo.BuyerLogin(uname, pwd);
                 if (buyer != null)
                 {
-                    token = new Token() { buyerid = buyer.Bid, token = GenerateJwtToken(uname), message = "success",uname=uname };
+                    token = new Token() { buyerid = buyer.Bid, token = GenerateJwtToken(uname), message = "success",uname=buyer.Username};
                 }
                 else
                 {

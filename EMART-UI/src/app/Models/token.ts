@@ -3,4 +3,5 @@ export class Token {
         public buyerid:string;
         public  sellerid:string ;
         public message:string;
+        public uname:string;
 }
