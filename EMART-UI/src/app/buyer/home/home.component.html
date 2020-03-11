@@ -6,15 +6,17 @@
 <div>
        
   <a [routerLink]="['/home']">   <img src="assets/images/logo4.png" alt="Not" style="width: 100px; height: 50px;">
-
+    <h3 class="text-right">Welcome,{{username}}</h3>
 </a>
+
+
 </div>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-danger">
     <div class="col">
         <ul class="nav row nav pills">
             <li class="col-sm-2 nav-item text-center">
-                <a class="nav-link btn-outline-warning" [routerLink]="['/home']"  >Home</a>
+                <a class="nav-link btn-outline-warning" [routerLink]="['/home']"><i class="fa fa-fw fa-home"></i>Home</a>
             </li>
             <li class="col-sm-2 nav-item text-center">
                 <a class="nav-link btn-outline-warning" [routerLink]="['/home/search']"  ><span class="glyphicon glyphicon-sunglasses"></span>Search</a>
@@ -39,7 +41,7 @@
 </nav>
 
 <marquee direction="rtl">Stay Home and Shop Online</marquee>
-<h3 class="text-center">Welcome,{{username}}</h3>
+
 
 <router-outlet></router-outlet>
    
