@@ -30,9 +30,9 @@ onSubmit(){
   this.submitted=true;
   if(this.addForm.valid){
     this.category=new Category();
-    this.category.categoryId='C'+Math.round(Math.random()*1000);
-    this.category.categoryName=this.addForm.value["CategoryName"];
-    this.category.briefDetails=this.addForm.value["BriefDetails"];
+    this.category.categoryid='C'+Math.round(Math.random()*1000);
+    this.category.categoryname=this.addForm.value["CategoryName"];
+    this.category.briefdetails=this.addForm.value["BriefDetails"];
     console.log(this.category);
     this.service.AddCategory(this.category).subscribe(res=>{
       console.log('record added')

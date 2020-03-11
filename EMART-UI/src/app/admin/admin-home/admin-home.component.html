@@ -1,7 +1,7 @@
 
     <div>
        
-        <img src="assets/images/logo4.jpg" alt="Not" style="width: 100px; height: 50px;">
+        <img src="assets/images/logo4.png" alt="Not" style="width: 100px; height: 50px;">
 
   <form>
                         <input type="text" placeholder="Search..." required>
@@ -27,11 +27,11 @@
               </div>
               <div class="dropdown col-3 ">
                 <button type="button" class="btn btn-outline-warning " data-toggle="dropdown">
-                  Block or unblock
+                  View
                 </button>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Buyer</a>
-                  <a class="dropdown-item" href="#">Seller</a>
+                  <a class="dropdown-item" [routerLink]="['/admin-home/viewcategory']" >ViewCategories</a>
+                  <a class="dropdown-item" [routerLink]="['/admin-home/viewsubcategory']" >ViewSubCategories</a>
                  
                 </div>
               </div>
@@ -44,12 +44,12 @@
 </nav>
 
 
-    <div class="row">
-        <aside class="col-3 back" >
+    
+        <!-- <aside class="col-3 back" >
             
 
             <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</h4>
-        </aside>
+        </aside> -->
         
         <!-- <div id="carouselExampleIndicators" class="carousel slide col-8"  data-ride="carousel">
             <ol class="carousel-indicators">
@@ -78,11 +78,12 @@
             </a>
         </div>
          -->
-         <div class="col-9">
+         <div class="container mt-3">
          <router-outlet></router-outlet>
-            </div>
+         </div>
+            
 
-    </div>
+    
     
         
         

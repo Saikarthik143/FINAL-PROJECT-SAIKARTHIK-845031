@@ -53,5 +53,10 @@ namespace EMART.AdminService.Repositories
         {
             return _context.SubCategory.Find(Subid);
         }
+
+        public List<SubCategory> GetSubCategories()
+        {
+            return _context.SubCategory.ToList();
+        }
     }
 }

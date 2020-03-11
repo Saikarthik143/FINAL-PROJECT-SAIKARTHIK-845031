@@ -16,5 +16,6 @@ namespace EMART.AdminService.Repositories
         List<Category> GetAllCategories();
         Category GetCategory(string categoryid);
         SubCategory GetSubCategory(string Subid);
+        List<SubCategory> GetSubCategories();
     }
 }

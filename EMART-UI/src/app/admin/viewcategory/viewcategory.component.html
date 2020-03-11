@@ -1,0 +1,51 @@
+<table class="table table-bordered">
+    <tr>
+        <th>CategoryId</th>
+        <th>CategoryName</th>
+        <th>BriefDeatils</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <tr *ngFor="let item of categorylist">
+        <td>{{item.categoryid}}</td>
+        <td>{{item.categoryname}}</td>
+        <td>{{item.briefdetails}}</td>
+        <td>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" (click)="Edit(item)">Edit</button>
+        </td>
+        <td>
+            <button class="btn btn-primary" (click)="Delete(item.categoryid)">Delete</button>
+        </td>
+    </tr>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title text-center">Edit</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="viewform">
+                        <div class="form-group">
+          
+                            <label>categoryid</label>
+                            <input type="text" formControlName="categoryid" class="form-control" readonly="readonly">
+                            </div>
+                            <div class="form-group">
+                                <label>categoryname</label>
+                                <input type="text" formControlName="categoryname" class="form-control" >
+                            </div>
+                            <div class="form-group">
+                                <label>Briefdetails</label>
+                                <input type="text" formControlName="briefdetails" class="form-control">
+                            </div>
+                    </form>
+</div>
+</div>
+</div>
+</div>

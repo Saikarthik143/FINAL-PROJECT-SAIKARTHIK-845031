@@ -1,0 +1,65 @@
+<table class="table table-bordered">
+    <tr>
+        <th>SubcategoryId</th>
+        <th>SubcategoryName</th>
+        <th>CategoryId</th>
+        <th>Brief</th>
+        <th>Gst</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <tr *ngFor="let item of sublist">
+        <td>{{item.subCategoryid}}</td>
+        <td>{{item.subCategoryName}}</td>
+        <td>{{item.categoryid}}</td>
+        <td>{{item.brief}}</td>
+        <td>{{item.gst}}</td>
+        <td>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" (click)="Edit(item)">Edit</button>
+        </td>
+        <td>
+            <button class="btn btn-primary" (click)="Delete(item.categoryid)">Delete</button>
+        </td>
+    </tr>
+</table>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title text-center">Edit</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="viewform">
+                        <div class="form-group">
+          
+                            <label>subcategoryid</label>
+                            <input type="text" formControlName="subcategoryid" class="form-control" readonly="readonly">
+                            </div>
+                            <div class="form-group">
+                                <label>subcategoryname</label>
+                                <input type="text" formControlName="subcategoryname" class="form-control" >
+                            </div>
+                            <div class="form-group">
+                                <label>categoryid</label>
+                                <input type="text" formControlName="categoryid" class="form-control" readonly="readonly">
+                            </div>
+                            <div class="form-group">
+                                <label>Briefdetails</label>
+                                <input type="text" formControlName="brief" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Gst</label>
+                                <input type="text" formControlName="gst" class="form-control">
+                            </div>
+                    </form>
+</div>
+</div>
+</div>
+</div>
+

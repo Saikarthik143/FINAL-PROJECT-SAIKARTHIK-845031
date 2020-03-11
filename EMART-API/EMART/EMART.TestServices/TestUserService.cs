@@ -21,7 +21,7 @@ namespace EMART.TestServices
         public void TestBuyerLogin()
         {
 
-            var result = _repo.BuyerLogin("siddarth", "asdfghj*");
+            var result = _repo.BuyerLogin("siddarth", "karthik@");
             Assert.IsNotNull(result);
         }
         [Test]
@@ -35,14 +35,14 @@ namespace EMART.TestServices
         {
             _repo.BuyerRegister(new Buyer()
             {
-                Bid = "B101",
-                Username = "saikumar",
+                Bid = "B31",
+                Username = "saibla",
                 Password = "qasqws",
                 Emailid = "as@gmail.com",
                 Mobile = "9876543210",
                 Createdatetime = DateTime.Now,
             });
-            var result = _repo.BuyerLogin("saikumar", "qasqws");
+            var result = _repo.BuyerLogin("saibla", "qasqws");
             Assert.NotNull(result);
         }
         [Test]
@@ -50,8 +50,8 @@ namespace EMART.TestServices
         {
             _repo.SellerRegister(new Seller()
             {
-                Sid = "S004",
-                Username = "kumari",
+                Sid = "S1204",
+                Username = "balaai",
                 Password = "asdwd",
                 Emailid = "asw@gmail.com",
                 CompanyName = "google",
@@ -61,7 +61,7 @@ namespace EMART.TestServices
                 Address = "fdgewf3",
                 Mobile = "9475850968"
             });
-            var result = _repo.SellerLogin("Kumari", "asdwd");
+            var result = _repo.SellerLogin("balaai", "asdwd");
             Assert.NotNull(result);
         }
     }

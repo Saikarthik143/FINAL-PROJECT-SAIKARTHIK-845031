@@ -21,18 +21,18 @@ namespace EMART.TestServices
         {
             _repo.AddItems(new Items()
             {
-                Iid = "I098",
-                Itemname = "note7",
-                Price = 12999,
+                Iid = "I00089",
+                Itemname = "note6pro",
+                Price = 14999,
                 Stocknumber = 5,
                 Sid = "S00",
                 Categoryid = "C260",
                 SubCategoryid = "SC311",
                 Description = "ram 8gb",
                 Remarks = "6months warranty",
-                Imagename = "mi7.jpg",
+                Imagename = "mobile3.jpg",
             });
-            var result = _repo.GetItem("I098");
+            var result = _repo.GetItem("I00089");
             Assert.NotNull(result);
         }
         [Test]
@@ -44,8 +44,8 @@ namespace EMART.TestServices
         [Test]
         public void TestDeleteItem()
         {
-            _repo.DeleteItem("I9574");
-            var result = _repo.GetItem("I9574");
+            _repo.DeleteItem("I00089");
+            var result = _repo.GetItem("I00089");
             Assert.Null(result);
         }
         [Test]

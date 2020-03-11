@@ -50,6 +50,11 @@ namespace EMART.BuyerService.Repositories
             _context.SaveChanges();
         }
 
+        public Cart GetCartItem(string cartid)
+        {
+            return _context.Cart.Find(cartid);
+        }
+
         public List<Cart> GetCarts(string bid)
         {
             return _context.Cart.Where(e => e.Bid == bid).ToList();

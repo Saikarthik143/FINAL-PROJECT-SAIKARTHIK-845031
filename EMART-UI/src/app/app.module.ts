@@ -34,6 +34,8 @@ import { SerComponent } from './ser/ser.component';
 import { EditProfileComponent } from './seller/edit-profile/edit-profile.component';
 import { EditProComponent } from './buyer/edit-pro/edit-pro.component';
 import { UserService } from './Services/user.service';
+import { ViewcategoryComponent } from './admin/viewcategory/viewcategory.component';
+import { ViewsubcategoryComponent } from './admin/viewsubcategory/viewsubcategory.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +69,8 @@ import { UserService } from './Services/user.service';
     SerComponent,
     EditProfileComponent,
     EditProComponent,
+    ViewcategoryComponent,
+    ViewsubcategoryComponent,
     ],
   imports: [
     BrowserModule,

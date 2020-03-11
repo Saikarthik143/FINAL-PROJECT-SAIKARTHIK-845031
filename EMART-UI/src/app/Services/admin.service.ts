@@ -24,4 +24,10 @@ export class AdminService {
   public GetCategory():Observable<any>{
     return this.http.get<any>(this.url+'GetAll',Requestheaders)
   }
+  public GetSubCategory():Observable<any>{
+    return this.http.get<any>(this.url+'GetAllSubCategories',Requestheaders);
+  }
+  public DeleteCategory(Cid:string):Observable<any>{
+    return this.http.delete<any>(this.url+'DeleteCatrgory/'+Cid,Requestheaders);
+  }
 }

@@ -39,7 +39,7 @@ namespace EMART.TestServices
         {
             _repo.BuyItem(new PurchaseHistory()
             {
-                Id = "P0001",
+                Id = "P1901",
                 Bid = "B001",
                 Sid = "S842",
                 Iid = "I6230",
@@ -49,7 +49,7 @@ namespace EMART.TestServices
                 Remarks = "good",
 
             });
-            var result = _repo.GetpurchaseHistory("P0001");
+            var result = _repo.GetpurchaseHistory("P1901");
             Assert.NotNull(result);
         }
         [Test]
@@ -96,9 +96,9 @@ namespace EMART.TestServices
         {
             _repo.AddToCart(new Cart()
             {
-                Cartid = "C234",
-                Iid = "I7754",
-                Itemname = "normal",
+                Cartid = "C4",
+                Iid = "I4618",
+                Itemname = "sal",
                 Price = 1299,
                 Description = "good",
                 Stocknumber = 5,
@@ -107,9 +107,9 @@ namespace EMART.TestServices
                 SubCategoryid = "SC367",
                 Bid = "B01",
                 Sid = "S000",
-                Imagename = "mi7.jpg"
+                Imagename = "Clothes.jpg"
             });
-            var result = _repo.CheckCartItem("B01", "I7754");
+            var result = _repo.CheckCartItem("B01", "I4618");
             Assert.NotNull(result);
         }
         [Test]
@@ -121,8 +121,8 @@ namespace EMART.TestServices
         [Test]
         public void TestDeleteCartItem()
         {
-            _repo.DeleteCart("C12");
-            var result = _repo.GetCarts("C12");
+            _repo.DeleteCart("C4");
+            var result = _repo.GetCartItem("C4");
             Assert.Null(result);
         }
         [Test]

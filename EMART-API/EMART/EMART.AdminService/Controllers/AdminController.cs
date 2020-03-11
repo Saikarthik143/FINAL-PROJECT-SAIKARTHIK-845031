@@ -47,6 +47,19 @@ namespace EMART.AdminService.Controllers
                 return NotFound(ex.Message);
             }
         }
+        [HttpGet]
+        [Route("GetAllSubCategories")]
+        public IActionResult GetSubCategory()
+        {
+            try
+            {
+                return Ok(_repo.GetSubCategories());
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
         [HttpPost]
         [Route("AddSubCategory")]
         public IActionResult AddSubCategory(SubCategory item)

@@ -26,6 +26,8 @@ import { SerComponent } from './ser/ser.component';
 import { AboutComponent } from './about/about.component';
 import { EditProfileComponent } from './seller/edit-profile/edit-profile.component';
 import { EditProComponent } from './buyer/edit-pro/edit-pro.component';
+import { ViewcategoryComponent } from './admin/viewcategory/viewcategory.component';
+import { ViewsubcategoryComponent } from './admin/viewsubcategory/viewsubcategory.component';
 
 
 
@@ -43,6 +45,8 @@ const routes: Routes = [
     {path:'add-category',component:AddCategoryComponent},
     {path:'add-sub-category',component:AddSubCategoryComponent},
     {path:'daily-report',component:DailyReportComponent},
+    {path:'viewcategory',component:ViewcategoryComponent},
+    {path:'viewsubcategory',component:ViewsubcategoryComponent},
     {path:'block-unblock-buyer',component:BlockUnblockBuyerComponent},
     {path:'block-unblock-seller',component:BlockUnblockSellerComponent},
     

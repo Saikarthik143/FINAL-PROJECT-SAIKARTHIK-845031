@@ -21,12 +21,12 @@ namespace EMART.TestServices
         {
             _repo.AddCategory(new Category()
             {
-                Categoryid = "C1234",
-                Categoryname = "Shirts",
-                Briefdetails = "all type of shirts available",
+                Categoryid = "C113",
+                Categoryname = "sht",
+                Briefdetails = "all type of short available",
 
             });
-            var result = _repo.GetCategory("C1234");
+            var result = _repo.GetCategory("C113");
             Assert.NotNull(result);
         }
         [Test]
@@ -34,28 +34,28 @@ namespace EMART.TestServices
         {
             _repo.AddSubCategory(new SubCategory()
             {
-                SubCategoryid = "S123",
-                SubCategoryName = "formal",
-                Categoryid = "C1234",
+                SubCategoryid = "SC113",
+                SubCategoryName = "fral",
+                Categoryid = "C113",
                 Brief = "good",
                 Gst = 3,
 
             });
-            var result = _repo.GetSubCategory("S123");
+            var result = _repo.GetSubCategory("SC113");
             Assert.NotNull(result);
         }
         [Test]
         public void TestDeleteCategory()
         {
-            _repo.DeleteCategory("C2");
-            var result = _repo.GetCategory("C2");
+            _repo.DeleteCategory("C113");
+            var result = _repo.GetCategory("C113");
             Assert.Null(result);
         }
         [Test]
         public void TestDeleteSubCategory()
         {
-            _repo.DeleteSubCategory("S123");
-            var result = _repo.GetSubCategory("S123");
+            _repo.DeleteSubCategory("SC113");
+            var result = _repo.GetSubCategory("SC113");
             Assert.Null(result);
         }
     }

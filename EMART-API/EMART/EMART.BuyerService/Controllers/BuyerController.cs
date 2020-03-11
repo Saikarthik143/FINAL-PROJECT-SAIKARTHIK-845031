@@ -231,5 +231,19 @@ namespace EMART.BuyerService.Controllers
                 return NotFound(e.InnerException.Message);
             }
         }
+        [HttpGet]
+        [Route("GetCartItem/{cid}")]
+        public IActionResult GetCartItem(string cid)
+        {
+            try
+            {
+                return Ok(_repo.GetCartItem(cid));
+            }
+
+            catch (Exception e)
+            {
+                return NotFound(e.InnerException.Message);
+            }
     }
+}
 }
