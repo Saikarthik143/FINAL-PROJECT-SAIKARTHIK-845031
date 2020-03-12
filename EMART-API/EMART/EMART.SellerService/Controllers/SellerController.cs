@@ -12,7 +12,7 @@ namespace EMART.SellerService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+  
     public class SellerController : ControllerBase
     {
         private readonly ISellerRepo _repo;

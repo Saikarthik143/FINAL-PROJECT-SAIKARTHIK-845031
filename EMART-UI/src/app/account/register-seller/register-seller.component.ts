@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormBuilder,Validators} from '@angular/forms';
 import { Seller } from 'src/app/Models/seller';
 import { UserService } from 'src/app/Services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-seller',
@@ -13,7 +14,7 @@ registerForm:FormGroup;
 submitted:boolean;
 list:Seller[];
 seller:Seller;
-  constructor(private formbuilder:FormBuilder,private service:UserService) { }
+  constructor(private formbuilder:FormBuilder,private service:UserService,private route:Router) { }
 
   ngOnInit() {
     this.registerForm=this.formbuilder.group({
@@ -53,10 +54,11 @@ onSubmit(){
     this.service.AddSeller(this.seller).subscribe(res=>{
       console.log('record added')
       alert('register success')
+      this.route.navigateByUrl('index')
     },err=>{
       console.log(err);
     })
-    alert("register success");
+    
   }
     
   

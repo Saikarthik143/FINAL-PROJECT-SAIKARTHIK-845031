@@ -12,7 +12,7 @@ namespace EMART.BuyerService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    
     public class BuyerController : ControllerBase
     {
         private readonly IBuyerRepo _repo;
