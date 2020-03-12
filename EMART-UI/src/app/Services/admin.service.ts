@@ -30,4 +30,13 @@ export class AdminService {
   public DeleteCategory(Cid:string):Observable<any>{
     return this.http.delete<any>(this.url+'DeleteCatrgory/'+Cid,Requestheaders);
   }
+  public DeleteSubCategory(Scid:string):Observable<any>{
+    return this.http.delete<any>(this.url+'DeleteSubCatrgory/'+Scid,Requestheaders);
+  }
+  public UpdateCategroy(category:Category):Observable<any>{
+    return this.http.put<any>(this.url+'UpdateCategory',category,Requestheaders)
+  }
+  public UpdateSubcategory(subcategory:SubCategory):Observable<any>{
+    return this.http.put<any>(this.url+'UpdateSubCategory',subcategory,Requestheaders);
+  }
 }

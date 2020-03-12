@@ -24,10 +24,10 @@ categorylist:Category[];
   ngOnInit() {
     this.SubForm=this.formbuilder.group({
       
-      SubCategoryName:['',[Validators.required]],
+      SubCategoryName:['',[Validators.required,Validators.pattern('^[a-z A-Z]{2,30}$')]],
       Category:['',[Validators.required]],
-      Brief:['',[Validators.required]],
-      Gst:['',[Validators.required]]
+      Brief:['',[Validators.required,Validators.pattern('^[a-z A-Z0-9]{2,50}$')]],
+      Gst:['',[Validators.required,Validators.pattern('^[0-9]$')]]
     })
   }
   get f(){
@@ -39,7 +39,7 @@ onSubmit(){
     this.subcategory=new SubCategory();
     this.subcategory.subCategoryid='SC'+Math.round(Math.random()*1000);
     this.subcategory.subCategoryName=this.SubForm.value["SubCategoryName"];
-    this.subcategory.categoryId=this.SubForm.value["Category"];
+    this.subcategory.categoryid=this.SubForm.value["Category"];
     this.subcategory.brief=this.SubForm.value["Brief"];
     this.subcategory.gst=Number(this.SubForm.value["Gst"]);
     console.log(this.subcategory);

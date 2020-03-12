@@ -15,7 +15,7 @@ list:Items[];
 item:Items;
 itemForm:FormGroup;
 category:Category;
-Show:boolean=true;
+// Show:boolean=true;
 
   constructor(private route:Router  ,private service:SellerService,private formbuilder:FormBuilder) { 
     if(localStorage.getItem('sellerid'))
@@ -52,9 +52,9 @@ Show:boolean=true;
     })
     this.Search();
   }
-  Update1(){
-    this.Show=!this.Show;
-  }
+  // Update1(){
+  //   this.Show=!this.Show;
+  // }
   Update(){
     
     this.item=new Items();

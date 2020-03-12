@@ -33,6 +33,37 @@ subcategory:SubCategory
 
 
   }
-  
+  Delete(Scid:string){
+    this.service.DeleteSubCategory(Scid).subscribe(res=>{
+      alert('Subcategory was deleted successfully');
+    })
+  }
+  Update(){
+    this.subcategory=new SubCategory();
+    this.subcategory.subCategoryid=this.viewform.value["subcategoryid"],
+    this.subcategory.subCategoryName=this.viewform.value["subcategoryname"],
+    this.subcategory.categoryid=this.viewform.value["categoryid"],
+    this.subcategory.brief=this.viewform.value["brief"],
+    this.subcategory.gst=Number(this.viewform.value["gst"]),
+    console.log(this.subcategory);
+    this.service.UpdateSubcategory(this.subcategory).subscribe(res=>{
+      console.log('record updated'),
+      alert('record update')
+    },err=>{
+      console.log(err)
+    })
+  }
+  Edit(edit:SubCategory){
+    console.log(edit);
+    this.subcategory=edit;
+    console.log(this.subcategory);
+    this.viewform.patchValue({
+      subcategoryid:this.subcategory.subCategoryid,
+      subcategoryname:this.subcategory.subCategoryName,
+      categoryid:this.subcategory.categoryid,
+      brief:this.subcategory.brief,
+      gst:this.subcategory.gst
+    })
+  }
 
 }

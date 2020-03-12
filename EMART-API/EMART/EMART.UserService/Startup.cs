@@ -72,10 +72,10 @@ namespace EMART.UserService
 
             app.UseRouting();
             app.UseAuthentication();
-            app.UseCors("AllowOrigin");
+            
 
             app.UseAuthorization();
-
+            app.UseCors("AllowOrigin");
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

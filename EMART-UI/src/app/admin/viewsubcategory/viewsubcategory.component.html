@@ -1,5 +1,5 @@
-<table class="table table-bordered">
-    <tr>
+<table class="table table-dark table-bordered" style="border: whitesmoke;" >
+    <tr style="color: whitesmoke;">
         <th>SubcategoryId</th>
         <th>SubcategoryName</th>
         <th>CategoryId</th>
@@ -8,17 +8,17 @@
         <th>Edit</th>
         <th>Delete</th>
     </tr>
-    <tr *ngFor="let item of sublist">
+    <tr *ngFor="let item of sublist" style="color:whitesmoke;">
         <td>{{item.subCategoryid}}</td>
         <td>{{item.subCategoryName}}</td>
         <td>{{item.categoryid}}</td>
         <td>{{item.brief}}</td>
         <td>{{item.gst}}</td>
         <td>
-            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" (click)="Edit(item)">Edit</button>
+            <button class="btn btn-secondary"  data-toggle="modal" data-target="#myModal" (click)="Edit(item)">Edit</button>
         </td>
         <td>
-            <button class="btn btn-primary" (click)="Delete(item.categoryid)">Delete</button>
+            <button class="btn btn-danger" (click)="Delete(item.subCategoryid)">Delete</button>
         </td>
     </tr>
 </table>
@@ -51,11 +51,14 @@
                             </div>
                             <div class="form-group">
                                 <label>Briefdetails</label>
-                                <input type="text" formControlName="brief" class="form-control">
+                                <textarea rows="5" cols="40" formControlName="brief" class="form-control"></textarea>
                             </div>
                             <div class="form-group">
                                 <label>Gst</label>
                                 <input type="text" formControlName="gst" class="form-control">
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-primary mr-1" (click)="Update()">Update</button>
                             </div>
                     </form>
 </div>

@@ -1,23 +1,18 @@
 <div class="container">
     <div class="row">
         <div class="col-3"></div>
-
 <div class="card m-3 col-6" style="background-color: #d0c9c3; border-radius: 1.5rem;"><marquee direction="rtl">
     <p>Add Items</p>
 </marquee>
     <h3 class="card-header  text-center" style="background-color: #414654;color: whitesmoke; border-radius: 1.5rem;">Add Items form</h3>
     <div class="card-body ">
         <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
-        
            <div class="row">
-            
-           
             <div class="form-group col-6 ">
                 <label> Category Name</label>
                 <select formControlName="CategoryId" class="form-control" (change)="GetSubCategory()" [ngClass]="{ 'is-invalid': submitted && f.CategoryId.errors }">
                     <option value=""></option>
-                    <option *ngFor="let item of categorylist" value="{{item.categoryid}}">{{item.categoryname}}</option>
-                    
+                    <option *ngFor="let item of categorylist" value="{{item.categoryid}}">{{item.categoryname}}</option>   
                 </select>
                 <div *ngIf="submitted && f.CategoryId.errors" class="invalid-feedback">
                     <div *ngIf="f.CategoryId.errors.required">category is required</div>
@@ -27,8 +22,7 @@
                 <label>SubCategoryid</label>
                 <select formControlName="SubCategoryid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.SubCategoryid.errors }">
                     <option value=""></option>
-                    <option *ngFor="let item of subcat" value="{{item.subCategoryid}}">{{item.subCategoryName}}</option>
-                    
+                    <option *ngFor="let item of subcat" value="{{item.subCategoryid}}">{{item.subCategoryName}}</option>  
                 </select>
                 <div *ngIf="submitted && f.SubCategoryid.errors" class="invalid-feedback">
                     <div *ngIf="f.SubCategoryid.errors.required"> Subcategory is required</div>
@@ -97,8 +91,11 @@
            </div>
            <div class="form-group">
                <label>Image</label>
-               <input type="file"  (change)="fileEvent($event)" >
-           </div>
+               <input type="file"  (change)="fileEvent($event)" formControlName="imagename" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.remarks.errors }">
+               <div *ngIf="submitted && f.remarks.errors" class="invalid-feedback">
+                <div *ngIf="f.remarks.errors.required"> is required</div>
+            </div>
+            </div>
            <!-- <div class="text-center">
                
            </div> -->

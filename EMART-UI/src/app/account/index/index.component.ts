@@ -63,6 +63,7 @@ this.loginForm=this.formbuilder.group({
     {
       localStorage.setItem('buyerid',token.buyerid);
       localStorage.setItem('username',token.uname);
+      localStorage.setItem('token',token.token);
      alert('login success')
       this.route.navigateByUrl("home");
     }
@@ -83,6 +84,7 @@ this.loginForm=this.formbuilder.group({
       {
         localStorage.setItem('sellerid',token.sellerid);
         localStorage.setItem('username',token.uname);
+        localStorage.setItem('token',token.token)
         alert('login success')
         this.route.navigateByUrl("shome");
       }

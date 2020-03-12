@@ -58,5 +58,17 @@ namespace EMART.AdminService.Repositories
         {
             return _context.SubCategory.ToList();
         }
+
+        public void EditCategory(Category category)
+        {
+            _context.Category.Update(category);
+            _context.SaveChanges();
+        }
+
+        public void EditSubCategory(SubCategory subCategory)
+        {
+            _context.SubCategory.Update(subCategory);
+            _context.SaveChanges();
+        }
     }
 }

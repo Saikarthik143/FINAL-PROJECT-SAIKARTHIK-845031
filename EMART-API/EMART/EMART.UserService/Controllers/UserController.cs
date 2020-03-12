@@ -17,7 +17,7 @@ namespace EMART.UserService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-   
+  
     public class UserController : ControllerBase
     {
         private readonly IUserRepo _repo;

@@ -6,11 +6,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using EMART.AdminService.Models;
 using EMART.AdminService.Repositories;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EMART.AdminService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    
     public class AdminController : ControllerBase
     {
         private readonly IAdminRepo _repo;
@@ -94,7 +96,7 @@ namespace EMART.AdminService.Controllers
         {
             try
             {
-                _repo.DeleteCategory(subcategory_id);
+                _repo.DeleteSubCategory(subcategory_id);
                 return Ok();
             }
             catch (Exception ex)
@@ -128,6 +130,35 @@ namespace EMART.AdminService.Controllers
                 return NotFound(e.InnerException.Message);
             }
         }
-        
+        [HttpPut]
+        [Route("UpdateCategory")]
+        public IActionResult EditCategory(Category category)
+        {
+            try
+            {
+                _repo.EditCategory(category);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.InnerException.Message);
+            }
+
+        }
+        [HttpPut]
+        [Route("UpdateSubCategory")]
+        public IActionResult EditSubCategory(SubCategory subCategory)
+        {
+            try
+            {
+                _repo.EditSubCategory(subCategory);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.InnerException.Message);
+            }
+
+        }
     }
 }

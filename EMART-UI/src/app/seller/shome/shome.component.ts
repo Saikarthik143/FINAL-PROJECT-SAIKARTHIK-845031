@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class SHomeComponent implements OnInit {
 username:string;
   constructor(private route:Router) {
-    if(localStorage.getItem('sellerid'))
+    if(localStorage.getItem('token'))
     {
       this.username=localStorage.getItem('username');
       console.log(this.username);

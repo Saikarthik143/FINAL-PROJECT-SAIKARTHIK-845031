@@ -48,5 +48,17 @@ export class ViewcategoryComponent implements OnInit {
       alert('category was deleted successful');
     })
   }
-
+Update(){
+  this.category=new Category();
+  this.category.categoryid=this.viewform.value["categoryid"],
+  this.category.categoryname=this.viewform.value["categoryname"],
+  this.category.briefdetails=this.viewform.value["briefdetails"],
+  console.log(this.category);
+  this.service.UpdateCategroy(this.category).subscribe(res=>{
+    console.log('record updated');
+    alert('updated the record');
+  },err=>{
+    console.log(err);
+  })
+}
 }

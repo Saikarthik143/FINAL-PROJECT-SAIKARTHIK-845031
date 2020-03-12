@@ -1,6 +1,6 @@
 
 
-<table class="table table-bordered">
+<table class="table table-bordered" >
     <tr>
        
         <th>Itemid</th>
@@ -13,6 +13,8 @@
         <th>Remarks</th>
         <th>sid</th>
         <th>image</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
     <tr *ngFor="let i of list">
         <td>{{i.iid}}</td>
@@ -29,7 +31,7 @@
         <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" (click)="View(i.iid)">Edit</button>
     </td>
     <td>
-        <button class="btn btn-primary" (click)="Delete(i.iid)">Delete</button>
+        <button class="btn btn-danger" (click)="Delete(i.iid)">Delete</button>
     </td>
     </tr>
 </table>

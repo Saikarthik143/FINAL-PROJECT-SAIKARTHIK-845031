@@ -1,22 +1,24 @@
-
-<div class="card m-3">
-    <h5 class="card-header text-center">Add Category form</h5>
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+<div class="card m-3 col-6" style="background-color: #d0c9c3; border-radius: 1.5rem;"><br>
+    <h5 class="card-header text-center" style="background-color: #414654; color: whitesmoke; border-radius: 1.5rem;">Add Category form</h5>
     <div class="card-body">
     <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
-        <div class="container offset-3">
+        <div class="offset-2">
             
-            <div class="form-group col-5 ">
+            <div class="form-group col-10 text-center ">
                 <label> Category Name</label>
-                <input type="text" formControlName="CategoryName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.CategoryName.errors }">
+                <input type="text" formControlName="CategoryName" placeholder="Eg:Electronics" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.CategoryName.errors }">
                 <div *ngIf="submitted && f.CategoryName.errors" class="invalid-feedback">
                     <div *ngIf="f.CategoryName.errors.required">category is required</div>
                     <div *ngIf="f.CategoryName.errors.pattern">follow the pattern</div>
                 </div>
             </div>
            
-            <div class="form-group col-5">
+            <div class="form-group text-center col-10">
                 <label> Brief_details</label>
-                <input type="text" formControlName="BriefDetails" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.BriefDetails.errors }" />
+                <textarea rows="5" cols="40" placeholder="Eg:about product" formControlName="BriefDetails" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.BriefDetails.errors }" ></textarea>
                 <div *ngIf="submitted && f.BriefDetails.errors" class="invalid-feedback">
                     <div *ngIf="f.BriefDetails.errors.required"> details is required</div>
                     <div *ngIf="f.BriefDetails.errors.pattern">please Enter valid details</div>
@@ -30,5 +32,7 @@
        
         </form>
     </div>
+</div>
+</div>
 </div>
 <router-outlet></router-outlet>

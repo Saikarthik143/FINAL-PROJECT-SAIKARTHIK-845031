@@ -2,16 +2,17 @@
     <div class="row">
          
     <div class="col-md-4" *ngFor="let cart of cartlist">
-        <div class="card " style="width:350px;">
-          <img class="card-img-top" src="/assets/images/{{cart.imagename}}" alt="Card image cap">
+        <div class="card " style="width:300px; ">
+          <h3 class="card-title text-center">{{cart.itemname}}  </h3>
+          <img class="card-img mx-5" src="/assets/images/{{cart.imagename}}" alt="Card image cap" style="width: 200px; height: 150px;" >
           <div class="card-body"  > 
             <h5 class="card-title text-center">Item</h5>
             <td>Cartid:{{cart.cartid}}</td><br>
            <td> ItemId:{{cart.iid}}</td><br>
-           <td>CategoryId:{{cart.categoryid}}</td><br>
+           <!-- <td>CategoryId:{{cart.categoryid}}</td><br>
             <td>SubCategoryId:{{cart.subCategoryid}}</td><br>
-            <td>SellerId:{{cart.sid}}</td><br>
-            <td>ItemName:{{cart.itemname}}</td><br>
+            <td>SellerId:{{cart.sid}}</td><br> -->
+            <!-- <td>ItemName:{{cart.itemname}}</td><br> -->
            <td> Description:{{cart.description}}</td><br>
            <td>price:{{cart.price}}</td><br>
            <td>Stock:{{cart.stocknumber}}</td><br>
@@ -20,7 +21,7 @@
           <div class="card-footer">
           <div class="text-center">
             <button class="btn btn-primary mr-1" (click)=" BuyNow(cart)">BuyNow</button>
-            <button class="btn btn-primary" (click)="Remove(cart.cartid)">Remove</button>
+            <button class="btn btn-danger" (click)="Remove(cart.cartid)">Remove</button>
         </div>
         </div>
         </div>

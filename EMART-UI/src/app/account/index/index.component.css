@@ -63,11 +63,11 @@ input {
   border-radius: 1.5rem;
 }
   
-    form {
+    /* form {
                   width:500px;
                   margin:10px auto;
       float:right;
-  }
+  } */
   label {
     color:whitesmoke;
   }

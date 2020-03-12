@@ -1,4 +1,4 @@
-<table class="table table-bordered">
+<table class="table table-bordered cls">
     <tr>
         <th>CategoryId</th>
         <th>CategoryName</th>
@@ -14,7 +14,7 @@
             <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" (click)="Edit(item)">Edit</button>
         </td>
         <td>
-            <button class="btn btn-primary" (click)="Delete(item.categoryid)">Delete</button>
+            <button class="btn btn-danger" (click)="Delete(item.categoryid)">Delete</button>
         </td>
     </tr>
 </table>
@@ -42,7 +42,10 @@
                             </div>
                             <div class="form-group">
                                 <label>Briefdetails</label>
-                                <input type="text" formControlName="briefdetails" class="form-control">
+                                <textarea rows="5" cols="40"  formControlName="briefdetails" class="form-control"></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-primary mr-1" (click)="Update()">Update</button>
                             </div>
                     </form>
 </div>

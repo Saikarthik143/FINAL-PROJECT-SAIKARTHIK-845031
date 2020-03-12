@@ -25,7 +25,8 @@
 
 
 
-
+  <div class="container">
+    <div class="row">
 
   <table class="table table-bordered">
     <tr>
@@ -36,7 +37,7 @@
       <th>Itemid</th>
       <th>numberofitems</th>
       
-      <th>Remarks</th>
+      <!-- <th>Remarks</th> -->
     </tr>
     <tr *ngFor="let item of list">
       <td>{{item.id}}</td>
@@ -46,6 +47,8 @@
         <td>{{item.iid}}</td>
           <td>{{item.numberofitems}}</td>
           
-          <td>{{item.remarks}}</td>
+          <!-- <td>{{item.remarks}}</td> -->
     </tr>
   </table>
+  </div>
+  </div>

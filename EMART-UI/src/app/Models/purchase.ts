@@ -7,6 +7,7 @@ export class Purchase {
     numberofitems:number;
     datetime:Date;
     remarks:string;
-    cartid:string
+    cartid:string;
+    
 }
 

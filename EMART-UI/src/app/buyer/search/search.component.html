@@ -1,6 +1,6 @@
 
 <div class="text-center">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" [(ngModel)]="item_name" aria-label="Search">
+    <input class="mr-sm-2" type="text" placeholder="Search" [(ngModel)]="item_name" >
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="Search(item_name)" >Search</button>
     <br>
     <h3>Advance Search</h3>
@@ -20,9 +20,10 @@
 <div class="row">
      
 <div class="col-md-4" *ngFor="let i of list">
-    <div class="card " style="width:350px;">
-      <img class="card-img-top" src="/assets/images/{{i.imagename}}" alt="Card image cap">
-      <div class="card-body"  > 
+  <div class="card " style="width:300px; ">
+    <h3 class="card-title text-center">{{i.itemname}}  </h3>
+    <img class="card-img mx-5" src="/assets/images/{{i.imagename}}" alt="Card image cap" style="width: 200px; height: 150px;" >
+    <div class="card-body"  > 
         <h5 class="card-title text-center">Item</h5>
        <td> ItemId:{{i.iid}}</td><br>
         <td>ItemName:{{i.itemname}}</td><br>
@@ -33,7 +34,7 @@
       </div>
       <div class="card-footer">
       <div class="text-center">
-        <button class="btn btn-primary mr-1" (click)=" AddtoCart(i)">Add</button>
+        <button class="btn btn-warning mr-1" (click)=" AddtoCart(i)">Add</button>
         <button class="btn btn-primary" (click)="BuyNow(i)">Buy</button>
     </div>
     </div>

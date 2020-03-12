@@ -37,14 +37,14 @@ selectedFile : File = null;
     this.itemForm=this.formbuilder.group({
       
       CategoryId:['',[Validators.required]],
-      SubCategoryid:[''],
+      SubCategoryid:['',[Validators.required]],
       item_name:['',[Validators.required,Validators.pattern('^[a-z A-Z0-9]{3,20}$')]],
-      description:['',[Validators.required,Validators.pattern('^[a-z A-Z0-9]{3,20}$')]],
+      description:['',[Validators.required,Validators.pattern('^[a-z A-Z0-9]{3,100}$')]],
       Price:['',[Validators.required,Validators.pattern('^[1-9][0-9]{1,20}$')]],
       stock_number:['',[Validators.required,Validators.pattern('^[0-9]{0,20}$')]],
       remarks:['',[Validators.required,Validators.pattern('^[a-z A-Z0-9]{0,80}$')]],
      // Sid:['',[Validators.required]],
-      
+      imagename:['',[Validators.required]]
 
     })
    
@@ -76,13 +76,13 @@ onSubmit()
     
     this.service.AddItem(this.item).subscribe(res=>{
       console.log(this.item);
-      alert('added')
+      
       
     },err=>{
       console.log(err);
     })
    
-    alert("register successful")
+    alert("Added successful")
   
   }
 }

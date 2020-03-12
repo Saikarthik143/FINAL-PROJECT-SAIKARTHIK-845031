@@ -1,13 +1,15 @@
-
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
   
-<div class="card offest-4">
-   
+<div class="card m-3 col-6" style="background-color: #d0c9c3; border-radius: 1.5rem;"><br>
+    <h3 class="card-header text-center" style="background-color: #414654;color: whitesmoke; border-radius: 1.5rem;">Payment form</h3>
     <div class="card-body">
         
       
 
         <form [formGroup]="paymentForm" (ngSubmit)= "Buy()">
-           
+            <div class="offset-2"> 
             <!-- <div class="form-group offset-3 col-6">
                 <label>ItemId</label>
                 <input type="text" class="form-control" formControlName="id" >
@@ -16,18 +18,18 @@
                 <label>Price</label>
                 <input type="text" class="form-control" formControlName="price">
             </div> -->
-            <div class="form-group offset-3 col-6">
+            <div class="form-group  col-10">
                 <label>PaymentType</label>
                 <select formControlName="paymenttype" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.paymenttype.errors }">
                     <option value="Credit">Credit</option>
                     <option value="Debit">Debit</option>
-                    <option value="Upi">Upi</option>
+                    
                 </select>
                 <div *ngIf="submitted && f.paymenttype.errors" class="invalid-feedback">
                 <div *ngIf="f.paymenttype.errors.required">select payment type</div>
                 </div>
             </div>
-            <div class="form-group offset-3 col-6">
+            <div class="form-group col-10">
                 <label>Cardnumber</label>
                 <input type="text" maxlength="16" class="form-control" formControlName="cardnumber" [ngClass]="{ 'is-invalid': submitted && f.cardnumber.errors }" >
                 <div *ngIf="submitted && f.cardnumber.errors" class="invalid-feedback">
@@ -35,19 +37,23 @@
                     <div *ngIf="f.cardnumber.errors.pattern">only digits</div>
                     </div>
             </div>
-            <div class="form-group offset-3 col-6">
+            <div class="form-group col-12">
                 <label>Cvv</label>
-                <input type="password" maxlength="3" formControlName="cvv" style="width: 10%;" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cvv.errors }" >
+                <input type="password" maxlength="3" formControlName="cvv" style="width: 20%;" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cvv.errors }" >
                 <div *ngIf="submitted && f.cvv.errors" class="invalid-feedback">
                 <div *ngIf="f.cvv.errors.required">cvv is required</div>
                 <div *ngIf="f.cvv.errors.pattern">3 digit cvv num</div>
                 </div>
             </div>
-            <div class="form-group offset-3 col-6">
+            <div class="form-group  col-10">
                 <label>Date</label>
-                <input type="date" class="form-control" formControlName="date">
+                <input type="date" class="form-control" formControlName="date" [ngClass]="{ 'is-invalid': submitted && f.date.errors }">
+                <div *ngIf="submitted && f.date.errors" class="invalid-feedback">
+                    <div *ngIf="f.date.errors.required">date is required</div>
             </div>
-            <div class="form-group offset-3 col-6">
+            </div>
+           
+            <div class="form-group col-10">
                 <label>numberofitems</label>
                 <input type="text" formControlName="numberofitems" class="form-control"[ngClass]="{ 'is-invalid': submitted && f.numberofitems.errors }" >
                 <div *ngIf="submitted && f.numberofitems.errors" class="invalid-feedback">
@@ -55,9 +61,10 @@
                     <div *ngIf="f.numberofitems.errors.pattern"> digit  num</div>
                     </div>
             </div>
-            <div class="form-group offset-3 col-6">
+            <div class="form-group  col-10">
                 <label>remarks</label>
                 <input type="text-area"  formControlName="remarks" class="form-control">
+            </div>
             </div>
             <div class="text-center">
                 <button class="btn btn-primary mr-1"  >Submit</button>
@@ -67,5 +74,6 @@
        
     </div>
     </div>
-    
+    </div>
+    </div>
   
