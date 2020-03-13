@@ -24,13 +24,13 @@ selectedFile : File = null;
       this.categorylist=res;
       console.log(this.categorylist);
     })
-    if(localStorage.getItem('sellerid'))
-    {}
-    else 
-    {
-      alert(' please login in first');
-      this.route.navigateByUrl('index');
-    }
+    // if(localStorage.getItem('sellerid'))
+    // {}
+    // else 
+    // {
+    //   alert(' please login in first');
+    //   this.route.navigateByUrl('index');
+    // }
    }
    
   ngOnInit() {

@@ -26,13 +26,13 @@ imagename:string;
       this.clist=res;
       console.log(this.clist);
     })
-    if(localStorage.getItem('buyerid'))
-    {}
-    else 
-    {
-      alert(' please login in first');
-      this.route.navigateByUrl('index');
-    }
+    // if(localStorage.getItem('buyerid'))
+    // {}
+    // else 
+    // {
+    //   alert(' please login in first');
+    //   this.route.navigateByUrl('index');
+    // }
    }
 
   ngOnInit() {

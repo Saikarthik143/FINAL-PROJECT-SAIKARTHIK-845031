@@ -134,5 +134,5 @@ E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.BuyerService\bin\Debug\
 E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.BuyerService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.BuyerService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.BuyerService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.BuyerService\obj\Debug\netcoreapp3.1\EMART.BuyerService.MvcApplicationPartsAssemblyInfo.cs
-E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.BuyerService\obj\Debug\netcoreapp3.1\EMART.BuyerService.MvcApplicationPartsAssemblyInfo.cache
+E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\Emart\EMART.BuyerService\obj\Debug\netcoreapp3.1\EMART.BuyerService.MvcApplicationPartsAssemblyInfo.cs
+E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\Emart\EMART.BuyerService\obj\Debug\netcoreapp3.1\EMART.BuyerService.MvcApplicationPartsAssemblyInfo.cache

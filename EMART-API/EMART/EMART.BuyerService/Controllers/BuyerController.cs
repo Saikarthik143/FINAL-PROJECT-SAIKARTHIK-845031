@@ -207,6 +207,20 @@ namespace EMART.BuyerService.Controllers
             }
         }
         [HttpGet]
+        [Route("SortItem/{price}/{price1}")]
+        public IActionResult Sort(int price, int price1)
+        {
+            try
+            {
+                return Ok(_repo.Items(price, price1));
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
+
+        }
+        [HttpGet]
         [Route("GetPurchase/{pid}")]
         public IActionResult GetPurchase(string pid)
         {

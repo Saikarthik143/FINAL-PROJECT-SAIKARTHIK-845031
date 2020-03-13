@@ -54,7 +54,7 @@ E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.Gateway\bin\Debug\netco
 E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.Gateway\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.Gateway\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.Gateway\bin\Debug\netcoreapp3.1\Ocelot.dll
-E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.Gateway\obj\Debug\netcoreapp3.1\EMART.Gateway.MvcApplicationPartsAssemblyInfo.cs
-E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.Gateway\obj\Debug\netcoreapp3.1\EMART.Gateway.MvcApplicationPartsAssemblyInfo.cache
 E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.Gateway\obj\Debug\netcoreapp3.1\EMART.Gateway.dll
 E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.Gateway\obj\Debug\netcoreapp3.1\EMART.Gateway.pdb
+E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\Emart\EMART.Gateway\obj\Debug\netcoreapp3.1\EMART.Gateway.MvcApplicationPartsAssemblyInfo.cs
+E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\Emart\EMART.Gateway\obj\Debug\netcoreapp3.1\EMART.Gateway.MvcApplicationPartsAssemblyInfo.cache

@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
 count:number;
 username:string;
   constructor(private route:Router,private service:BuyerService) {
-    if(localStorage.getItem('token'))
+    if(localStorage.getItem('buyerid'))
     {
       this.username=localStorage.getItem('username');
       console.log(this.username);

@@ -134,5 +134,5 @@ E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.SellerService\bin\Debug
 E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.SellerService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.SellerService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.SellerService\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
-E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.SellerService\obj\Debug\netcoreapp3.1\EMART.SellerService.MvcApplicationPartsAssemblyInfo.cs
-E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.SellerService\obj\Debug\netcoreapp3.1\EMART.SellerService.MvcApplicationPartsAssemblyInfo.cache
+E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\Emart\EMART.SellerService\obj\Debug\netcoreapp3.1\EMART.SellerService.MvcApplicationPartsAssemblyInfo.cs
+E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\Emart\EMART.SellerService\obj\Debug\netcoreapp3.1\EMART.SellerService.MvcApplicationPartsAssemblyInfo.cache

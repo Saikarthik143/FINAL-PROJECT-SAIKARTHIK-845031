@@ -91,6 +91,12 @@ namespace EMART.BuyerService.Repositories
             return subCategories;
         }
 
+        public List<Items> Items(int price, int price1)
+        {
+            List<Items> items = _context.Items.Where(e => e.Price >= price && e.Price <= price1).ToList();
+            return items;
+        }
+
         public List<PurchaseHistory> Purchase(string bid)
         {
             List<PurchaseHistory> b1 = _context.PurchaseHistory.Where(e => e.Bid == bid).ToList();

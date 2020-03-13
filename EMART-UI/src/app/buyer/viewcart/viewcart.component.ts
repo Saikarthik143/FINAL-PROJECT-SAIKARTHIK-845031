@@ -24,11 +24,11 @@ export class ViewcartComponent implements OnInit {
       console.log(err)
     })
     }
-    else 
-    {
-      alert(' please login in first');
-      this.route.navigateByUrl('index');
-    }
+    // else 
+    // {
+    //   alert(' please login in first');
+    //   this.route.navigateByUrl('index');
+    // }
    }
 
   ngOnInit() {

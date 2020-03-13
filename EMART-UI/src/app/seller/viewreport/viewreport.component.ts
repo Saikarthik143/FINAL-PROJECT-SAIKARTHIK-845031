@@ -19,11 +19,11 @@ plist:Purchase[];
         console.log(this.plist);
       })
     }
-    else 
-    {
-      alert(' please login in first');
-      this.route.navigateByUrl('index');
-    }
+    // else 
+    // {
+    //   alert(' please login in first');
+    //   this.route.navigateByUrl('index');
+    // }
    }
 
   ngOnInit() {

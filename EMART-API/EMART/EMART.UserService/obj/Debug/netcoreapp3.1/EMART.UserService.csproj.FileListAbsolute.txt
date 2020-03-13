@@ -131,8 +131,8 @@ E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.UserService\bin\Debug\n
 E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.UserService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
 E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.UserService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.UserService\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
-E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.UserService\obj\Debug\netcoreapp3.1\EMART.UserService.MvcApplicationPartsAssemblyInfo.cs
-E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.UserService\obj\Debug\netcoreapp3.1\EMART.UserService.MvcApplicationPartsAssemblyInfo.cache
 E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.UserService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.UserService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\EMART\EMART.UserService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\Emart\EMART.UserService\obj\Debug\netcoreapp3.1\EMART.UserService.MvcApplicationPartsAssemblyInfo.cs
+E:\FINAL-PROJECT-SAIKARTHIK-845031\EMART-API\Emart\EMART.UserService\obj\Debug\netcoreapp3.1\EMART.UserService.MvcApplicationPartsAssemblyInfo.cache

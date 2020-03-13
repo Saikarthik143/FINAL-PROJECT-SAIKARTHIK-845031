@@ -938,6 +938,7 @@
           }
         }
       },
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.9.10": {},
       "Microsoft.VisualStudio.Web.CodeGeneration/3.1.1": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "3.1.2",
@@ -1934,6 +1935,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.2",
+          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.9.10",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.1",
           "Ocelot": "14.0.11"
         },
@@ -1945,6 +1947,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.2",
+          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.9.10",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.1",
           "Ocelot": "14.0.11",
           "System.IdentityModel.Tokens.Jwt": "5.6.0"
@@ -1957,6 +1960,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.2",
+          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.9.10",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.1",
           "Ocelot": "14.0.11"
         },
@@ -1968,6 +1972,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.2",
+          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.9.10",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.1",
           "Ocelot": "14.0.11",
           "System.IdentityModel.Tokens.Jwt": "5.6.0"
@@ -2340,6 +2345,13 @@
       "sha512": "sha512-tMlz3uc7VUZSYYslyVOVXH40KexTptZMAi8gIE+5w+SIt8I0qLPObpqX6QVLWszPr7sxX4WAKTiFgqgBB1MxjA==",
       "path": "microsoft.testplatform.testhost/16.4.0",
       "hashPath": "microsoft.testplatform.testhost.16.4.0.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.9.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-d5/5CDc4TAjrgO9oyyj+FHUDVumxgrlCMJqDtUX4GyTnr1Q/BP88PhnVunRZ9AQcL2UQkM4EkRNyFelPXunHtw==",
+      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.9.10",
+      "hashPath": "microsoft.visualstudio.azure.containers.tools.targets.1.9.10.nupkg.sha512"
     },
     "Microsoft.VisualStudio.Web.CodeGeneration/3.1.1": {
       "type": "package",

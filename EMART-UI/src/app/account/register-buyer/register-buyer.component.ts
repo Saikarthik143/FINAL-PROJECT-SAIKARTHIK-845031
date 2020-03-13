@@ -46,7 +46,7 @@ onSubmit()
     console.log(this.buyer);
     this.service.AddBuyer(this.buyer).subscribe(res=>{
       console.log('record added')
-      alert('register success')
+      // alert('register success')
       this.route.navigateByUrl('index');
     },err=>{
       console.log(err);

@@ -18,13 +18,13 @@ category:Category;
 // Show:boolean=true;
 
   constructor(private route:Router  ,private service:SellerService,private formbuilder:FormBuilder) { 
-    if(localStorage.getItem('sellerid'))
-    {}
-    else 
-    {
-      alert(' please login in first');
-      this.route.navigateByUrl('index');
-    }
+    // if(localStorage.getItem('sellerid'))
+    // {}
+    // else 
+    // {
+    //   alert(' please login in first');
+    //   this.route.navigateByUrl('index');
+    // }
   }
   Search(){
   let id=localStorage.getItem('sellerid');
@@ -110,5 +110,9 @@ category:Category;
     Logout(){
       localStorage.clear();
       this.route.navigateByUrl('index');
+    }
+    Preview(item1:Items)
+    {
+      this.item=item1;
     }
 }

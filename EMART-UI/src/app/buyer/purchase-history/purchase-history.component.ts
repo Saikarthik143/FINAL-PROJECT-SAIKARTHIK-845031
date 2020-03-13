@@ -20,11 +20,11 @@ list:Purchase[];
       console.log(this.list);
     })
   }
-    else 
-    {
-      alert(' please login in first');
-      this.route.navigateByUrl('index');
-    }
+    // else 
+    // {
+    //   alert(' please login in first');
+    //   this.route.navigateByUrl('index');
+    // }
    }
 
   ngOnInit() {

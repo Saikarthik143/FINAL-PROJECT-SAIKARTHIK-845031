@@ -1,33 +1,37 @@
 
-
+<div class="container">
 <table class="table table-bordered" >
     <tr>
        
         <th>Itemid</th>
         <th>ItemName</th>
-        <th>CategoryId</th>
-        <th>SubcategoryId</th>
-        <th>Description</th>
+        <!-- <th>CategoryId</th>
+        <th>SubcategoryId</th> -->
+        <!-- <th>Description</th> -->
         <th>Price</th>
-        <th>StockNumber</th>
+        <!-- <th>StockNumber</th>
         <th>Remarks</th>
-        <th>sid</th>
+        <th>sid</th> -->
         <th>image</th>
+        <th>Preview</th>
         <th>Edit</th>
         <th>Delete</th>
     </tr>
     <tr *ngFor="let i of list">
         <td>{{i.iid}}</td>
         <td>{{i.itemname}}</td>
-        <td>{{i.categoryid}}</td>
-        <td>{{i.subCategoryid}}</td>
-        <td>{{i.description}}</td>
+        <!-- <td>{{i.categoryid}}</td>
+        <td>{{i.subCategoryid}}</td> -->
+        <!-- <td>{{i.description}}</td> -->
         <td>{{i.price}}</td>
-        <td>{{i.stocknumber}}</td>
-        <td>{{i.remarks}}</td>
-        <td>{{i.sid}}</td>
+        <!-- <td>{{i.stocknumber}}</td>
+        <td>{{i.remarks}}</td> -->
+        <!-- <td>{{i.sid}}</td> -->
        <td><img src='assets/images/{{i.imagename}}' style="height:150px; width:150px;"><br></td>
-    <td>
+            <td>
+                <button class="btn btn-warning" data-toggle="modal" data-target="#myModal1" (click)="Preview(item1)">Preview</button>
+            </td>
+       <td>
         <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" (click)="View(i.iid)">Edit</button>
     </td>
     <td>
@@ -35,7 +39,7 @@
     </td>
     </tr>
 </table>
-
+</div>
 <!-- <div class="text-center">
     <button class="btn btn-primary" (click)="Update1()">Edit</button>
   
@@ -153,3 +157,32 @@
 </div>
 </div>
 </div>
+<div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title text-center">Preview</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="card bg-dark">
+                                <img src='assets/images/{{item1.imagename}}' style="height:150px; width:150px;"><br>
+                                <div class="card-body">
+                                ItemId:{{item1.iid}}<br>
+                                ItemName:{{i.itemname}}<br>
+                                CategoryId:{{i.categoryid}}<br>
+                                SubCategoryId:{{i.subCategoryid}}<br>
+                                Price:{{i.price}}<br>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                
