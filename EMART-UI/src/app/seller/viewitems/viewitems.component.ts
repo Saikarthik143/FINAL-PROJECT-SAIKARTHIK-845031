@@ -48,7 +48,7 @@ category:Category;
       stocknumber:['',[Validators.required,Validators.pattern('^[0-9]{0,20}$')]],
       remarks:['',[Validators.required,Validators.pattern('^[a-z A-Z0-9]{0,80}$')]],
       Sid:['',[Validators.required]],
-      imagename:['',[Validators.required]]
+      imagename:['']
     })
     this.Search();
   }
@@ -111,8 +111,8 @@ category:Category;
       localStorage.clear();
       this.route.navigateByUrl('index');
     }
-    Preview(item1:Items)
+    Preview(item:Items)
     {
-      this.item=item1;
+      this.item=item;
     }
 }
